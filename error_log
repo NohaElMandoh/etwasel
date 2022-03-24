@@ -1,0 +1,12 @@
+[12-Jan-2022 18:19:18 UTC] PHP Fatal error:  Allowed memory size of 2097152 bytes exhausted (tried to allocate 2193008 bytes) in Unknown on line 0
+[12-Jan-2022 18:22:18 UTC] PHP Fatal error:  Allowed memory size of 2097152 bytes exhausted (tried to allocate 2193008 bytes) in Unknown on line 0
+[12-Jan-2022 21:11:38 UTC] PHP Fatal error:  Allowed memory size of 2097152 bytes exhausted (tried to allocate 4096 bytes) in /home/etwasel/public_html/etwasel/vendor/composer/autoload_static.php on line 1182
+[12-Jan-2022 21:13:56 UTC] PHP Fatal error:  Allowed memory size of 2097152 bytes exhausted (tried to allocate 4096 bytes) in /home/etwasel/public_html/etwasel/vendor/composer/autoload_static.php on line 1182
+[12-Jan-2022 22:39:19 UTC] PHP Fatal error:  Allowed memory size of 2097152 bytes exhausted (tried to allocate 4096 bytes) in /home/etwasel/public_html/etwasel/vendor/composer/autoload_static.php on line 1182
+[12-Jan-2022 22:43:32 UTC] PHP Fatal error:  Allowed memory size of 2097152 bytes exhausted (tried to allocate 4096 bytes) in /home/etwasel/public_html/etwasel/vendor/composer/autoload_static.php on line 1182
+[12-Jan-2022 22:43:48 UTC] PHP Fatal error:  Allowed memory size of 2097152 bytes exhausted (tried to allocate 2193008 bytes) in Unknown on line 0
+[12-Jan-2022 22:46:08 UTC] PHP Fatal error:  Allowed memory size of 2097152 bytes exhausted (tried to allocate 2193008 bytes) in Unknown on line 0
+[12-Jan-2022 22:46:12 UTC] PHP Fatal error:  Allowed memory size of 2097152 bytes exhausted (tried to allocate 4096 bytes) in /home/etwasel/public_html/etwasel/vendor/composer/autoload_static.php on line 1182
+[12-Jan-2022 22:46:48 UTC] PHP Fatal error:  Allowed memory size of 2097152 bytes exhausted (tried to allocate 4096 bytes) in /home/etwasel/public_html/etwasel/vendor/composer/autoload_static.php on line 1182
+[13-Jan-2022 09:33:00 UTC] PHP Fatal error:  Allowed memory size of 2097152 bytes exhausted (tried to allocate 4096 bytes) in /home/etwasel/public_html/etwasel/vendor/composer/autoload_static.php on line 1182
+[13-Jan-2022 09:33:41 UTC] PHP Fatal error:  Allowed memory size of 2097152 bytes exhausted (tried to allocate 2193008 bytes) in Unknown on line 0

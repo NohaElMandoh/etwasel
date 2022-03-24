@@ -1,0 +1,44 @@
+
+/** images **/
+.imgbox {
+display: block;
+width: 100%;
+text-align: center;
+margin-bottom: 0px;
+    height: 350px;
+}
+.imgbox img {
+-webkit-box-shadow: 1px 4px 9px -1px rgba(0,0,0,0.65);
+-moz-box-shadow: 1px 4px 9px -1px rgba(0,0,0,0.65);
+box-shadow: 1px 4px 9px -1px rgba(0,0,0,0.65);
+    width: 100%;
+    height: 100%;
+}
+.credits {
+text-align: center;
+margin-bottom: 20px;
+}
+.magnify {
+width: 100%;
+margin: 0px auto;
+position: relative;
+cursor: none;
+}
+/* Let's create the magnifying glass */
+.large {
+display: none;
+width: 175px;
+height: 175px;
+position: absolute;
+-webkit-border-radius: 0%;
+-moz-border-radius: 0%;
+border-radius: 0%;
+/* box shadows to achieve the glass effect */
+-webkit-box-shadow: 0 0 0 7px rgba(255, 255, 255, 0.85), 0 0 7px 7px rgba(0, 0, 0, 0.25), inset 0 0 40px 2px rgba(0, 0, 0, 0.25);
+-moz-box-shadow: 0 0 0 7px rgba(255, 255, 255, 0.85), 0 0 7px 7px rgba(0, 0, 0, 0.25), inset 0 0 40px 2px rgba(0, 0, 0, 0.25);
+box-shadow: 0 0 0 7px rgba(255, 255, 255, 0.85), 0 0 7px 7px rgba(0, 0, 0, 0.25), inset 0 0 40px 2px rgba(0, 0, 0, 0.25)
+}
+/* To solve overlap bug at the edges during magnification */
+.thumb {
+display: block;
+}

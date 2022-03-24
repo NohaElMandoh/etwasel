@@ -1,0 +1,276 @@
+/********************** Start carousel-pr0duct***************/
+.carousel {
+position: relative;
+    width: 100%;
+    height: auto;
+    margin-top: 0;
+}
+
+.carousel-caption{
+    position: absolute;
+    right: 20%;
+    
+    font-size: 30px;
+
+}
+
+.carousel-inner {
+
+    border-radius: 5px;
+        /*margin-bottom: 130px;*/
+        margin-bottom: 0px;
+}
+
+.carousel-caption{
+    bottom: 80px;
+    margin-top: 0;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 0px;
+    background: rgba(3,3,3,0.5);
+    border-radius: 10px;
+    
+}
+.carousel-caption h1{
+    padding-top: 0px;
+}
+.carousel-indicators {
+    /* bottom: -132px; */
+    /* left: 145px; */
+    width: 100%;
+    /* margin: auto; */
+    margin-left: auto;
+    position: static;
+    margin-top: 20px;
+}
+.carousel .carousel-inner .item img{
+    line-height: 1;
+    display: block;
+    width: 100%;
+    height: 400px;
+}
+
+@media(max-width:768px){
+    .carousel .carousel-inner .item img{
+    height: auto;
+}
+}
+.carousel .carousel-inner .item .gfgf{
+    padding-top: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.carousel .carousel-inner .item .gfgf .artical{
+    padding-top: 20px;
+    padding-right: 5px;
+}
+.carousel .carousel-inner .item .gfgf .artical h1{
+    margin-top: -20px;
+    height: 40px;
+        font-size: 35px;
+}
+.carousel .carousel-inner .item .gfgf .artical span{
+ color: #d1044b;
+        padding: 20px;
+}
+.carousel .carousel-inner .item .gfgf .artical .btn {
+    width: 120px;
+    padding-left: 11px;
+    height: 40px;
+    padding-top: 8px;
+    line-height: -50px;
+    background: #d1044b;
+    color: #fff;
+    border-radius: 50px;
+    outline: 0;
+    margin-left: 120px;
+        border: 2px solid #d1044b;
+        -webkit-transition: all .3s ease-in-out;
+        -moz-transition: all .3s ease-in-out;
+        -o-transition: all .3s ease-in-out;
+        transition: all .3s ease-in-out;
+}
+
+.carousel .carousel-inner .item .gfgf .artical .btn:hover {
+    width: 120px;
+    padding-left: 11px;
+    height: 40px;
+    padding-top: 8px;
+    line-height: -50px;
+    background: #fff;
+    border: 2px solid #d1044b;
+    color: #d1044b;
+}
+.carousel .carousel-inner .item .gfgf .artical .lead{
+    padding-top: 10px;
+        font-size: 18px;
+}
+.carousel .carousel-inner .item .gfgf .asas{
+    padding-top: 20px;
+    padding-right: 0px;
+}
+.carousel .carousel-inner .item .gfgf .imagesds{
+    width: 100%;
+    display: block;
+   /* height: 100%;
+    border: 2px solid #000;
+    border-radius: 10px;*/
+    overflow: hidden;
+}
+@media (max-width:768px) {
+.carousel .carousel-inner .item .gfgf .imagesds{
+    width: 100%;
+    display: block;
+    height: auto;
+   /* border: 2px solid #000;
+    border-radius: 10px;*/
+    overflow: hidden;
+}
+}
+
+.carousel-control.left {
+    background-image: -webkit-linear-gradient(left, color-stop(rgba(0, 0, 0, .5) 0%), color-stop(rgba(0, 0, 0, .0001) 100%));
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#80000000', endColorstr='#00000000', GradientType=1);
+    background-repeat: repeat-x;
+    cursor: default;
+    
+}
+.carousel-control.right {
+    right: 0;
+    left: auto;
+    background-image: -webkit-linear-gradient(left, color-stop(rgba(0, 0, 0, .0001) 0%), color-stop(rgba(0, 0, 0, .5) 100%));
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#80000000', GradientType=1);
+    background-repeat: repeat-x;
+    cursor: default;
+   
+}
+.glyphicon-chevron-left:before {
+    content: "\e079";
+    color: #d1044b;
+}
+.glyphicon-chevron-right:before {
+    content: "\e080";
+    color: #d1044b;
+}
+
+/*
+.glyphicon glyphicon glyphicon-arrow-left {
+    position: relative;
+    top: 200px;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: normal;
+    line-height: 0;
+    color: #f00;
+    font-size: 25px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.glyphicon-arrow-left {
+position: relative;
+    top: 10px;
+    left: 508%;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: normal;
+    line-height: 0;
+    color: #d1044b;
+    font-size: 25px;
+    cursor: pointer;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    z-index: -1;
+}
+*/
+@media (max-width:768px) {
+.glyphicon-arrow-left {
+
+        left: 455%;
+}
+}
+.glyphicon-arrow-right {
+position: relative;
+    top: 10px;
+    right: 0%;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: normal;
+    line-height: 0;
+    color: #d1044b;
+    font-size: 25px;
+    cursor: pointer;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.carousel-indicators li {
+    display: inline-block;
+    width: 75px;
+    height: 75px;
+    margin: 1px;
+   /* margin-left: 20px;*/
+    text-indent: -999px;
+    cursor: pointer;
+    background-color: #000;
+    border:2px;
+    border-radius: 0px;
+            -webkit-transition: all .7s ease-in-out;
+        -moz-transition: all .7s ease-in-out;
+        -o-transition: all .7s ease-in-out;
+        transition: all .7s ease-in-out;
+    opacity: .5;
+    border-radius: 0px;
+}
+.carousel-indicators li .image-product{
+    display: block;
+    width: 75px;
+    height: 75px;
+    border-radius: 0px;
+    border: 1px solid #fff;
+}
+
+.carousel-indicators .active {
+    width: 75px;
+    height: 75px;
+    margin: 1px;
+    /*margin-left: 20px;*/
+    background-color: #fff;
+    border: 1px solid #333;
+    opacity: 1;
+    border-radius: 0px;
+}
+.carousel-indicators .active .image-product{
+    border-radius: 0px;
+    width: 100%;
+    height: 100%;
+}
+
+
+@media(max-width:768px){
+    .carousel-indicators li {
+    width: 65px;
+    height: 65px;
+
+}
+    .carousel-indicators li .image-product{
+
+    width: 65px;
+    height: 65px;
+
+}
+    .carousel-indicators .active {
+    width: 65px;
+    height: 65px;
+
+}
+    
+}
+
+/*********************************** End carousel-pr0duct***************/
+
+
+

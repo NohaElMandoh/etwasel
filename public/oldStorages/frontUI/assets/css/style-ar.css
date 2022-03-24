@@ -1,0 +1,317 @@
+
+:root{
+--ARFont: 'Almarai', sans-serif;
+}
+
+body{
+    direction: rtl;
+    /*font-family: 'Cairo', sans-serif;*/   
+font-family: var(--ARFont);
+}
+.sectionfixd .fixedleft {
+
+    right: 0;
+    left: auto;
+}
+.dropdown-menu-end[style] {
+    left: 15px !important;
+    right: auto!important;
+}
+.dropdown-item {
+
+    text-align: right;
+}
+.dropdown-item img{
+    margin: 0 5px;
+        height: auto;
+    width: 20px;
+}
+.simbebaree {
+    overflow: auto;
+    direction: ltr;
+    text-align: right;
+}
+.float-end {
+    float: left !important;
+}
+.sectionfixd .fixedleft .leftsidecont .faq-accordion .accordion .accordion-item .accordion-title .iconplusss {
+    right: auto;
+    left: 0;
+}
+.sectionfixd .fixedleft .leftsidecont {
+    margin-bottom: 15px;
+}
+.sectionfixd .fixedleft .leftsidecont .faq-accordion .accordion .accordion-item .acordeddeatails .linkcateg ul li a i {
+    margin: 0;
+    float: right;
+    height: 40px;
+    line-height: 40px;
+    width: 40px;
+    text-align: center;
+}
+.sectionfixd .centerside .centersidecont {
+    margin-right: 0;
+    margin-left: 20px;
+}
+.sectionfixd .centerside .centersidecont .services .servcont .title .Sertittl {
+    text-align: right;
+}
+.sectionfixd .centerside .centersidecont .Category .Categorycont .title .Categorytittl {
+    text-align: right;
+}
+.sectionfixd .centerside .centersidecont .Category .Categorycont .seemore .seemorelink span {
+    font-size: 15px;
+    transform: rotate(90deg);
+
+}
+
+.dropdown-menu-end h6{
+    text-align: right;
+}
+.sectionfixd .fixedleft .leftsidecont .faq-accordion .accordion .accordion-item .accordion-title .namecat {
+font-family: var(--ARFont);
+}
+.sectionfixd .fixedleft .leftsidecont .faq-accordion .accordion .accordion-item .acordeddeatails .linkcateg ul li a{
+    font-family: var(--ARFont);
+}
+.sectionfixd .centerside .centersidecont .PopuProd .title .PopuProdtittl {
+    text-align: start;
+}
+.sectionfixd .centerside .centersidecont .PopuProd .title .line {
+    margin: 0;
+}
+.sectionfixd .centerside .centersidecont .hotdeals .tittle .PopuProdtittl {
+    text-align: start;
+}
+.sectionfixd .centerside .centersidecont .hotdeals .tittle .line {
+    margin: 0;
+}
+.sectionfixd .centerside .centersidecont .tradtube .title .PopuProdtittl {
+    text-align: start;
+}
+.sectionfixd .centerside .centersidecont .tradtube .title .line {
+    margin: 0;
+}
+.sectionfixd .centerside .centersidecont .Classify .title .PopuProdtittl {
+    text-align: start;
+}
+.sectionfixd .centerside .centersidecont .Classify .title .line {
+    margin: 0;
+}
+.sectionfixd .centerside .centersidecont .store .title .PopuProdtittl {
+    text-align: start;
+}
+.sectionfixd .centerside .centersidecont .store .title .line {
+    margin: 0;
+}
+.faq-accordion .accordion .accordion-title {
+
+    font-weight: 500;
+    font-family: var(--ARFont);
+}
+
+.sectionfixd .fixedleft .leftsidecont .faq-accordion .accordion .accordion-item .accordion-title .namecat span{
+    margin-left: 5px;
+}
+#jtv-rev_slider_wrapper .info {
+    width: 100%;
+    display: block;
+    text-align: right;
+    position: absolute;
+    top: 25%;
+    right: 7%;
+    left: auto;
+}
+.tp-caption.jtv-sub-title{
+        text-align: right;
+}
+.tp-caption.jtv-large-title span{
+            text-align: right;
+}
+.tp-caption.jtv-large-title{
+       text-align: right;
+}
+.tp-caption.Title{
+                text-align: right;
+}
+.jtv-shop-now-btn{
+        float: right;
+}
+.inputVendorr .formItemVendor .addMore {
+
+    left: 10px;
+    right:auto;
+}
+.deleterepeat {
+    left: -2px;
+    right: auto;
+}
+.modal-header .btn-close{
+    margin: 0;
+}
+
+.modalprivew .sectionfixd .centerside .centersidecont {
+    margin-right: 0;
+    margin-left: 0;
+        margin-top: 0;
+}
+.nananbars .navbar .navbar-collapse ul .dropdown .dropdown-menu{
+    right:0;
+}
+.companyheaders .companydetails .companylogo {
+    float: right;
+}
+.companyheaders .companydetails {
+    display: flow-root;
+}
+.companyheaders .companydetails .companylogo {
+    display: inline-block;
+    float: right;
+        margin-right: 0;
+    margin-left: 10px;
+        margin-top: 0;
+}
+.companyheaders .companydetails .companydesas {
+    display: inline-block;
+    margin-top: 0px;
+}
+.contactsupli .detailsssup .supInfo .imagess {
+    float: right;
+
+}
+.contactsupli .detailsssup .formsss .formitem .forminpsd::placeholder{
+    text-align: right;
+}
+.certifications .Messagee .Messageinput .inputmess .mailinpu::placeholder{
+    text-align: right;
+}
+.popupqutaions .modal-body .qutpopupbody .qutpopform .formgropop .forminpppop::placeholder{
+    text-align: right;
+}
+.profilepage{
+        margin-right: 0;
+}
+.jtv-shop-now-btn:after{
+margin-right: 10px;
+margin-left: 0px;
+}
+
+.sectionfixd .fixedleft .leftsidecont .faq-accordion .accordion .accordion-item .acordeddeatails .linkcateg ul li a:hover {
+
+    padding-right: 20px;
+}
+.popupqutaions .modal-body .qutpopupbody .qutpopform .formgropop .forminpppop{
+    padding: 0 15px;
+}
+
+
+
+
+
+/******************login + register page ****************/
+.donthane .title-tip h2 a {
+    float: left;
+}
+.newRegister .headernav .Language {
+    float: right;
+    text-align: right;
+}
+.jiningfree {
+    text-align: left;
+}
+.jiningfree a {
+    float: left;
+}
+.newRegister .headernav .Language .dropdown .dropdown-toggle {
+    color: #242121 !IMPORTANT;
+}
+
+.newRegister .registerForm .rigjtcont .why-register ul li i {
+    margin-left: 10px;
+    margin-right: 0;
+}
+
+.fieldlabels {
+    text-align: right;
+    float: right;
+        display: block;
+    width: 100%;
+}
+#progressbar li {
+    float: right;
+}
+#msform .action-button {
+
+    margin: 10px;
+    float: left;
+}
+
+#msform .action-button-previous{
+        margin: 10px;
+    float: right;
+}
+#msform .input-group-prepend .input-group-text {
+    border-radius: 0;
+    display: block;
+    width: 40px;
+    text-align: center;
+    padding: 0;
+    line-height: 40px;
+}
+#msform .input-group-prepend {
+    top: 2px;
+}
+
+
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+font-family: var(--ARFont);
+}
+.price .prod_price{
+    font-family: var(--ARFont);
+}
+.sectionfixd .centerside .centersidecont .PopuProd .PopuProdtemsss .PopuProdItem .details .nameprod .namlink{
+        font-family: var(--ARFont);
+}
+
+.productOwl .Products{
+    direction: ltr;
+}
+
+.productOwl .Products .owl-theme .owl-nav {
+
+    left: 0;
+    right: auto;
+
+}
+.sectionfixd .centerside .centersidecont .PopuProd .PopuProdtemsss .PopuProdItem .details {
+    padding: 10px;
+    text-align: right;
+}
+.sectionfixd .centerside .centersidecont .PopuProd .PopuProdtemsss .PopuProdItem .details .categoru {
+
+    direction: rtl;
+}
+
+
+
+
+
+@media(max-width:768px){
+    .header-profile-user {
+    height: 36px;
+    width: 230px;
+    }
+    #header-lang-img{
+            width: 165px;
+    height: auto;
+    }
+    .linkatlogregister ul {
+    width: max-content;
+}
+.landroppp{
+    width:50px;
+}
+}
+
+
+
