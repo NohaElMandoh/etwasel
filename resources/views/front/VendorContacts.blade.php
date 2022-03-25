@@ -66,7 +66,12 @@ $user=Auth::user();
                                                                         <td><p>{{$k+1}}</p></td>
                                                             
                                                                         <td><p>{{$content->email}}</p></td>
-                                                                        <td><p>{{$content->message}}</p></td>
+                                                                        <td>
+                                                                            <!--<p>{{$content->message}}</p>-->
+                                                                            <button type="button" class=" modalShowMessageBTN" data-toggle="modal" data-target="#modalShowMessage">
+                                                                                View Message
+                                                                            </button>
+                                                                        </td>
                                                                         <td><p>{{$content->phone}}</p></td>
                                                              
                                                                         <td><p>{{$content->name}}</p></td>
@@ -144,6 +149,37 @@ $user=Auth::user();
 
         </div>
     </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="modal fade modalShowMessage" id="modalShowMessage" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">admin@steel.com</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="MessageContent">
+            
+            <p>Message Detauils</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+    
+    
+    
+    
+    
 @endsection
 
 @section('scripts')

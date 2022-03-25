@@ -129,7 +129,7 @@ class HomeController extends Controller
 
         return view('front.profile', compact('categories', 'fields'));
     }
-     public function checkEmail(Request $request)
+    public function checkEmail(Request $request)
     {
         $this->validate($request, [
             'email' => 'required|email',
@@ -139,28 +139,28 @@ class HomeController extends Controller
         //     return response()->json(['success' => 2, 'message' => 'Please Enter Valid Email']);
         // }
         // return $request->all();
-       
+
         $email = $request->email;
-      
+
         $user = User::where('email', $email)->get();
 
         if (count($user) > 0) {
 
-            return response()->json(['success' => 0, 'message' =>__('front.Email Taken Befor')]);
-        } else{
+            return response()->json(['success' => 0, 'message' => __('front.Email Taken Befor')]);
+        } else {
             return response()->json(['success' => 1, 'message' => 'Email Not Exist']);
-        } 
+        }
     }
     public function vendor_update_profile(Request $request)
     {
 
-// return $request->all();
+        // return $request->all();
         $user_id = $request->user()->id;
 
         $user = User::find($user_id);
 
         $userDetails = UsersDetail::where('user_id', $user_id)->first();
-        $allReaquest = $request->except('_token','pmcs','emails','contacts','slide','certification');
+        $allReaquest = $request->except('_token', 'pmcs', 'emails', 'contacts', 'slide', 'certification');
 
         if ($userDetails) {
 
@@ -188,41 +188,41 @@ class HomeController extends Controller
 
             $user = $user->details()->create($allReaquest);
         }
-        
+
         //  if ($request->has('certicications_imgs')) {
         //      return gettype($request->certicications_imgs);
         //     //   foreach ($request->certicications_imgs as $f_key) {
         //     //  return file($f_key);
-                  
+
         //     //   }
         //  }
-//  if ($request->has('certicications')) {
-//             $data = json_decode($request->certicications, true);
-//             foreach ($data as $k=>$f_key) {
-                
-//                 // return gettype($f_key['image']); 
-//               $image      = $request->file($f_key['image']);
-            
-//                 $fileName   = time() . '.' . $image->getClientOriginalExtension();
-//                 //   return $fileName; 
-//                 $path = public_path();
-//                 $destinationPath = $path . '/storage/certifications/';
-//                 $img = \Image::make($image->getRealPath());
-               
+        //  if ($request->has('certicications')) {
+        //             $data = json_decode($request->certicications, true);
+        //             foreach ($data as $k=>$f_key) {
 
-//                 $img->stream(); // <-- Key point
-//                 $image->move($destinationPath, $fileName); // uploading file to given path
-             
-//                 Storage::disk('local')->put('certifications' . '/' . $fileName, $img, 'public');
-                
-//                 Certification::create([
-//                 'user_id'=> $user->id,
-//                 'title_en'=>$f_key['title']
-//                     ]);
-//             }
-     
-//  }
-           
+        //                 // return gettype($f_key['image']); 
+        //               $image      = $request->file($f_key['image']);
+
+        //                 $fileName   = time() . '.' . $image->getClientOriginalExtension();
+        //                 //   return $fileName; 
+        //                 $path = public_path();
+        //                 $destinationPath = $path . '/storage/certifications/';
+        //                 $img = \Image::make($image->getRealPath());
+
+
+        //                 $img->stream(); // <-- Key point
+        //                 $image->move($destinationPath, $fileName); // uploading file to given path
+
+        //                 Storage::disk('local')->put('certifications' . '/' . $fileName, $img, 'public');
+
+        //                 Certification::create([
+        //                 'user_id'=> $user->id,
+        //                 'title_en'=>$f_key['title']
+        //                     ]);
+        //             }
+
+        //  }
+
         if ($request->has('emails')) {
             if (!empty($user->emails))
                 foreach ($user->emails as $em)
@@ -240,15 +240,13 @@ class HomeController extends Controller
                 if ($contact['contact'] != null)
                     ContactsUser::create(['contact' => $contact['contact'], 'user_id' => $user_id]);
         }
-  $pmcs_ids = [];
+        $pmcs_ids = [];
         if ($request->has('pmcs')) {
-if($user->pmcs)
-{
-if(count($user->pmcs)>0)
-{
-     $pmcs_ids = $user->pmcs->pluck('id')->toArray();
-}
-}
+            if ($user->pmcs) {
+                if (count($user->pmcs) > 0) {
+                    $pmcs_ids = $user->pmcs->pluck('id')->toArray();
+                }
+            }
 
             $cat_ids = [];
 
@@ -270,8 +268,6 @@ if(count($user->pmcs)>0)
                         $pm2->delete();
                 }
             }
-
-           
         }
         // ---add slider images------   
         if ($request->hasfile('slide')) {
@@ -300,7 +296,7 @@ if(count($user->pmcs)>0)
             }
         }
         // ----------
-         if ($request->hasfile('certification')) {
+        if ($request->hasfile('certification')) {
             $files = $request->file('certification');
             // foreach ($user->sliders as $slide)
             //     $slide->delete();
@@ -330,50 +326,50 @@ if(count($user->pmcs)>0)
         // } else {
         //     return response()->json(['message' => 'Error!']);
         // }
-        return  redirect()->back()->with('message',  __('front.Data Updated Successfully') );;
+        return  redirect()->back()->with('message',  __('front.Data Updated Successfully'));;
     }
-     public function deleteSlide($id=null)
+    public function deleteSlide($id = null)
     {
         // return $id;
-        $slide=null;
-        if($id !=null){
-        $slide=UsersSlide::find($id);
-        // return $slide;
-       $del= $slide->delete();
+        $slide = null;
+        if ($id != null) {
+            $slide = UsersSlide::find($id);
+            // return $slide;
+            $del = $slide->delete();
         }
-            if ($del) {
+        if ($del) {
             return response()->json(['message' => 'Success!']);
         } else {
             return response()->json(['message' => 'Error!']);
         }
     }
-    
-     public function deleteMedia($id=null)
+
+    public function deleteMedia($id = null)
     {
         // return $id;
-        $slide=null;
-        if($id !=null){
-        $slide=ProductsMedia::find($id);
-        // return $slide;
-       $del= $slide->delete();
+        $slide = null;
+        if ($id != null) {
+            $slide = ProductsMedia::find($id);
+            // return $slide;
+            $del = $slide->delete();
         }
-            if ($del) {
+        if ($del) {
             return response()->json(['message' => 'Success!']);
         } else {
             return response()->json(['message' => 'Error!']);
         }
     }
-    
-     public function deleteCert($id=null)
+
+    public function deleteCert($id = null)
     {
         // return $id;
-        $cert=null;
-        if($id !=null){
-        $cert=Certification::find($id);
-        // return $slide;
-       $del= $cert->delete();
+        $cert = null;
+        if ($id != null) {
+            $cert = Certification::find($id);
+            // return $slide;
+            $del = $cert->delete();
         }
-            if ($del) {
+        if ($del) {
             return response()->json(['message' => 'Success!']);
         } else {
             return response()->json(['message' => 'Error!']);
@@ -457,12 +453,12 @@ if(count($user->pmcs)>0)
     }
     public function VendorindividualProduct_Post(Request $request)
     {
-// return  $request->all();
+        // return  $request->all();
 
-     
+
         // ----------
 
-       $request->validate([
+        $request->validate([
             'product_name_en' => 'required',
 
             'product_name_ar' => 'required',
@@ -473,12 +469,12 @@ if(count($user->pmcs)>0)
             'max_price' => 'required',
             // 'product_desc' => 'required',
         ]);
-// if ($validator->fails()) {    
-//     return response()->json(['success'=>0,'message' => $validator->messages()]);
-// }
+        // if ($validator->fails()) {    
+        //     return response()->json(['success'=>0,'message' => $validator->messages()]);
+        // }
         $f_p_word_arr = [];
 
-        $allReaquest = $request->except(['_token', 'first_page_keywords', 'dynamic_page_keywords','image','video']);
+        $allReaquest = $request->except(['_token', 'first_page_keywords', 'dynamic_page_keywords', 'image', 'video']);
 
         $product = PmcsProduct::create($allReaquest);
 
@@ -499,11 +495,11 @@ if(count($user->pmcs)>0)
 
         //     $product->update(['image' => 'pmcs-products\web-products\\' . $fileName]);
         // }
-        
+
         // ---add slider images------   
         if ($request->hasfile('image')) {
             $files = $request->file('image');
-        
+
             foreach ($request->file('image') as $image) {
 
                 $filename = $image->getClientOriginalName();
@@ -519,16 +515,16 @@ if(count($user->pmcs)>0)
 
                 $image_path = 'products-media\\' . $fileName;
                 $product->media()->create([
-                    'user_id'=>$request->user()->id,
-                    'type'=>'image',
+                    'user_id' => $request->user()->id,
+                    'type' => 'image',
                     'image' => $image_path
                 ]);
             }
         }
-        
-            if ($request->hasfile('video')) {
+
+        if ($request->hasfile('video')) {
             $files = $request->file('video');
-        
+
             foreach ($request->file('video') as $image) {
 
                 $filename = $image->getClientOriginalName();
@@ -543,10 +539,10 @@ if(count($user->pmcs)>0)
                 Storage::disk('local')->put('products-media' . '/' . $fileName, $img, 'public');
 
                 $image_path = 'products-media\\' . $fileName;
-              
+
                 $product->media()->create([
-                    'user_id'=>$request->user()->id,
-                    'type'=>'video',
+                    'user_id' => $request->user()->id,
+                    'type' => 'video',
                     'vedio' => $image_path
                 ]);
             }
@@ -573,7 +569,7 @@ if(count($user->pmcs)>0)
                     'price' => $f_key['price'],
                     'position' => $f_key['position'],
                     'pmc_product_id' => $product->id,
-'total'=>$f_key['total']
+                    'total' => $f_key['total']
                 ]);
             }
         }
@@ -588,7 +584,7 @@ if(count($user->pmcs)>0)
                     'price' => $f_key['price'],
                     'position' => $f_key['position'],
                     'pmc_product_id' => $product->id,
-                    'total'=>$f_key['total']
+                    'total' => $f_key['total']
                 ]);
             }
         }
@@ -620,28 +616,28 @@ if(count($user->pmcs)>0)
         $first_page_keywrds = Keyword::where('position', 'first_page')->get();
         $dynamic_page_keywrds = Keyword::where('position', 'dynamic_page')->get();
         $product = PmcsProduct::find($id);
-      $first_page_keywords=UsersKeyword::where('user_id',$product->user_id)->where('pmc_product_id',$id)->where('position','first_page')->get();
-         $dynamic_page_keywords=UsersKeyword::where('user_id',$product->user_id)->where('pmc_product_id',$id)->where('position','dynamic_page')->get();
-      
-     
-        return view('front.VendorIndevdualProductEdit', compact('units', 'currencies', 'first_page_keywrds', 'dynamic_page_keywrds', 'product','first_page_keywords','dynamic_page_keywords'));
+        $first_page_keywords = UsersKeyword::where('user_id', $product->user_id)->where('pmc_product_id', $id)->where('position', 'first_page')->get();
+        $dynamic_page_keywords = UsersKeyword::where('user_id', $product->user_id)->where('pmc_product_id', $id)->where('position', 'dynamic_page')->get();
+
+
+        return view('front.VendorIndevdualProductEdit', compact('units', 'currencies', 'first_page_keywrds', 'dynamic_page_keywrds', 'product', 'first_page_keywords', 'dynamic_page_keywords'));
     }
-     public function delete_product($id)
+    public function delete_product($id)
     {
 
         $product = PmcsProduct::find($id);
-      
-        $del=null;
-        if($product)
-        $del= $product->delete();
-       if($del) {
+
+        $del = null;
+        if ($product)
+            $del = $product->delete();
+        if ($del) {
             return response()->json(['message' => 'Success!']);
         } else {
             return response()->json(['message' => 'Error!']);
         }
         // return view('front.VendorIndevdualProductEdit', compact('units', 'currencies', 'first_page_keywrds', 'dynamic_page_keywrds', 'product','first_page_keywords','dynamic_page_keywords'));
     }
-    
+
     public function VendorindividualProductEdit_Post(Request $request)
     {
         return $request->all();
@@ -660,11 +656,11 @@ if(count($user->pmcs)>0)
 
         $f_p_word_arr = [];
 
-        $allReaquest = $request->except(['_token', 'first_page_keywords', 'dynamic_page_keywords','image','video','dynamic_page_keywords_words','first_page_keywords_words']);
+        $allReaquest = $request->except(['_token', 'first_page_keywords', 'dynamic_page_keywords', 'image', 'video', 'dynamic_page_keywords_words', 'first_page_keywords_words']);
 
         $product = PmcsProduct::find($request->product_id);
 
-   $product->update($allReaquest);
+        $product->update($allReaquest);
 
         // if ($request->hasFile('image')) {
         //     // return 'hi';
@@ -692,9 +688,9 @@ if(count($user->pmcs)>0)
         //     $video->move($destinationPath, $name); // uploading file to given path
         //     $product->update(['video' => 'uploads/PmcProduct/video/' . $name]);
         // }
-if ($request->hasfile('image')) {
+        if ($request->hasfile('image')) {
             $files = $request->file('image');
-        
+
             foreach ($request->file('image') as $image) {
 
                 $filename = $image->getClientOriginalName();
@@ -710,16 +706,16 @@ if ($request->hasfile('image')) {
 
                 $image_path = 'products-media\\' . $fileName;
                 $product->media()->create([
-                    'user_id'=>$request->user()->id,
-                    'type'=>'image',
+                    'user_id' => $request->user()->id,
+                    'type' => 'image',
                     'image' => $image_path
                 ]);
             }
         }
-        
-            if ($request->hasfile('video')) {
+
+        if ($request->hasfile('video')) {
             $files = $request->file('video');
-        
+
             foreach ($request->file('video') as $image) {
 
                 $filename = $image->getClientOriginalName();
@@ -734,21 +730,21 @@ if ($request->hasfile('image')) {
                 Storage::disk('local')->put('products-media' . '/' . $fileName, $img, 'public');
 
                 $image_path = 'products-media\\' . $fileName;
-              
+
                 $product->media()->create([
-                    'user_id'=>$request->user()->id,
-                    'type'=>'video',
+                    'user_id' => $request->user()->id,
+                    'type' => 'video',
                     'vedio' => $image_path
                 ]);
             }
         }
 
         if ($request->has('first_page_keywords')) {
-            
-         
-                  $first_page_keywordss=UsersKeyword::where('user_id',$product->user_id)->where('pmc_product_id',$product->id)->where('position','first_page')->get();
-                  foreach($first_page_keywordss as $f) $f->delete();
-                  
+
+
+            $first_page_keywordss = UsersKeyword::where('user_id', $product->user_id)->where('pmc_product_id', $product->id)->where('position', 'first_page')->get();
+            foreach ($first_page_keywordss as $f) $f->delete();
+
             $data = json_decode($request->first_page_keywords, true);
             foreach ($data as $f_key) {
                 $user_key = UsersKeyword::create([
@@ -759,16 +755,16 @@ if ($request->hasfile('image')) {
                     'price' => $f_key['price'],
                     'position' => $f_key['position'],
                     'pmc_product_id' => $product->id,
-                     'total' => $f_key['total'],
+                    'total' => $f_key['total'],
 
                 ]);
             }
         }
         if ($request->has('dynamic_page_keywords')) {
-            
-               $d_page_keywordss=UsersKeyword::where('user_id',$product->user_id)->where('pmc_product_id',$product->id)->where('position','dynamic_page')->get();
-                  foreach($d_page_keywordss as $f) $f->delete();
-                  
+
+            $d_page_keywordss = UsersKeyword::where('user_id', $product->user_id)->where('pmc_product_id', $product->id)->where('position', 'dynamic_page')->get();
+            foreach ($d_page_keywordss as $f) $f->delete();
+
             $data = json_decode($request->dynamic_page_keywords, true);
             foreach ($data as $f_key) {
                 $user_key = UsersKeyword::create([
@@ -779,7 +775,7 @@ if ($request->hasfile('image')) {
                     'price' => $f_key['price'],
                     'position' => $f_key['position'],
                     'pmc_product_id' => $product->id,
-                     'total' => $f_key['total'],
+                    'total' => $f_key['total'],
                 ]);
             }
         }
@@ -809,11 +805,11 @@ if ($request->hasfile('image')) {
     {
         return view('front.VendorContacts');
     }
-     public function notifications(Request $request)
+    public function notifications(Request $request)
     {
         return view('front.VendorNotifications');
     }
- 
+
     public function Vendor_RFQ_Post(Request $request)
     {
         $allReaquest = $request->except('_token');
@@ -826,26 +822,26 @@ if ($request->hasfile('image')) {
     {
         $row = Contact::find($id);
         $row->delete();
-        return  redirect()->back()->with('message',__('front.Delete successfully'));
+        return  redirect()->back()->with('message', __('front.Delete successfully'));
     }
- public function delete_notification($id)
+    public function delete_notification($id)
     {
         $row = Notification::find($id);
         $row->delete();
-        return  redirect()->back()->with('message',__('front.Delete successfully'));
+        return  redirect()->back()->with('message', __('front.Delete successfully'));
     }
-    public function Vendor_website($vendor_id,$vendor_name)
+    public function Vendor_website($vendor_id, $vendor_name)
     {
-if($vendor_id !=null){
-        $user = User::find($vendor_id);
-}else  $user = User::where('name', $vendor_name)->first();
+        if ($vendor_id != null) {
+            $user = User::find($vendor_id);
+        } else  $user = User::where('name', $vendor_name)->first();
         $fields = IndustriesField::all();
         $regions = Region::all();
         //   $certification=Certification::all();
         return view('front.vendor-website', compact('user', 'fields', 'regions'));
     }
-    
-     public function Vendor_contact_us($vendor_id)
+
+    public function Vendor_contact_us($vendor_id)
     {
 
         $user = User::find($vendor_id);
@@ -855,8 +851,8 @@ if($vendor_id !=null){
         //   $certification=Certification::all();
         return view('front.vendor-ContactUs', compact('user', 'fields', 'regions'));
     }
-    
-  
+
+
     public function product($product_name)
     {
 
@@ -910,27 +906,26 @@ if($vendor_id !=null){
             return response()->json(['message' => 'Success!', 'keyword' => $keyword]);
         }
     }
-    
- public function keywordPrice(Request $request)
+
+    public function keywordPrice(Request $request)
     {
-// return $request->all();
-$to =  $request->to_date;
-$from = $request->from_date;
+        // return $request->all();
+        $to =  $request->to_date;
+        $from = $request->from_date;
 
 
-$datetime1 = new DateTime($from);
-$datetime2 = new DateTime($to);
-$interval = $datetime1->diff($datetime2);
-$days = $interval->format('%a');//now do whatever you like with $days
+        $datetime1 = new DateTime($from);
+        $datetime2 = new DateTime($to);
+        $interval = $datetime1->diff($datetime2);
+        $days = $interval->format('%a'); //now do whatever you like with $days
 
 
-// $diff_in_days = $to->diffInDays($from);
-$total=$days*$request->price;
-// return($days); // Output: 1
+        // $diff_in_days = $to->diffInDays($from);
+        $total = $days * $request->price;
+        // return($days); // Output: 1
 
 
-            return response()->json(['message' => 'Success!', 'price' => $total]);
-      
+        return response()->json(['message' => 'Success!', 'price' => $total]);
     }
     public function vendor_info(Request $request)
     {
@@ -1121,17 +1116,16 @@ $total=$days*$request->price;
         // ]);
         return response()->file($path);
     }
-    
-     public function product_media(Request $request)
+
+    public function product_media(Request $request)
     {
         $id = $request->id;
-        
-        $product_imgs = ProductsMedia::where('product_id',$id)->get();
-        
+
+        $product_imgs = ProductsMedia::where('product_id', $id)->get();
+
         if ($product_imgs) {
 
             return response()->json(['message' => 'Success!', 'product_imgs' => $product_imgs]);
-            
         } else {
             return response()->json(['message' => 'Error!']);
         }

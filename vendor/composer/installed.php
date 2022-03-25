@@ -1,11 +1,11 @@
 <?php return array(
     'root' => array(
-        'pretty_version' => '1.0.0+no-version-set',
-        'version' => '1.0.0.0',
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => NULL,
+        'reference' => 'b76875a1b31c6057dc07cbbbd95ae3750c418676',
         'name' => 'laravel/laravel',
         'dev' => true,
     ),
@@ -26,6 +26,15 @@
             'install_path' => __DIR__ . '/../asm89/stack-cors',
             'aliases' => array(),
             'reference' => '73e5b88775c64ccc0b84fb60836b30dc9d92ac4a',
+            'dev_requirement' => false,
+        ),
+        'bacon/bacon-qr-code' => array(
+            'pretty_version' => '2.0.7',
+            'version' => '2.0.7.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../bacon/bacon-qr-code',
+            'aliases' => array(),
+            'reference' => 'd70c840f68657ce49094b8d91f9ee0cc07fbf66c',
             'dev_requirement' => false,
         ),
         'brick/math' => array(
@@ -51,6 +60,15 @@
             'replaced' => array(
                 0 => '*',
             ),
+        ),
+        'dasprid/enum' => array(
+            'pretty_version' => '1.0.3',
+            'version' => '1.0.3.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../dasprid/enum',
+            'aliases' => array(),
+            'reference' => '5abf82f213618696dda8e3bf6f64dd042d8542b2',
+            'dev_requirement' => false,
         ),
         'davedevelopment/hamcrest-php' => array(
             'dev_requirement' => true,
@@ -466,6 +484,15 @@
             'reference' => 'ab6e821c467704ae91a9a944e6ebdaad6a99a294',
             'dev_requirement' => false,
         ),
+        'laravel/fortify' => array(
+            'pretty_version' => 'v1.11.2',
+            'version' => '1.11.2.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../laravel/fortify',
+            'aliases' => array(),
+            'reference' => '35c44f36f2a93fb7d3d8b38d6b7794913c69d414',
+            'dev_requirement' => false,
+        ),
         'laravel/framework' => array(
             'pretty_version' => 'v8.83.5',
             'version' => '8.83.5.0',
@@ -476,12 +503,12 @@
             'dev_requirement' => false,
         ),
         'laravel/laravel' => array(
-            'pretty_version' => '1.0.0+no-version-set',
-            'version' => '1.0.0.0',
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => NULL,
+            'reference' => 'b76875a1b31c6057dc07cbbbd95ae3750c418676',
             'dev_requirement' => false,
         ),
         'laravel/sail' => array(
@@ -679,6 +706,15 @@
             'reference' => '3d81e4309d2a927abbe66df935f4bb60082805ad',
             'dev_requirement' => false,
         ),
+        'paragonie/constant_time_encoding' => array(
+            'pretty_version' => 'v2.5.0',
+            'version' => '2.5.0.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../paragonie/constant_time_encoding',
+            'aliases' => array(),
+            'reference' => '9229e15f2e6ba772f0c55dd6986c563b937170a8',
+            'dev_requirement' => false,
+        ),
         'phar-io/manifest' => array(
             'pretty_version' => '2.0.3',
             'version' => '2.0.3.0',
@@ -856,6 +892,15 @@
             'reference' => '35ea4b7f3acabb26f4bb640f8c30866c401da807',
             'dev_requirement' => true,
         ),
+        'pragmarx/google2fa' => array(
+            'pretty_version' => '8.0.0',
+            'version' => '8.0.0.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../pragmarx/google2fa',
+            'aliases' => array(),
+            'reference' => '26c4c5cf30a2844ba121760fd7301f8ad240100b',
+            'dev_requirement' => false,
+        ),
         'psr/container' => array(
             'pretty_version' => '1.1.2',
             'version' => '1.1.2.0',
@@ -913,8 +958,8 @@
         'psr/http-factory-implementation' => array(
             'dev_requirement' => false,
             'provided' => array(
-                0 => '^1.0',
-                1 => '1.0',
+                0 => '1.0',
+                1 => '^1.0',
             ),
         ),
         'psr/http-message' => array(
@@ -944,8 +989,8 @@
         'psr/log-implementation' => array(
             'dev_requirement' => false,
             'provided' => array(
-                0 => '1.0|2.0',
-                1 => '1.0.0 || 2.0.0 || 3.0.0',
+                0 => '1.0.0 || 2.0.0 || 3.0.0',
+                1 => '1.0|2.0',
             ),
         ),
         'psr/simple-cache' => array(

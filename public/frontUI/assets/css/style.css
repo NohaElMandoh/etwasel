@@ -17003,17 +17003,70 @@ display: block;
 
 
 
+.modalShowMessageBTN{
+    display: block;
+    width: max-content;
+    padding: 0 20px;
+    height: 37px;
+    line-height: 37px;
+    font-weight: unset;
+    text-transform: capitalize;
+    margin: auto;
+    border-radius: 25px;
+    color: #fff;
+    background: #3c79c7;
+    border: 1px solid #3c79c7;
+}
+.modalShowMessageBTN::after{
+    content: none;
+}
+.modalShowMessageBTN::before{
+    content: none;
+}
+.modalShowMessageBTN:hover{
+    background-color: #3c79c7 !important;
+    color: #fff !IMPORTANT;
+}
+.modalShowMessage{
+    
+}
+.modalShowMessage .modal-dialog{
+    
+}
+.modalShowMessage .modal-content{
+        border-radius: 0;
+    border: none;
+}
+.modalShowMessage .modal-header{
+padding: 5px 15px;
+    background: #3c79c7;
+    border-radius: 0;
+    border: 1px solid #3c79c7;
+}
 
-
-
-
-
-
-
-
-
-
-
+.modalShowMessage .modal-header .modal-title{
+    color: #fff;
+    font-size: 16px;
+}
+.modalShowMessage .modal-header .close{
+    color: #fff;
+    background: #3c79c7;
+    border: 1px solid #3c79c7;
+    font-size: 26px;
+    outline: 0 !IMPORTANT;
+}
+.modalShowMessage .modal-body{
+    
+}
+.modalShowMessage .modal-body .MessageContent{
+    
+}
+.modalShowMessage .modal-body .MessageContent p{
+    font-size: 16px;
+    color: #333;
+    font-weight: 400;
+}
+}
 
 
 
