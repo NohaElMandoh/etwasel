@@ -52,7 +52,7 @@ $user=Auth::user();
                                                                         <th><p>{{__('front.Message')}}</p></th>
                                                                         <th><p>{{__('front.Phone Number')}}</p></th>
                                                                         <th><p>{{__('front.Name')}}</p></th>
-                                                                        <th><p>{{__('front.Qty')}}</p></th>
+                                                                        <th style="display:none"><p>{{__('front.Qty')}}</p></th>
                                                                         <th><p>{{__('front.Action')}}</p></th>
                                                                     
                                                                     </tr>
@@ -70,7 +70,7 @@ $user=Auth::user();
                                                                         <td><p>{{$content->phone}}</p></td>
                                                              
                                                                         <td><p>{{$content->name}}</p></td>
-                                                                        <td><p>{{$content->quantity}}</p></td>
+                                                                        <td  style="display:none"><p>{{$content->quantity}}</p></td>
                                                                                 
                                                                  
                                                                         <td>
