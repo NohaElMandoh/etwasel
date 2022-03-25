@@ -60,6 +60,9 @@ Route::post('/rfq', [App\Http\Controllers\HomeController::class, 'Vendor_RFQ_Pos
 Route::get('/website/{vendor_id?}/{vendor_name?}', [App\Http\Controllers\HomeController::class, 'Vendor_website'])->name('vendor_website');
 Route::get('/Vendor_ContactUs/{vendor_id?}', [App\Http\Controllers\HomeController::class, 'Vendor_ContactUs'])->name('Vendor_ContactUs');
 
+Route::get('/product/{pmc_id?}', [App\Http\Controllers\HomeController::class, 'product_pmc'])->name('product_pmc');
+
+
 Route::get('/Vendor_contact_us/{vendor_id?}', [App\Http\Controllers\HomeController::class, 'Vendor_contact_us'])->name('Vendor_contact_us');
 
 

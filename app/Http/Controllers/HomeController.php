@@ -861,7 +861,19 @@ class HomeController extends Controller
         //   $certification=Certification::all();
         return view('front.vendor-website', compact('user', 'fields', 'regions'));
     }
-
+    public function product_pmc($pmc_id)
+    {
+        $pmc=Pmc::find($pmc_id);
+        if ($pmc ) {
+            $user = User::find($pmc->user_id);
+        }
+        // return  $pmc;
+        $fields = IndustriesField::all();
+        $regions = Region::all();
+        //   $certification=Certification::all();
+        return view('front.product_pmc', compact('user', 'fields', 'regions','pmc'));
+    }
+    
     public function Vendor_ContactUs($vendor_id)
     {
         $user = null;
