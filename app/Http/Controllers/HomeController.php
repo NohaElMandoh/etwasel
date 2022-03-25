@@ -50,41 +50,41 @@ class HomeController extends Controller
     {
         return view('front.home');
     }
-    public function userRegistration(Request $request)
-    {
+    // public function userRegistration(Request $request)
+    // {
 
-        $request->validate([
-            'name' => 'required',
-            'email' => 'required|email|unique:users',
-            'password' => 'required|min:6|confirmed',
-            'type' => 'required'
-        ]);
+    //     $request->validate([
+    //         'name' => 'required',
+    //         'email' => 'required|email|unique:users',
+    //         'password' => 'required|min:6|confirmed',
+    //         'type' => 'required'
+    //     ]);
 
-        $data = $request->all();
-        $data['password'] = Hash::make($data['password']);
-        $check = User::create($data);
+    //     $data = $request->all();
+    //     $data['password'] = Hash::make($data['password']);
+    //     $check = User::create($data);
 
-        if ($check) {
+    //     if ($check) {
 
-            $credentials = $request->only('email', 'password');
-            if (Auth::attempt($credentials)) {
+    //         $credentials = $request->only('email', 'password');
+    //         if (Auth::attempt($credentials)) {
 
-                return redirect('home');
-            }
-        } else {
-            return response()->json(['message' => 'Error!']);
-        }
-    }
+    //             return redirect('home');
+    //         }
+    //     } else {
+    //         return response()->json(['message' => 'Error!']);
+    //     }
+    // }
 
     public function vendorRegistration(Request $request)
     {
 
-      $validator=  $request->validate([
-            'name' => 'required',
-            'email' => 'required|email|unique:users',
-            'password' => 'required|min:6|confirmed',
-            'type' => 'required'
-        ]);
+    //   $validator=  $request->validate([
+    //         'name' => 'required',
+    //         'email' => 'required|email|unique:users',
+    //         'password' => 'required|min:6|confirmed',
+    //         'type' => 'required'
+    //     ]);
         
          $validator = \Validator::make($request->all(), [ 'name' => 'required',
             'email' => 'required|email|unique:users',

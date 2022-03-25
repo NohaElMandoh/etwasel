@@ -9,8 +9,8 @@ use Laravel\Scout\Searchable;
 
 class PmcsProduct extends Model
 {
-
-    use HasFactory,Searchable;
+//,Searchable
+    use HasFactory;
     
     protected $fillable = ['user_id','pmc_id','product_name_en','product_name_ar','image','video','unit_id','currency_id',
     'min_order','min_price','max_price','load_time','product_desc','home_keywords','pages_keywords','product_desc_ar'];
