@@ -79,22 +79,24 @@ class HomeController extends Controller
     public function vendorRegistration(Request $request)
     {
 
-    //   $validator=  $request->validate([
-    //         'name' => 'required',
-    //         'email' => 'required|email|unique:users',
-    //         'password' => 'required|min:6|confirmed',
-    //         'type' => 'required'
-    //     ]);
-        
-         $validator = \Validator::make($request->all(), [ 'name' => 'required',
+        //   $validator=  $request->validate([
+        //         'name' => 'required',
+        //         'email' => 'required|email|unique:users',
+        //         'password' => 'required|min:6|confirmed',
+        //         'type' => 'required'
+        //     ]);
+
+        $validator = \Validator::make($request->all(), [
+            'name' => 'required',
             'email' => 'required|email|unique:users',
             'password' => 'required|min:6|confirmed',
-            'type' => 'required']);
-         
-if ($validator->fails()) {
-    return response()->json(['errors' => $validator->errors(),'status'=>422]);
-//   return response()->json($validator->errors(), 422);
-}
+            'type' => 'required'
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json(['errors' => $validator->errors(), 'num' => 422]);
+            //   return response()->json($validator->errors(), 422);
+        }
         $data = $request->all();
         $data['password'] = Hash::make($data['password']);
         // return $data;
@@ -124,7 +126,7 @@ if ($validator->fails()) {
             $credentials = $request->only('email', 'password');
             if (Auth::attempt($credentials)) {
 
-                 return response()->json(['message' => 'success','status'=>200]);
+                return response()->json(['message' => 'success', 'num' => 200]);
             }
         } else {
             return response()->json(['message' => 'Error!']);
@@ -237,7 +239,7 @@ if ($validator->fails()) {
 
             $cat_ids = [];
 
-            foreach ($request['pmcs'] as $key => $pmc) { 
+            foreach ($request['pmcs'] as $key => $pmc) {
                 array_push($cat_ids, $pmc['cat_id']);
                 if ($pmc['cat_name'] != null && $pmc['cat_id'] == null)
                     Pmc::create(['cat_name' => $pmc['cat_name'], 'user_id' => $user_id]);
@@ -402,18 +404,20 @@ if ($validator->fails()) {
             foreach ($request['pmcs'] as $key => $pmc) {
                 array_push($cat_ids, $pmc['cat_id']);
                 if ($pmc['cat_name'] != null && $pmc['cat_id'] == null)
-                    Pmc::create([
-                        'cat_name' => $pmc['cat_name'],
-                    'user_id' => $user_id,
-                    'cat_name_ar' => $pmc['cat_name_ar']
-                    ]
+                    Pmc::create(
+                        [
+                            'cat_name' => $pmc['cat_name'],
+                            'user_id' => $user_id,
+                            'cat_name_ar' => $pmc['cat_name_ar']
+                        ]
                     );
                 else {
                     if ($pmc['cat_id'] != null)
                         $pm = Pmc::find($pmc['cat_id']);
                     if ($pm)
-                        $pm->update(['cat_name' => $pmc['cat_name'],
-                        'cat_name_ar' => $pmc['cat_name_ar']
+                        $pm->update([
+                            'cat_name' => $pmc['cat_name'],
+                            'cat_name_ar' => $pmc['cat_name_ar']
                         ]);
                 }
             }
@@ -520,16 +524,23 @@ if ($validator->fails()) {
 
 
         $request->validate([
+            'pmc_id' => 'required',
             'product_name_en' => 'required',
-
             'product_name_ar' => 'required',
             'min_order' => 'required',
-
             'min_price' => 'required',
-
             'max_price' => 'required',
-            'product_desc' => 'required',
+       
+        ], [
+            'product_name_en.required' => __('messages.product_name_en'),
+            'product_name_ar.required' => __('messages.product_name_ar'),
+            'pmc_id.required' => __('messages.pmc_id'),
+            'min_order.required' => __('messages.min_order'),
+            'min_price.required' => __('messages.min_price'),
+            'max_price.required' => __('messages.max_price'),
+         
         ]);
+
 
         $f_p_word_arr = [];
 
@@ -627,6 +638,7 @@ if ($validator->fails()) {
             $product->update(['home_keywords' => $request->first_page_keywords_words]);
         }
         if ($product) {
+
             return response()->json(['message' => 'Success!']);
         } else {
             return response()->json(['message' => 'Error!']);
@@ -635,7 +647,7 @@ if ($validator->fails()) {
     }
     public function myProducts(Request $request)
     {
-        $products = PmcsProduct::where('user_id', $request->user()->id)->orderBy('created_at','desc')->get();
+        $products = PmcsProduct::where('user_id', $request->user()->id)->orderBy('created_at', 'desc')->get();
 
         return view('front.VenddorProducts', compact('products'));
     }
@@ -859,23 +871,23 @@ if ($validator->fails()) {
     }
 
 
- public function product($product_name)
+    public function product($product_name)
     {
 
         $product = PmcsProduct::where('product_name_en', $product_name)->first();
-        $like_produts=PmcsProduct::where('user_id', $product->user_id)->get();
+        $like_produts = PmcsProduct::where('user_id', $product->user_id)->get();
 
-        return view('front.product-single', compact('product','like_produts'));
+        return view('front.product-single', compact('product', 'like_produts'));
     }
     public function product_media(Request $request)
     {
         $id = $request->id;
 
         $product_imgs = PmcsProductsMedia::where('pmc_product_id', $id)->get();
-$product=   PmcsProduct::find($id)->first();
+        $product =   PmcsProduct::find($id)->first();
         if ($product_imgs) {
 
-            return response()->json(['message' => 'Success!', 'product_imgs' => $product_imgs,'product'=>$product]);
+            return response()->json(['message' => 'Success!', 'product_imgs' => $product_imgs, 'product' => $product]);
         } else {
             return response()->json(['message' => 'Error!']);
         }
@@ -885,20 +897,20 @@ $product=   PmcsProduct::find($id)->first();
         $keyword = 'all';
         if ($request->has('keyword') && $request->keyword != '') {
 
-            // $products = PmcsProduct::where('product_name_en', 'like', '%' . $request->keyword . '%')->orWhere('product_name_ar', 'like', '%' . $request->keyword . '%')->get();
+            $products = PmcsProduct::where('product_name_en', 'like', '%' . $request->keyword . '%')->orWhere('product_name_ar', 'like', '%' . $request->keyword . '%')->get();
             $keyword = $request->keyword;
-            $products = PmcsProduct::search($request->keyword)->get();
+            // $products = PmcsProduct::search($request->keyword)->get();
         } else
             $products = PmcsProduct::all();
         return view('front.product', compact('products', 'keyword'));
     }
-    
+
     public function user_product(Request $request)
     {
         $keyword = 'all';
-      
-            $products = PmcsProduct::get();
-        
+
+        $products = PmcsProduct::get();
+
         return view('front.user_product', compact('products', 'keyword'));
     }
     public function contact_us_post(Request $request)
@@ -999,7 +1011,6 @@ $product=   PmcsProduct::find($id)->first();
                 'postal_code' => $request->postal_code,
                 'state' => $request->state,
             ]);
-         
         } else {
             $request->user()->details()->create([
                 'employees' => $request->employees,

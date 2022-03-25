@@ -215,18 +215,19 @@ $user=Auth::user();
                                     <div class="alert alert-success alert-success-message3" style="display:none">
                                         {{ Session::get('success') }}
                                     </div>
-                                       <div class="alert alert-danger " style="display:none">
-                                                                            {{__('front.please fill all records')}}
-                                                                      {{--  @if (count($errors) > 0)
-    <div class="alert alert-danger">
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
-@endif--}}
-                                                                        </div>
+                                    <div class="alert alert-danger " style="display:none">
+                                        <ul id='list'>
+
+                                        </ul>
+                                        {{-- {{__('front.please fill all records')}}
+                                        @if (count($errors) > 0)
+                                        <div class="alert alert-danger">
+                                            <ul id='list'>
+
+                                            </ul>
+                                        </div>
+                                        @endif--}}
+                                    </div>
                                     <input type="hidden" id="user_id" name="user_id" value="{{$user->id}}">
                                     <div class="inputVendorr">
                                         <div class="row">
@@ -265,499 +266,502 @@ $user=Auth::user();
                                                 <div class="profsittengs">
 
                                                     <div class="setingstaps">
-                                                        
-                                                        
-                                                        
-                                                                        <div class="TapCOnfirmation bs-example">
-                                                                                <ul class="nav nav-tabs nav-tabs-custom nav-justified" role="tablist">
-                                                                                    <li class="nav-item">
-                                                                                        <a class="nav-link active" data-bs-toggle="tab" href="#Phone" role="tab">
-                                                                                            
-                                                                                            <span class=" d-sm-block">{{__('front.Product Pictures')}}</span>
-                                                                                        </a>
-                                                                                    </li>
-                                                                                    <li class="nav-item">
-                                                                                        <a class="nav-link" data-bs-toggle="tab" href="#Email" role="tab">
-                                                                                            
-                                                                                            <span class=" d-sm-block">{{__('front.Product Video')}}</span>
-                                                                                        </a>
-                                                                                    </li>
-                                            
-                                                                                </ul>
-                                                                                
-                                                                               
-                                                                                <div class="tab-content p-3 text-muted">
-                                                                                    <div class="tab-pane tabcontent-grids active" id="Phone" role="tabpanel">
-                                                                                        <div class="row">
-                                                                                            
-                                                                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                                                                                <div class="setforms">
-                                                                                                    <div class="qoutstepform ">
-                                                                                                        <span>{{__('front.Upload Pictures')}}</span>
-                                                                                                        <div class="input-group image-preview fileuploaaad">
-                                                                                                            <input type="text" class="form-control image-preview-filename" disabled="disabled">
-                                                                                                            <span class="input-group-btn">
-                                                                                                                <div class="btn btn-default image-preview-input">
-                
-                                                                                                                    <span class="far fa-folder-open"></span>
-                                                                                                                    <span class="image-preview-input-title">{{__('front.Browse')}}</span>
-                                                                                                                    <input type="file" accept="image/*" multiple id='image' name='image[]' onchange="changePreview(event);" />
-                                                                                                                </div>
-                                                                                                            </span>
-                                                                                                        </div>
-                                                                                                    </div>
-                                                                                                    
-                                                                                                </div>
-                                                                                                
-                                                                                            </div>
-                                                                                            
-                                                                                        </div>
-                                                                                        <div class="popup-gallery2">
-                                                                                                    <div class="row" id='gallary_imgs'>
-                                                                                                        <!--<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">-->
-                                                                                                                                         
-                                                                                                        <!--        <div class="formItemVendor"> -->
-                                                                                                        <!--            <a href="{{asset('frontUI/assets/img/cladreximg/2021-LogoMaker-Site-Logo.png')}}" class="Itemmm">-->
-                                                                                                        <!--                <div class="sliderimgItem">-->
-                                                                                                        <!--                    <img src="{{asset('frontUI/assets/img/cladreximg/2021-LogoMaker-Site-Logo.png')}}">-->
-                                                                                                        <!--                    <button type="button"  class="Removee RemoveSlide" >-->
-                                                                                                        <!--                       <i class="far fa-trash-alt"></i>-->
-                                                                                                        <!--                    </button>-->
-                                                                                                        <!--                </div>-->
-                                                                                                        <!--            </a>-->
-                                                                                                                    
-                                                                                                                     
-                                                                                                        <!--         </div> -->
-                                                                                                                
-                                                                                                        <!--</div>-->
-                                                                                                    </div>
-                                                                                                </div>
-                                                                                        
-                                                                                        </div>
-                                                                                    <div class="tab-pane tabcontent-grids" id="Email" role="tabpanel">
-                                                                                        <div class="row">
-                                                                                            <div class="col-lg-12 col-md-12col-sm-12 col-xs-12">
-                                                                                                <div class="setforms">
-                                                                                                    <div class="qoutstepform ">
-                                                                                        <span>{{__('front.Upload Video')}}</span>
-                                                                                        <div class="input-group image-preview fileuploaaad">
-                                                                                            <input type="text"  class="form-control image-preview-filename">
-                                                                                            <span class="input-group-btn">
-                                                                                <div class="btn btn-default image-preview-input">
 
-                                                                                    <span class="far fa-folder-open"></span>
-                                                                                    <span class="image-preview-input-title">{{__('front.Browse')}}</span>
-                                                                                    <input type="file" accept="video/*" id='video' name='video[]' multiple  onchange="changeVideoPreview(event);"/>
-                                                                                </div>
-                                                                            </span> 
-                                                                                        </div>
-                                                                                    </div>  </div>                                 </div>                                    </div>
-                                                                   
-                                                                                         <div class="row sliderimgItemV">
-                                                                                <!--<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">                              <div class="formItemVendor"> -->
-                                                                                <!--    <div class="sliderimgItemV">-->
-                                                                                        <!--<video class="VedioPorUpload"  controls>-->
-                                                                                              <!--<source src="{{asset('frontUI/assets/videos/Team Working-14.m4v')}}" type="video/mp4">-->
-                                                                                              
-                                                                                            
-                                                                                        <!--</video>-->
-                                                                                                    <!--<button type="button"  class="Removee RemoveSlide" >-->
-                                                                                                    <!--                           <i class="far fa-trash-alt"></i>-->
-                                                                                                    <!--                        </button> -->
-                                                                                        
-                                                                                <!--    </div>-->
-                                                                                                       
-                                                                                                                     
-                                                                                <!--                                 </div>-->
-                                                                                <!--</div>-->
-                                                                            </div>
-                                                                                </div>
-                                                                            </div>
-                                                                            
-                                                        
-                                                        
-                                                        
-                                                        <div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs" style="display: none">
-                                                            <ul id="myTab" class="nav nav-tabs" role="tablist">
-                                                                <li role="presentation" class="active">
-                                                                    <a href="#home" id="home-tab" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="true" class="active show">{{__('front.Product Pictures')}}</a>
-                                                                </li>
-                                                                <li role="presentation">
-                                                                    <a href="#carl" role="tab" id="carl-tab" data-toggle="tab" aria-controls="carl">{{__('front.Product Video')}}</a>
-                                                                </li>
 
+
+                                                        <div class="TapCOnfirmation bs-example">
+                                                            <ul class="nav nav-tabs nav-tabs-custom nav-justified" role="tablist">
+                                                                <li class="nav-item">
+                                                                    <a class="nav-link active" data-bs-toggle="tab" href="#Phone" role="tab">
+
+                                                                        <span class=" d-sm-block">{{__('front.Product Pictures')}}</span>
+                                                                    </a>
+                                                                </li>
+                                                                <li class="nav-item">
+                                                                    <a class="nav-link" data-bs-toggle="tab" href="#Email" role="tab">
+
+                                                                        <span class=" d-sm-block">{{__('front.Product Video')}}</span>
+                                                                    </a>
+                                                                </li>
 
                                                             </ul>
-                                                            <div id="myTabContent" class="tab-content">
-                                                                <div role="tabpanel" class="tab-pane fadeIn active" id="home" aria-labelledby="home-tab">
-                                                                    <div class="tabcontent-grids">
-                                                                        <div class="setforms">
-                                                                            <div class="row">
-                                                                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                          
+
+
+                                                            <div class="tab-content p-3 text-muted">
+                                                                <div class="tab-pane tabcontent-grids active" id="Phone" role="tabpanel">
+                                                                    <div class="row">
+
+                                                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                                            <div class="setforms">
+                                                                                <div class="qoutstepform ">
+                                                                                    <span>{{__('front.Upload Pictures')}}</span>
+                                                                                    <div class="input-group image-preview fileuploaaad">
+                                                                                        <input type="text" class="form-control image-preview-filename" disabled="disabled">
+                                                                                        <span class="input-group-btn">
+                                                                                            <div class="btn btn-default image-preview-input">
+
+                                                                                                <span class="far fa-folder-open"></span>
+                                                                                                <span class="image-preview-input-title">{{__('front.Browse')}}</span>
+                                                                                                <input type="file" accept="image/*" multiple id='image' name='image[]' onchange="changePreview(event);" />
+                                                                                            </div>
+                                                                                        </span>
+                                                                                    </div>
                                                                                 </div>
 
-
-
-
-
                                                                             </div>
-                                                                            <div class="row">
-                                                                                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+
+                                                                        </div>
+
+                                                                    </div>
+                                                                    <div class="popup-gallery2">
+                                                                        <div class="row" id='gallary_imgs'>
+                                                                            <!--<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">-->
+
+                                                                            <!--        <div class="formItemVendor"> -->
+                                                                            <!--            <a href="{{asset('frontUI/assets/img/cladreximg/2021-LogoMaker-Site-Logo.png')}}" class="Itemmm">-->
+                                                                            <!--                <div class="sliderimgItem">-->
+                                                                            <!--                    <img src="{{asset('frontUI/assets/img/cladreximg/2021-LogoMaker-Site-Logo.png')}}">-->
+                                                                            <!--                    <button type="button"  class="Removee RemoveSlide" >-->
+                                                                            <!--                       <i class="far fa-trash-alt"></i>-->
+                                                                            <!--                    </button>-->
+                                                                            <!--                </div>-->
+                                                                            <!--            </a>-->
+
+
+                                                                            <!--         </div> -->
+
+                                                                            <!--</div>-->
+                                                                        </div>
+                                                                    </div>
+
+                                                                </div>
+                                                                <div class="tab-pane tabcontent-grids" id="Email" role="tabpanel">
+                                                                    <div class="row">
+                                                                        <div class="col-lg-12 col-md-12col-sm-12 col-xs-12">
+                                                                            <div class="setforms">
+                                                                                <div class="qoutstepform ">
+                                                                                    <span>{{__('front.Upload Video')}}</span>
+                                                                                    <div class="input-group image-preview fileuploaaad">
+                                                                                        <input type="text" class="form-control image-preview-filename">
+                                                                                        <span class="input-group-btn">
+                                                                                            <div class="btn btn-default image-preview-input">
+
+                                                                                                <span class="far fa-folder-open"></span>
+                                                                                                <span class="image-preview-input-title">{{__('front.Browse')}}</span>
+                                                                                                <input type="file" accept="video/*" id='video' name='video[]' multiple onchange="changeVideoPreview(event);" />
+                                                                                            </div>
+                                                                                        </span>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="row sliderimgItemV">
+                                                                        <!--<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">                              <div class="formItemVendor"> -->
+                                                                        <!--    <div class="sliderimgItemV">-->
+                                                                        <!--<video class="VedioPorUpload"  controls>-->
+                                                                        <!--<source src="{{asset('frontUI/assets/videos/Team Working-14.m4v')}}" type="video/mp4">-->
+
+
+                                                                        <!--</video>-->
+                                                                        <!--<button type="button"  class="Removee RemoveSlide" >-->
+                                                                        <!--                           <i class="far fa-trash-alt"></i>-->
+                                                                        <!--                        </button> -->
+
+                                                                        <!--    </div>-->
+
+
+                                                                        <!--                                 </div>-->
+                                                                        <!--</div>-->
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+
+
+
+                                                            <div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs" style="display: none">
+                                                                <ul id="myTab" class="nav nav-tabs" role="tablist">
+                                                                    <li role="presentation" class="active">
+                                                                        <a href="#home" id="home-tab" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="true" class="active show">{{__('front.Product Pictures')}}</a>
+                                                                    </li>
+                                                                    <li role="presentation">
+                                                                        <a href="#carl" role="tab" id="carl-tab" data-toggle="tab" aria-controls="carl">{{__('front.Product Video')}}</a>
+                                                                    </li>
+
+
+                                                                </ul>
+                                                                <div id="myTabContent" class="tab-content">
+                                                                    <div role="tabpanel" class="tab-pane fadeIn active" id="home" aria-labelledby="home-tab">
+                                                                        <div class="tabcontent-grids">
+                                                                            <div class="setforms">
+                                                                                <div class="row">
+                                                                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+                                                                                    </div>
+
+
+
+
+
+                                                                                </div>
+                                                                                <div class="row">
+                                                                                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                                                                                         <div class="ImagePriveiwEdite">
-                                                                                <img id='f_prev_img2' style='display:none'>
-                                                                            </div>
-                                                                                </div>
-                                                                            </div>
-                                                                             
-                                                                        </div>
-
-                                                                    </div>
-                                                                </div>
-                                                                <div role="tabpanel" class="tab-pane fade" id="carl" aria-labelledby="carl-tab">
-                                                                    <div class="tabcontent-grids">
-                                                                        <div class="setforms">
-                                                                            <div class="row">
-                                                                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                                                            <!--        <div class="qoutstepform ">-->
-                                                                            <!--            <span>{{__('front.Upload Video')}}</span>-->
-                                                                            <!--            <div class="input-group image-preview fileuploaaad">-->
-                                                                            <!--                <input type="text" id='video' name='video' class="form-control image-preview-filename">-->
-                                                                            <!--                <span class="input-group-btn">-->
-                                                                            <!--    <div class="btn btn-default image-preview-input">-->
-
-                                                                            <!--        <span class="far fa-folder-open"></span>-->
-                                                                            <!--        <span class="image-preview-input-title">Browse</span>-->
-                                                                            <!--        <input type="file" accept="" id='video' name='video' />-->
-                                                                            <!--    </div>-->
-                                                                            <!--</span> -->
-                                                                            <!--            </div>-->
-                                                                            <!--        </div>-->
+                                                                                            <img id='f_prev_img2' style='display:none'>
+                                                                                        </div>
+                                                                                    </div>
                                                                                 </div>
 
-
                                                                             </div>
+
                                                                         </div>
-
                                                                     </div>
-                                                                </div>
+                                                                    <div role="tabpanel" class="tab-pane fade" id="carl" aria-labelledby="carl-tab">
+                                                                        <div class="tabcontent-grids">
+                                                                            <div class="setforms">
+                                                                                <div class="row">
+                                                                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                                                        <!--        <div class="qoutstepform ">-->
+                                                                                        <!--            <span>{{__('front.Upload Video')}}</span>-->
+                                                                                        <!--            <div class="input-group image-preview fileuploaaad">-->
+                                                                                        <!--                <input type="text" id='video' name='video' class="form-control image-preview-filename">-->
+                                                                                        <!--                <span class="input-group-btn">-->
+                                                                                        <!--    <div class="btn btn-default image-preview-input">-->
+
+                                                                                        <!--        <span class="far fa-folder-open"></span>-->
+                                                                                        <!--        <span class="image-preview-input-title">Browse</span>-->
+                                                                                        <!--        <input type="file" accept="" id='video' name='video' />-->
+                                                                                        <!--    </div>-->
+                                                                                        <!--</span> -->
+                                                                                        <!--            </div>-->
+                                                                                        <!--        </div>-->
+                                                                                    </div>
 
 
-                                                            </div>
-                                                        </div>
+                                                                                </div>
+                                                                            </div>
 
-                                                    </div>
-                                                </div>
-                                            </div>
+                                                                        </div>
+                                                                    </div>
 
-                                            
-                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                <div class="formItemVendor">
-                                                    <span>{{__('front.Currency')}}</span>
-                                                    <select id='currency_id' name='currency_id'  class='form-control select2' required>
-                                                        @if($currencies)
-                                                        @foreach( $currencies as $currency)
-                                                        <option value='{{$currency->id}}'>{{$currency->name}}</option>
-                                                        @endforeach
-                                                        @endif
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            
-                                            
-                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <hr>
-                                </div>
-                                            
-                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                                <div class="row">
-                                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                                                        <div class="formItemVendor">
-                                                            <span>{{__('front.Min')}} {{__('front.Price')}}</span>
-                                                            <input type="number" step="0.01" id='min_price' name='min_price' class="inputvendor" required placeholder="">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                                                        <div class="formItemVendor">
-                                                            <span>{{__('front.Max')}} {{__('front.Price')}}</span>
-                                                            <input type="number" step="0.01" id='max_price' name='max_price' class="inputvendor" required placeholder="">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                                                        <div class="formItemVendor">
-                                                            <span>{{__('front.Unit')}}</span>
-                                                            <select id='unit_id' name='unit_id'  class='form-control select2' required>
-                                                                @if($units)
-                                                                @foreach($units as $unit)
-                                                                <option value='{{$unit->id}}'>{{$unit->name}}</option>
-        
-                                                                @endforeach
-                                                                @endif
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-6 col-nd-6 col-sm-6 col-xs-12">
-                                                        <div class="row">
-                                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                                                <div class="formItemVendor">
-                                                                    <span>{{__('front.Min')}} {{__('front.Order')}} {{__('front.Qty')}}  </span>
-                                                                    <input type="number" id='min_order' name='min_order' class="inputvendor" required placeholder="">
+
                                                                 </div>
                                                             </div>
-                                                            
+
                                                         </div>
                                                     </div>
                                                 </div>
-                                                
-                                            </div>
-                                            
-                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <hr>
-                                </div>
-                                            
-                                            
-                                            
 
-                                            <!--<div class="col-lg-6 col-nd-6 col-sm-6 col-xs-12">-->
-                                            <!--    <div class="row">-->
-                                            <!--        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">-->
-                                            <!--            <div class="formItemVendor">-->
-                                            <!--                <span>{{__('front.Max')}} {{__('front.Order')}}*</span>-->
-                                            <!--                <input type="number" id='max_order' name='max_order' class="inputvendor" required placeholder="">-->
-                                            <!--            </div>-->
-                                            <!--        </div>-->
-                                                    
-                                            <!--    </div>-->
-                                            <!--</div>-->
-                                            <div class="col-lg-6 col-nd-6 col-sm-6 col-xs-12">
-                                                <div class="formItemVendor">
-                                                    <span>{{__('front.Delivery Load Time')}}</span>
-                                                    <input type="text" id='load_time' name='load_time' class="inputvendor" required placeholder="">
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                                <div class="formItemVendor">
-                                                    <span>{{__('front.Product Specs EN')}}*</span>
-                                                    <!--<textarea placeholder="My Info" id='product_desc' name='product_desc' required class="textarea"></textarea>-->
-                                                </div>
-                                              
-                                                 <textarea id='product_desc' name='product_desc' required class="textarea"></textarea>
-                                                 
-                                            </div>
-                                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                                <div class="formItemVendor">
-                                                    <span>{{__('front.Product Specs AR')}}*</span>
-                                                    <!--<textarea placeholder="My Info" id='product_desc' name='product_desc' required class="textarea"></textarea>-->
-                                                </div>
-                                              
-                                                 <textarea id='product_desc_ar' name='product_desc_ar' required class="textarea"></textarea>
-                                                 
-                                            </div>
-                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
-                                                <div>
-                                                    <span id='f_error' style="display:none">{{__('front.please select keyword,date from and date to')}}</span>
 
+                                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                    <div class="formItemVendor">
+                                                        <span>{{__('front.Currency')}}</span>
+                                                        <select id='currency_id' name='currency_id' class='form-control select2' required>
+                                                            @if($currencies)
+                                                            @foreach( $currencies as $currency)
+                                                            <option value='{{$currency->id}}'>{{$currency->name}}</option>
+                                                            @endforeach
+                                                            @endif
+                                                        </select>
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                    <hr>
+                                                </div>
+
+                                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                                     <div class="row">
-                                                        <div class="col-lg-3 col-nd-3 col-sm-3 col-xs-12">
+                                                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                                                             <div class="formItemVendor">
-                                                                <span>{{__('front.1st_page')}}
-                                                                    <!--<a class="btnInfoPopover" data-toggle="popover" data-trigger="hover"  data-content="{{$website->first_keyword_info}}"><i class="fas fa-info"></i></a>-->
-                                                                    <a class="btnInfoPopover" data-toggle="popover" data-trigger="hover" data-content="{{$website->first_keyword_info}}"><i class="fas fa-info"></i> </a>
-                                                                </span>
+                                                                <span>{{__('front.Min')}} {{__('front.Price')}}</span>
+                                                                <input type="number" step="0.01" id='min_price' name='min_price' class="inputvendor" required placeholder="">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                                            <div class="formItemVendor">
+                                                                <span>{{__('front.Max')}} {{__('front.Price')}}</span>
+                                                                <input type="number" step="0.01" id='max_price' name='max_price' class="inputvendor" required placeholder="">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                                            <div class="formItemVendor">
+                                                                <span>{{__('front.Unit')}}</span>
+                                                                <select id='unit_id' name='unit_id' class='form-control select2' required>
+                                                                    @if($units)
+                                                                    @foreach($units as $unit)
+                                                                    <option value='{{$unit->id}}'>{{$unit->name}}</option>
 
-
-                                                                <input id='first_page_keywrd_input' class="form-control " type="text" value="" list="first_page_keywrd_list" name='first_page_keywrd_list' />
-                                                                <datalist id='first_page_keywrd_list'>
-                                                                    @if($first_page_keywrds)
-                                                                    @foreach($first_page_keywrds as $f_keyword)
-                                                                    <option value='{{$f_keyword->keyword}}' data-price="{{$f_keyword->price}}"></option>
                                                                     @endforeach
                                                                     @endif
-                                                                </datalist>
-
+                                                                </select>
                                                             </div>
                                                         </div>
-                                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                        <div class="col-lg-6 col-nd-6 col-sm-6 col-xs-12">
                                                             <div class="row">
-                                                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                                                     <div class="formItemVendor">
-                                                                        <span>{{__('front.from')}}</span>
-                                                                        <div class="input-group" id="datepicker3">
-                                                                            <input type="date" name='first_page_from' class="form-control first_page_from_input" placeholder="dd M, yyyy" data-date-format="dd M, yyyy" data-date-container='#datepicker3' data-provide="datepicker" data-date-autoclose="true">
-
-                                                                            <span class="input-group-text bg_Brawen_iconinput"><i class="fas fa-calendar-alt"></i></span>
-                                                                        </div><!-- input-group -->
+                                                                        <span>{{__('front.Min')}} {{__('front.Order')}} {{__('front.Qty')}} </span>
+                                                                        <input type="number" id='min_order' name='min_order' class="inputvendor" required placeholder="">
                                                                     </div>
                                                                 </div>
-                                                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                                    <div class="formItemVendor">
-                                                                        <span>{{__('front.to')}}</span>
-                                                                        <div class="input-group" id="datepicker4">
-                                                                            <input type="date" name='first_page_to' class="form-control first_page_to_input"  placeholder="dd M, yyyy" data-date-format="dd M, yyyy" data-date-container='#datepicker4' data-provide="datepicker" data-date-autoclose="true">
 
-                                                                            <span class="input-group-text bg_Brawen_iconinput"><i class="fas fa-calendar-alt"></i></span>
-                                                                        </div><!-- input-group -->
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 pp">
-                                                            <div class="formItemVendor">
-                                                                <span>{{__('front.Unit')}} {{__('front.Price')}}</span>
-                                                                <input readonly type="text" id='first_page_price_input' name='first_page_price' class="inputvendor first_page_price" placeholder="">
-                                                                <input type="hidden" id="f_page_position" name="f_page_position" value="first_page">
-                                                                       <input type="text" style='display:none' id="total" name="total" value="">
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12">
-                                                            <div class="formItemVendor">
-                                                                <button style="top: 35px; " type="button" class="addMore addMore_input" title="Add Mor Emails">
-                                                                    <i class="fas fa-plus iconpluss"></i>
-                                                                </button>
                                                             </div>
                                                         </div>
                                                     </div>
 
                                                 </div>
-                                            </div>
 
-                                            <div class="keyword_table">
-                                                <table id="keywordstable" class="table table-bordered">
-                                                    <thead>
-                                                        <tr>
-                                                            <th>
-                                                                <p>{{__('front.Keyword')}}</p>
-                                                            </th>
-                                                            <th>
-                                                                <p>{{__('front.from')}}</p>
-                                                            </th>
-                                                            <th>
-                                                                <p>{{__('front.to')}}</p>
-                                                            </th>
-                                                            <th>
-                                                                <p>{{__('front.Price')}}</p>
-                                                            </th>
-                                                            <th>
-                                                                <p>{{__('front.Total')}}</p>
-                                                            </th>
-                                                            <th>
-                                                                <p>{{__('front.Action')}}</p>
-                                                            </th>
-                                                        </tr>
+                                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                    <hr>
+                                                </div>
 
-                                                    </thead>
-                                                    <tbody>
 
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
-                                                <div>
 
-                                                    <span id='d_error' style="display:none">{{__('front.please select keyword,date from and date to')}}</span>
-                                                    <div class="row">
-                                                        <div class="col-lg-3 col-nd-3 col-sm-3 col-xs-12">
-                                                            <div class="formItemVendor">
-                                                                <span>{{__('front.Top Dynamic')}}
-                                                                    <!--<a class="btnInfoPopover" data-toggle="popover" data-trigger="hover"  data-content="{{$website->top_dynamic}}"><i class="fas fa-info"></i></a>-->
-                                                                    <a class="btnInfoPopover" data-toggle="popover" data-trigger="hover" data-content="{{$website->top_dynamic}}"><i class="fas fa-info"></i> </a>
-                                                                </span>
-                                                                <!--<input type="text" class="inputvendor" placeholder="">-->
-                                                                {{-- <select id='dynamic_page_keywrd' name='dynamic_page_keywrd'>
+
+                                                <!--<div class="col-lg-6 col-nd-6 col-sm-6 col-xs-12">-->
+                                                <!--    <div class="row">-->
+                                                <!--        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">-->
+                                                <!--            <div class="formItemVendor">-->
+                                                <!--                <span>{{__('front.Max')}} {{__('front.Order')}}*</span>-->
+                                                <!--                <input type="number" id='max_order' name='max_order' class="inputvendor" required placeholder="">-->
+                                                <!--            </div>-->
+                                                <!--        </div>-->
+
+                                                <!--    </div>-->
+                                                <!--</div>-->
+                                                <div class="col-lg-6 col-nd-6 col-sm-6 col-xs-12">
+                                                    <div class="formItemVendor">
+                                                        <span>{{__('front.Delivery Load Time')}}</span>
+                                                        <input type="text" id='load_time' name='load_time' class="inputvendor"  required placeholder="">
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"> 
+                                                    <div class="formItemVendor">
+                                                        <span>{{__('front.Product Specs EN')}}*</span>
+                                                        <!--<textarea placeholder="My Info" id='product_desc' name='product_desc' required class="textarea"></textarea>-->
+                                                    </div>
+
+                                                    <textarea id='product_desc' name='product_desc' required class="textarea"></textarea>
+
+                                                </div>
+                                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                    <div class="formItemVendor">
+                                                        <span>{{__('front.Product Specs AR')}}*</span>
+                                                        <!--<textarea placeholder="My Info" id='product_desc' name='product_desc' required class="textarea"></textarea>-->
+                                                    </div>
+
+                                                    <textarea id='product_desc_ar' name='product_desc_ar' required class="textarea"></textarea>
+
+                                                </div>
+                                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
+                                                    <div>
+                                                        <span id='f_error' style="display:none">{{__('front.please select keyword,date from and date to')}}</span>
+
+                                                        <div class="row">
+                                                            <div class="col-lg-3 col-nd-3 col-sm-3 col-xs-12">
+                                                                <div class="formItemVendor">
+                                                                    <span>{{__('front.1st_page')}}
+                                                                        <!--<a class="btnInfoPopover" data-toggle="popover" data-trigger="hover"  data-content="{{$website->first_keyword_info}}"><i class="fas fa-info"></i></a>-->
+                                                                        <a class="btnInfoPopover" data-toggle="popover" data-trigger="hover" data-content="{{$website->first_keyword_info}}"><i class="fas fa-info"></i> </a>
+                                                                    </span>
+
+
+                                                                    <input id='first_page_keywrd_input' class="form-control " type="text" value="" list="first_page_keywrd_list" name='first_page_keywrd_list' />
+                                                                    <datalist id='first_page_keywrd_list'>
+                                                                        @if($first_page_keywrds)
+                                                                        @foreach($first_page_keywrds as $f_keyword)
+                                                                        <option value='{{$f_keyword->keyword}}' data-price="{{$f_keyword->price}}"></option>
+                                                                        @endforeach
+                                                                        @endif
+                                                                    </datalist>
+
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                                <div class="row">
+                                                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                                        <div class="formItemVendor">
+                                                                            <span>{{__('front.from')}}</span>
+                                                                            <div class="input-group" id="datepicker3">
+                                                                                <input type="date" name='first_page_from' class="form-control first_page_from_input" placeholder="dd M, yyyy" data-date-format="dd M, yyyy" data-date-container='#datepicker3' data-provide="datepicker" data-date-autoclose="true">
+
+                                                                                <span class="input-group-text bg_Brawen_iconinput"><i class="fas fa-calendar-alt"></i></span>
+                                                                            </div><!-- input-group -->
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                                        <div class="formItemVendor">
+                                                                            <span>{{__('front.to')}}</span>
+                                                                            <div class="input-group" id="datepicker4">
+                                                                                <input type="date" name='first_page_to' class="form-control first_page_to_input" placeholder="dd M, yyyy" data-date-format="dd M, yyyy" data-date-container='#datepicker4' data-provide="datepicker" data-date-autoclose="true">
+
+                                                                                <span class="input-group-text bg_Brawen_iconinput"><i class="fas fa-calendar-alt"></i></span>
+                                                                            </div><!-- input-group -->
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 pp">
+                                                                <div class="formItemVendor">
+                                                                    <span>{{__('front.Unit')}} {{__('front.Price')}}</span>
+                                                                    <input readonly type="text" id='first_page_price_input' name='first_page_price' class="inputvendor first_page_price" placeholder="">
+                                                                    <input type="hidden" id="f_page_position" name="f_page_position" value="first_page">
+                                                                    <input type="text" style='display:none' id="total" name="total" value="">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12">
+                                                                <div class="formItemVendor">
+                                                                    <button style="top: 35px; " type="button" class="addMore addMore_input" title="Add Mor Emails">
+                                                                        <i class="fas fa-plus iconpluss"></i>
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="keyword_table">
+                                                    <table id="keywordstable" class="table table-bordered">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>
+                                                                    <p>{{__('front.Keyword')}}</p>
+                                                                </th>
+                                                                <th>
+                                                                    <p>{{__('front.from')}}</p>
+                                                                </th>
+                                                                <th>
+                                                                    <p>{{__('front.to')}}</p>
+                                                                </th>
+                                                                <th>
+                                                                    <p>{{__('front.Price')}}</p>
+                                                                </th>
+                                                                <th>
+                                                                    <p>{{__('front.Total')}}</p>
+                                                                </th>
+                                                                <th>
+                                                                    <p>{{__('front.Action')}}</p>
+                                                                </th>
+                                                            </tr>
+
+                                                        </thead>
+                                                        <tbody>
+
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
+                                                    <div>
+
+                                                        <span id='d_error' style="display:none">{{__('front.please select keyword,date from and date to')}}</span>
+                                                        <div class="row">
+                                                            <div class="col-lg-3 col-nd-3 col-sm-3 col-xs-12">
+                                                                <div class="formItemVendor">
+                                                                    <span>{{__('front.Top Dynamic')}}
+                                                                        <!--<a class="btnInfoPopover" data-toggle="popover" data-trigger="hover"  data-content="{{$website->top_dynamic}}"><i class="fas fa-info"></i></a>-->
+                                                                        <a class="btnInfoPopover" data-toggle="popover" data-trigger="hover" data-content="{{$website->top_dynamic}}"><i class="fas fa-info"></i> </a>
+                                                                    </span>
+                                                                    <!--<input type="text" class="inputvendor" placeholder="">-->
+                                                                    {{-- <select id='dynamic_page_keywrd' name='dynamic_page_keywrd'>
                                                                     <option value='0'>Select</option>
                                                                     @if($dynamic_page_keywrds)
                                                                     @foreach($dynamic_page_keywrds as $d_keyword)
                                                                     <option value='{{$d_keyword->id}}'>{{$d_keyword->keyword}}</option>
-                                                                @endforeach
-                                                                @endif
-                                                                </select>--}}
-                                                                <input id='dynamic_page_keywrd_input' class="form-control  " list="dynamic_page_keywrd_list" type="text" value="" name='dynamic_page_keywrd' />
-                                                                <datalist id='dynamic_page_keywrd_list'>
-                                                                    @if($dynamic_page_keywrds)
-                                                                    @foreach($dynamic_page_keywrds as $d_keyword)
-                                                                    <option value='{{$d_keyword->keyword}}'></option>
                                                                     @endforeach
                                                                     @endif
-                                                                </datalist>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                            <div class="row">
-                                                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                                    <div class="formItemVendor">
-                                                                        <span>{{__('front.from')}}</span>
-                                                                        <div class="input-group" id="datepicker3">
-                                                                            <input type="date" name='dynamic_page_from' class="form-control dynamic_page_from_input" placeholder="dd M, yyyy" data-date-format="dd M, yyyy" data-date-container='#datepicker3' data-provide="datepicker" data-date-autoclose="true">
-
-                                                                            <span class="input-group-text bg_Brawen_iconinput"><i class="fas fa-calendar-alt"></i></span>
-                                                                        </div><!-- input-group -->
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                                    <div class="formItemVendor">
-                                                                        <span>{{__('front.to')}}</span>
-                                                                        <div class="input-group" id="datepicker4">
-                                                                            <input type="date" name='dynamic_page_to' class="form-control dynamic_page_to_input" placeholder="dd M, yyyy" data-date-format="dd M, yyyy" data-date-container='#datepicker4' data-provide="datepicker" data-date-autoclose="true">
-
-                                                                            <span class="input-group-text bg_Brawen_iconinput"><i class="fas fa-calendar-alt"></i></span>
-                                                                        </div><!-- input-group -->
-                                                                    </div>
+                                                                    </select>--}}
+                                                                    <input id='dynamic_page_keywrd_input' class="form-control  " list="dynamic_page_keywrd_list" type="text" value="" name='dynamic_page_keywrd' />
+                                                                    <datalist id='dynamic_page_keywrd_list'>
+                                                                        @if($dynamic_page_keywrds)
+                                                                        @foreach($dynamic_page_keywrds as $d_keyword)
+                                                                        <option value='{{$d_keyword->keyword}}'></option>
+                                                                        @endforeach
+                                                                        @endif
+                                                                    </datalist>
                                                                 </div>
                                                             </div>
-                                                        </div>
-                                                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
-                                                            <div class="formItemVendor">
-                                                                <span>{{__('front.Price')}}</span>
-                                                                <input readonly name='dynamic_page_price' id='dynamic_page_price_input' type="text" class="inputvendor dynamic_page_price_input" placeholder="">
+                                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                                <div class="row">
+                                                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                                        <div class="formItemVendor">
+                                                                            <span>{{__('front.from')}}</span>
+                                                                            <div class="input-group" id="datepicker3">
+                                                                                <input type="date" name='dynamic_page_from' class="form-control dynamic_page_from_input" placeholder="dd M, yyyy" data-date-format="dd M, yyyy" data-date-container='#datepicker3' data-provide="datepicker" data-date-autoclose="true">
+
+                                                                                <span class="input-group-text bg_Brawen_iconinput"><i class="fas fa-calendar-alt"></i></span>
+                                                                            </div><!-- input-group -->
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                                        <div class="formItemVendor">
+                                                                            <span>{{__('front.to')}}</span>
+                                                                            <div class="input-group" id="datepicker4">
+                                                                                <input type="date" name='dynamic_page_to' class="form-control dynamic_page_to_input" placeholder="dd M, yyyy" data-date-format="dd M, yyyy" data-date-container='#datepicker4' data-provide="datepicker" data-date-autoclose="true">
+
+                                                                                <span class="input-group-text bg_Brawen_iconinput"><i class="fas fa-calendar-alt"></i></span>
+                                                                            </div><!-- input-group -->
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                                                                <div class="formItemVendor">
+                                                                    <span>{{__('front.Price')}}</span>
+                                                                    <input readonly name='dynamic_page_price' id='dynamic_page_price_input' type="text" class="inputvendor dynamic_page_price_input" placeholder="">
+                                                                </div>
+
+                                                                <input type="hidden" id="dynamic_position" name="dynamic_position" value="dynamic_page">
+
+                                                            </div>
+                                                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12">
+                                                                <div class="formItemVendor">
+                                                                    <button style="top: 35px;" type="button" class="addMore add_more" title="Add Mor Emails">
+                                                                        <i class="fas fa-plus iconpluss"></i>
+                                                                    </button>
+                                                                </div>
                                                             </div>
 
-                                                            <input type="hidden" id="dynamic_position" name="dynamic_position" value="dynamic_page">
-
-                                                        </div>
-                                                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12">
-                                                            <div class="formItemVendor">
-                                                                <button style="top: 35px;" type="button" class="addMore add_more" title="Add Mor Emails">
-                                                                    <i class="fas fa-plus iconpluss"></i>
-                                                                </button>
-                                                            </div>
                                                         </div>
 
-                                                    </div>
 
-
-                                                    <div class="keyword_d_table keyword_table">
-                                                        <table id="keywords_d_table" class="table table-bordered">
-                                                            <thead>
-                                                                <tr>
-                                                                    <th>
-                                                                        <p>{{__('front.Keyword')}}</p>
-                                                                    </th>
-                                                                    <th>
-                                                                        <p>{{__('front.from')}}</p>
-                                                                    </th>
-                                                                    <th>
-                                                                        <p>{{__('front.to')}}</p>
-                                                                    </th>
-                                                                    <th>
-                                                                        <p>{{__('front.Price')}}</p>
-                                                                    </th>
+                                                        <div class="keyword_d_table keyword_table">
+                                                            <table id="keywords_d_table" class="table table-bordered">
+                                                                <thead>
+                                                                    <tr>
                                                                         <th>
-                                                                <p>{{__('front.Total')}}</p>
-                                                            </th>
-                                                                    <th>
-                                                                        <p>{{__('front.Action')}}</p>
-                                                                    </th>
-                                                                </tr>
+                                                                            <p>{{__('front.Keyword')}}</p>
+                                                                        </th>
+                                                                        <th>
+                                                                            <p>{{__('front.from')}}</p>
+                                                                        </th>
+                                                                        <th>
+                                                                            <p>{{__('front.to')}}</p>
+                                                                        </th>
+                                                                        <th>
+                                                                            <p>{{__('front.Price')}}</p>
+                                                                        </th>
+                                                                        <th>
+                                                                            <p>{{__('front.Total')}}</p>
+                                                                        </th>
+                                                                        <th>
+                                                                            <p>{{__('front.Action')}}</p>
+                                                                        </th>
+                                                                    </tr>
 
-                                                            </thead>
-                                                            <tbody>
+                                                                </thead>
+                                                                <tbody>
 
-                                                            </tbody>
-                                                        </table>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            {{--
+                                                {{--
                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 repeater">
                                                 <div data-repeater-list="first_page_keywords">
                                                     <div class="formItemVendor">
@@ -776,10 +780,69 @@ $user=Auth::user();
                                                                     @if($first_page_keywrds)
                                                                     @foreach($first_page_keywrds as $f_keyword)
                                                                     <option value='{{$f_keyword->keyword}}'></option>
-                                            @endforeach
-                                            @endif
-                                            </datalist>
+                                                @endforeach
+                                                @endif
+                                                </datalist>
 
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
+                                            <div class="row">
+                                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                    <div class="formItemVendor">
+                                                        <span>From</span>
+                                                        <div class="input-group" id="datepicker3">
+                                                            <input type="date" id='first_page_from' name='first_page_from' class="form-control" placeholder="dd M, yyyy" data-date-format="dd M, yyyy" data-date-container='#datepicker3' data-provide="datepicker" data-date-autoclose="true">
+
+                                                            <span class="input-group-text bg_Brawen_iconinput"><i class="fas fa-calendar-alt"></i></span>
+                                                        </div><!-- input-group -->
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                    <div class="formItemVendor">
+                                                        <span>TO</span>
+                                                        <div class="input-group" id="datepicker4">
+                                                            <input type="date" id='first_page_to' name='first_page_to' class="form-control" placeholder="dd M, yyyy" data-date-format="dd M, yyyy" data-date-container='#datepicker4' data-provide="datepicker" data-date-autoclose="true">
+
+                                                            <span class="input-group-text bg_Brawen_iconinput"><i class="fas fa-calendar-alt"></i></span>
+                                                        </div><!-- input-group -->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                                            <div class="formItemVendor">
+                                                <span>Price</span>
+                                                <input readonly type="text" id='first_page_price' name='first_page_price' class="inputvendor" placeholder="">
+                                            </div>
+                                        </div>
+
+                                    </div>
+                            </div>
+                        </div>
+
+
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 repeater">
+                            <div data-repeater-list="dynamic_page_keywords">
+                                <div class="formItemVendor">
+                                    <button style="top: 35px;" data-repeater-create type="button" class="addMore" title="Add Mor Emails">
+                                        <i class="fas fa-plus iconpluss"></i>
+                                    </button>
+                                </div>
+                                <div class="row" data-repeater-item>
+                                    <div class="col-lg-3 col-nd-3 col-sm-3 col-xs-12">
+                                        <div class="formItemVendor">
+                                            <span>Top Dynamic</span>
+                                            <!--<input type="text" class="inputvendor" placeholder="">-->
+
+                                            <input class="form-control" type="text" value="" list="dynamic_page_keywrd" name='dynamic_page_keywrd' />
+                                            <datalist id='dynamic_page_keywrd'>
+                                                @if($dynamic_page_keywrds)
+                                                @foreach($dynamic_page_keywrds as $d_keyword)
+                                                <option value='{{$d_keyword->keyword}}'></option>
+                                                @endforeach
+                                                @endif
+                                            </datalist>
                                         </div>
                                     </div>
                                     <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
@@ -788,7 +851,7 @@ $user=Auth::user();
                                                 <div class="formItemVendor">
                                                     <span>From</span>
                                                     <div class="input-group" id="datepicker3">
-                                                        <input type="date" id='first_page_from' name='first_page_from' class="form-control" placeholder="dd M, yyyy" data-date-format="dd M, yyyy" data-date-container='#datepicker3' data-provide="datepicker" data-date-autoclose="true">
+                                                        <input type="date" id='dynamic_page_from' name='dynamic_page_from' class="form-control" placeholder="dd M, yyyy" data-date-format="dd M, yyyy" data-date-container='#datepicker3' data-provide="datepicker" data-date-autoclose="true">
 
                                                         <span class="input-group-text bg_Brawen_iconinput"><i class="fas fa-calendar-alt"></i></span>
                                                     </div><!-- input-group -->
@@ -798,7 +861,7 @@ $user=Auth::user();
                                                 <div class="formItemVendor">
                                                     <span>TO</span>
                                                     <div class="input-group" id="datepicker4">
-                                                        <input type="date" id='first_page_to' name='first_page_to' class="form-control" placeholder="dd M, yyyy" data-date-format="dd M, yyyy" data-date-container='#datepicker4' data-provide="datepicker" data-date-autoclose="true">
+                                                        <input type="date" id='dynamic_page_to' name='dynamic_page_to' class="form-control" placeholder="dd M, yyyy" data-date-format="dd M, yyyy" data-date-container='#datepicker4' data-provide="datepicker" data-date-autoclose="true">
 
                                                         <span class="input-group-text bg_Brawen_iconinput"><i class="fas fa-calendar-alt"></i></span>
                                                     </div><!-- input-group -->
@@ -809,112 +872,53 @@ $user=Auth::user();
                                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
                                         <div class="formItemVendor">
                                             <span>Price</span>
-                                            <input readonly type="text" id='first_page_price' name='first_page_price' class="inputvendor" placeholder="">
+                                            <input readonly id='dynamic_page_price' name='dynamic_page_price' type="text" class="inputvendor" placeholder="">
                                         </div>
                                     </div>
 
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 repeater">
-                        <div data-repeater-list="dynamic_page_keywords">
+                        --}}
+                        <div class="col-lg-12">
                             <div class="formItemVendor">
-                                <button style="top: 35px;" data-repeater-create type="button" class="addMore" title="Add Mor Emails">
-                                    <i class="fas fa-plus iconpluss"></i>
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target=".bs-example-modal-xl">{{__('front.first_page_preview')}}</button>
+
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target=".ScondPriview">{{__('front.dynamic_page_preview')}}</button>
+                            </div>
+
+
+
+
+                        </div>
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="formItemVendor">
+                                <button type="submit" id='add_btn' class="btn btn-success ">
+                                    <i class="fas fa-check"></i> {{__('front.Add')}}
                                 </button>
+
+                                <a href="#" class="btn btn-danger " style="display:none">
+                                    <i class="fas fa-undo-alt"></i> {{__('front.Back')}}
+                                </a>
                             </div>
-                            <div class="row" data-repeater-item>
-                                <div class="col-lg-3 col-nd-3 col-sm-3 col-xs-12">
-                                    <div class="formItemVendor">
-                                        <span>Top Dynamic</span>
-                                        <!--<input type="text" class="inputvendor" placeholder="">-->
 
-                                        <input class="form-control" type="text" value="" list="dynamic_page_keywrd" name='dynamic_page_keywrd' />
-                                        <datalist id='dynamic_page_keywrd'>
-                                            @if($dynamic_page_keywrds)
-                                            @foreach($dynamic_page_keywrds as $d_keyword)
-                                            <option value='{{$d_keyword->keyword}}'></option>
-                                            @endforeach
-                                            @endif
-                                        </datalist>
-                                    </div>
-                                </div>
-                                <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
-                                    <div class="row">
-                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                            <div class="formItemVendor">
-                                                <span>From</span>
-                                                <div class="input-group" id="datepicker3">
-                                                    <input type="date" id='dynamic_page_from' name='dynamic_page_from' class="form-control" placeholder="dd M, yyyy" data-date-format="dd M, yyyy" data-date-container='#datepicker3' data-provide="datepicker" data-date-autoclose="true">
-
-                                                    <span class="input-group-text bg_Brawen_iconinput"><i class="fas fa-calendar-alt"></i></span>
-                                                </div><!-- input-group -->
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                            <div class="formItemVendor">
-                                                <span>TO</span>
-                                                <div class="input-group" id="datepicker4">
-                                                    <input type="date" id='dynamic_page_to' name='dynamic_page_to' class="form-control" placeholder="dd M, yyyy" data-date-format="dd M, yyyy" data-date-container='#datepicker4' data-provide="datepicker" data-date-autoclose="true">
-
-                                                    <span class="input-group-text bg_Brawen_iconinput"><i class="fas fa-calendar-alt"></i></span>
-                                                </div><!-- input-group -->
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
-                                    <div class="formItemVendor">
-                                        <span>Price</span>
-                                        <input readonly id='dynamic_page_price' name='dynamic_page_price' type="text" class="inputvendor" placeholder="">
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-
-                    --}}
-                    <div class="col-lg-12">
-                        <div class="formItemVendor">
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target=".bs-example-modal-xl">{{__('front.first_page_preview')}}</button>
-
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target=".ScondPriview">{{__('front.dynamic_page_preview')}}</button>
                         </div>
 
 
 
 
-                    </div>
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <div class="formItemVendor">
-                            <button type="submit" id='add_btn' class="btn btn-success ">
-                                <i class="fas fa-check"></i> {{__('front.Add')}}
-                            </button>
-
-                            <a href="#" class="btn btn-danger " style="display:none">
-                                <i class="fas fa-undo-alt"></i> {{__('front.Back')}}
-                            </a>
-                        </div>
 
                     </div>
-
-
-
-
-
                 </div>
+                </form>
             </div>
-            </form>
         </div>
+
+
+
+
     </div>
-
-
-
-
-</div>
 </div>
 
 </div>
@@ -1115,10 +1119,10 @@ $user=Auth::user();
 
 
 <script>
-	$(function(e) {
-		$('#product_desc').richText();
-	$('#product_desc_ar').richText();
-	});
+    $(function(e) {
+        $('#product_desc').richText();
+        $('#product_desc_ar').richText();
+    });
 </script>
 
 <script>
@@ -1139,102 +1143,104 @@ $user=Auth::user();
         let total;
         $('.addMore_input').click(function() {
             // alert('hi');
-        
+
             var ids = [];
-            
+
             if (!$('#first_page_keywrd_input').val() || !$('.first_page_from_input').val() || !$('.first_page_to_input').val()) {
                 $("#f_error").css("display", "block");
             } else {
                 // ----------
-                  var from_date=  $('.first_page_from_input').val() ;
-          var to_date =$('.first_page_to_input').val();
-          var price= $('#first_page_price_input').val() ;
-             $.ajax({
-                url: "{{route('keywordPrice')}}",
-                type: "POST",
-                data: {
-                    "_token": "{{ csrf_token() }}",
-                    from_date: from_date,
-                    to_date: to_date,
-                price:price,
-                },
-                success: function(response) {
-                    total =response.price;
-                    $('#total').val(response.price);
-// alert(response.price);
+                var from_date = $('.first_page_from_input').val();
+                var to_date = $('.first_page_to_input').val();
+                var price = $('#first_page_price_input').val();
+                $.ajax({
+                    url: "{{route('keywordPrice')}}",
+                    type: "POST",
+                    data: {
+                        "_token": "{{ csrf_token() }}",
+                        from_date: from_date,
+                        to_date: to_date,
+                        price: price,
+                    },
+                    success: function(response) {
+                        total = response.price;
+                        $('#total').val(response.price);
+                        // alert(response.price);
 
-useNextLoad(response.price);
+                        useNextLoad(response.price);
 
-                }
+                    }
 
-            });
-            // alert(total);
-            // ----------<td>'+total+'</td>
-             
+                });
+                // alert(total);
+                // ----------<td>'+total+'</td>
+
             }
-           
+
         });
-function useNextLoad(total){
-//   console.log(price);
-      $("#f_error").css("display", "none");
-                $('#keywordstable > tbody').append('<tr><td><p>' + $('#first_page_keywrd_input').val() + '</td><td><p>' + $('.first_page_from_input').val() + '</td><td><p>' + $('.first_page_to_input').val() + '</td><td><p>' + $('#first_page_price_input').val() + '</td><td><p>'+ $('#total').val()+'</p></td><td>  ' +
-                    '<button  type="button" class="btn btn-danger f_delete" title="Add Mor Emails"><i class="far fa-trash-alt"></i> </button></td></tr>');
-                     if ($('#keywordstable tr').length >= 2) {
+
+        function useNextLoad(total) {
+            //   console.log(price);
+            $("#f_error").css("display", "none");
+            $('#keywordstable > tbody').append('<tr><td><p>' + $('#first_page_keywrd_input').val() + '</td><td><p>' + $('.first_page_from_input').val() + '</td><td><p>' + $('.first_page_to_input').val() + '</td><td><p>' + $('#first_page_price_input').val() + '</td><td><p>' + $('#total').val() + '</p></td><td>  ' +
+                '<button  type="button" class="btn btn-danger f_delete" title="Add Mor Emails"><i class="far fa-trash-alt"></i> </button></td></tr>');
+            if ($('#keywordstable tr').length >= 2) {
                 $('.keyword_table').slideDown();
             } else {
                 $('.keyword_table').slideUp();
             }
 
-}
+        }
         $('.add_more').click(function() {
             // alert('hi');
             var ids = [];
             if (!$('#dynamic_page_keywrd_input').val() || !$('.dynamic_page_from_input').val() || !$('.dynamic_page_to_input').val()) {
                 $("#d_error").css("display", "block");
             } else {
-                
-                   var from_date=  $('.dynamic_page_from_input').val() ;
-          var to_date =$('.dynamic_page_to_input').val();
-          var price= $('#dynamic_page_price_input').val() ;
-             $.ajax({
-                url: "{{route('keywordPrice')}}",
-                type: "POST",
-                data: {
-                    "_token": "{{ csrf_token() }}",
-                    from_date: from_date,
-                    to_date: to_date,
-                price:price,
-                },
-                success: function(response) {
-                    total =response.price;
-                    $('#total').val(response.price);
-// alert(response.price);
 
-useNextLoad2(response.price);
+                var from_date = $('.dynamic_page_from_input').val();
+                var to_date = $('.dynamic_page_to_input').val();
+                var price = $('#dynamic_page_price_input').val();
+                $.ajax({
+                    url: "{{route('keywordPrice')}}",
+                    type: "POST",
+                    data: {
+                        "_token": "{{ csrf_token() }}",
+                        from_date: from_date,
+                        to_date: to_date,
+                        price: price,
+                    },
+                    success: function(response) {
+                        total = response.price;
+                        $('#total').val(response.price);
+                        // alert(response.price);
 
-                }
+                        useNextLoad2(response.price);
 
-            });
-                
+                    }
+
+                });
+
                 // $("#d_error").css("display", "none");
                 // $('#keywords_d_table > tbody').append('<tr><td><p>' + $('#dynamic_page_keywrd_input').val() + '</p></td><td><p>' + $('.dynamic_page_from_input').val() + '</p></td><td><p>' + $('.dynamic_page_to_input').val() + '</p></td><td><p>' + $('#dynamic_page_price_input').val() + '</p></td><td>  ' +
                 //     '<button  type="button" class="btn btn-danger d_delete" title="Add Mor Emails"><i class="far fa-trash-alt"></i> </button></td></tr>')
             }
-          
+
 
         });
-function useNextLoad2(total2){
-//   console.log(price);
-                     $("#d_error").css("display", "none");
-                $('#keywords_d_table > tbody').append('<tr><td><p>' + $('#dynamic_page_keywrd_input').val() + '</p></td><td><p>' + $('.dynamic_page_from_input').val() + '</p></td><td><p>' + $('.dynamic_page_to_input').val() + '</p></td><td><p>' + $('#dynamic_page_price_input').val() + '</p></td><td><p>'+ $('#total').val()+'</p></td><td>  ' +
-                    '<button  type="button" class="btn btn-danger d_delete" title="Add Mor Emails"><i class="far fa-trash-alt"></i> </button></td></tr>');
-                      if ($('#keywords_d_table tr').length >= 2) {
+
+        function useNextLoad2(total2) {
+            //   console.log(price);
+            $("#d_error").css("display", "none");
+            $('#keywords_d_table > tbody').append('<tr><td><p>' + $('#dynamic_page_keywrd_input').val() + '</p></td><td><p>' + $('.dynamic_page_from_input').val() + '</p></td><td><p>' + $('.dynamic_page_to_input').val() + '</p></td><td><p>' + $('#dynamic_page_price_input').val() + '</p></td><td><p>' + $('#total').val() + '</p></td><td>  ' +
+                '<button  type="button" class="btn btn-danger d_delete" title="Add Mor Emails"><i class="far fa-trash-alt"></i> </button></td></tr>');
+            if ($('#keywords_d_table tr').length >= 2) {
                 $('.keyword_d_table').slideDown();
             } else {
                 $('.keyword_d_table').slideUp();
             }
-                    
-}
+
+        }
 
         let keyword_arr = new Array();;
         let dynamic_keyword_arr = new Array();
@@ -1261,7 +1267,7 @@ function useNextLoad2(total2){
                     item["to"] = to;
                     item["price"] = price;
                     item["position"] = position;
- item["total"] = total;
+                    item["total"] = total;
 
                     // jsonObj.push(item);
 
@@ -1290,7 +1296,7 @@ function useNextLoad2(total2){
                         from2 = $tds2.eq(1).text(),
                         to2 = $tds2.eq(2).text();
                     price2 = $tds2.eq(3).text();
-                     total2 = $tds2.eq(4).text();
+                    total2 = $tds2.eq(4).text();
                     position2 = $('#dynamic_position').val();
 
 
@@ -1301,7 +1307,7 @@ function useNextLoad2(total2){
                         "to": to2,
                         "price": price2,
                         'position': position2,
-                        'total':total2
+                        'total': total2
                     };
                     dynamic_keyword_arr.push(row2);
                     // alert(dynamic_keyword_arr);
@@ -1312,7 +1318,7 @@ function useNextLoad2(total2){
             });
         }
         $('#add_btn').click(function() {
-           
+
             event.preventDefault();
 
             //get first kewords obj
@@ -1338,7 +1344,7 @@ function useNextLoad2(total2){
             form.append('product_desc', $('#product_desc').val());
             form.append('product_desc_ar', $('#product_desc_ar').val());
             form.append('first_page_keywords', JSON.stringify(keyword_arr));
-            form.append('dynamic_page_keywords',JSON.stringify( dynamic_keyword_arr));
+            form.append('dynamic_page_keywords', JSON.stringify(dynamic_keyword_arr));
 
             form.append('first_page_keywords_words', keyword_arr_words);
             form.append('dynamic_page_keywords_words', dynamic_keyword_arr_words);
@@ -1349,19 +1355,19 @@ function useNextLoad2(total2){
 
 
             // form.append('image', images.files[0]);
-             var TotalImages = $('#image')[0].files.length;
-        var images = $('#image')[0];
+            var TotalImages = $('#image')[0].files.length;
+            var images = $('#image')[0];
 
-        for (var i = 0; i < TotalImages; i++) {
-            form.append('image[]', images.files[i]);
-        }
-        
-         var Totalvideos = $('#video')[0].files.length;
-        var videos = $('#video')[0];
+            for (var i = 0; i < TotalImages; i++) {
+                form.append('image[]', images.files[i]);
+            }
 
-        for (var j = 0; j < Totalvideos; j++) {
-            form.append('video[]', videos.files[j]);
-        }
+            var Totalvideos = $('#video')[0].files.length;
+            var videos = $('#video')[0];
+
+            for (var j = 0; j < Totalvideos; j++) {
+                form.append('video[]', videos.files[j]);
+            }
 
             $.ajax({
                 url: "{{route('vendor_individual_product_post')}}",
@@ -1375,50 +1381,43 @@ function useNextLoad2(total2){
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 },
                 processData: false,
-                beforeSend: function() { 
-      $("#add_btn").html("<option>  {{__('front.Loading ...')}}</option>");
-      $("#add_btn").prop('disabled', true); // disable button
-    },
+                beforeSend: function() {
+                    $("#add_btn").html("<option>  {{__('front.Loading ...')}}</option>");
+                    $("#add_btn").prop('disabled', true); // disable button
+                },
                 success: function(response) {
+                 
                     // location.reload();
-                    $("#add_btn").html("<option> {{__('front.Done')}}</option>");
-      $("#add_btn").prop('disabled', false); // disable button
+                        $("#add_btn").html("<option> {{__('front.Done')}}</option>");
+                        $("#add_btn").prop('disabled', false); // disable button
+                        $(".alert-danger").css("display", "none");
+                        $(".alert-success-message3").css("display", "block");
+                        $(".alert-success-message3").html('<P style="text-align:center">Thank you.').hide()
+                            .fadeIn(1500, function() {
+                                $('.alert-success-message3');
+                            }).fadeOut(1500, function() {
+                                $('.alert-success-message3');
+                            }).reset();
 
-                    $(".alert-danger").css("display", "none");
-                    $(".alert-success-message3").css("display", "block");
-                    $(".alert-success-message3").html('<P style="text-align:center">Thank you.').hide()
-                        .fadeIn(1500, function() {
-                            $('.alert-success-message3');
-                        }).fadeOut(1500, function() {
-                            $('.alert-success-message3');
-                        }).reset();
-                        
-                         $(".sliderimgItem").empty();
- 
- $("#gallary_imgs").empty();
-                       
+                        $(".sliderimgItem").empty();
+
+                        $("#gallary_imgs").empty();
+                        document.getElementById("submitForm").reset();
                 },
                 error: function(response) {
                     $("#add_btn").html("<option> {{__('front.Add')}}</option>");
-      $("#add_btn").prop('disabled', false); // disable button
+                    $("#add_btn").prop('disabled', false); // disable button
 
                     $(".alert-danger").css("display", "block");
-                    $(".alert-success-message3").css("display", "none");
-                     
-                    // alert('hi');
-                   
-        //              var errors = $.parseJSON(response.message);
-        // $.each(errors, function (key, value) {
-        //     // $('#' + key).parent().addClass('error');
-        //      console.log(value);
-        // });
-                //     $.each(response.errors, function(i, item) {
-                    
-                //     $(".alert-danger ul").append('<li>'+item[i]+'</li>')  
-                // });
+                    $("#list").empty();
+                        $.each(response.responseJSON.errors, function(key, value) {
+                         
+                            str = "<li>" + value + "</li>";
+                              $("#list").append(str);
+                        });
                 },
             });
-             document.getElementById("submitForm").reset();
+            // document.getElementById("submitForm").reset();
 
         });
 
@@ -1542,11 +1541,11 @@ function useNextLoad2(total2){
 
             },
             error: function(response) {
-             
-                  $(".alert-danger").css("display", "block");
+
+                $(".alert-danger").css("display", "block");
                 $(".alert-success-message").css("display", "none");
-                
-              
+
+
             },
 
         });
@@ -1554,33 +1553,33 @@ function useNextLoad2(total2){
 
 
     });
-    
-    
+
+
     // $(".first_page_to_input").change(function() {
     //     alert('hi');
-        
+
     // }
-//   function handler(e){
-// // //   alert(e.target.value);  first_page_from first_page_price_input
-//   var from_date= $(".first_page_from").val();
-//  var to_date= e.target.value;
-// var price=$('.first_page_price').val();
-//       $.ajax({
-//                 url: "{{route('keywordPrice')}}",
-//                 type: "POST",
-//                 data: {
-//                     "_token": "{{ csrf_token() }}",
-//                     from_date: from_date,
-//                     to_date: to_date,
-//                 price:price,
-//                 },
-//                 success: function(response) {
-//                       $('.first_page_price').val(response.keyword.price);
+    //   function handler(e){
+    // // //   alert(e.target.value);  first_page_from first_page_price_input
+    //   var from_date= $(".first_page_from").val();
+    //  var to_date= e.target.value;
+    // var price=$('.first_page_price').val();
+    //       $.ajax({
+    //                 url: "{{route('keywordPrice')}}",
+    //                 type: "POST",
+    //                 data: {
+    //                     "_token": "{{ csrf_token() }}",
+    //                     from_date: from_date,
+    //                     to_date: to_date,
+    //                 price:price,
+    //                 },
+    //                 success: function(response) {
+    //                       $('.first_page_price').val(response.keyword.price);
 
-//                 }
+    //                 }
 
-//             });
-// }
+    //             });
+    // }
     $("#dynamic_page_keywrd_input").change(function() {
 
         var id = $(this).val();
@@ -1689,18 +1688,18 @@ function useNextLoad2(total2){
                 $("#f_prev_img").attr("src", e.target.result);
                 $("#s_prev_img").attr("src", e.target.result);
                 // $("#f_prev_img2").css("display", "block");
-//   $("#f_prev_img2").attr("src",e.target.result);
+                //   $("#f_prev_img2").attr("src",e.target.result);
 
-                                                                                 
-                                                                                                        
-$html="<div class='col-lg-3 col-md-3 col-sm-12 col-xs-12 weyy' > <div class='formItemVendor'><a href='"+e.target.result+"' class='Itemmm'><div class='sliderimgItem'><img  src='"+e.target.result+"'><button "+
-"type='button' class='Removee RemoveImg RemoveProductImage'><i class='far"+
-" fa-trash-alt' aria-hidden='true'></i></button></div></a> </div></div>";
- $("#gallary_imgs").append($html);
+
+
+                $html = "<div class='col-lg-3 col-md-3 col-sm-12 col-xs-12 weyy' > <div class='formItemVendor'><a href='" + e.target.result + "' class='Itemmm'><div class='sliderimgItem'><img  src='" + e.target.result + "'><button " +
+                    "type='button' class='Removee RemoveImg RemoveProductImage'><i class='far" +
+                    " fa-trash-alt' aria-hidden='true'></i></button></div></a> </div></div>";
+                $("#gallary_imgs").append($html);
             }
         });
     }
-   
+
 
     function changeVideoPreview(e, k, v) {
         var files = e.target.files;
@@ -1710,23 +1709,23 @@ $html="<div class='col-lg-3 col-md-3 col-sm-12 col-xs-12 weyy' > <div class='for
             var reader = new FileReader();
             reader.readAsDataURL(file);
             reader.onload = function(e) {
-                
-  $html=  '<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 weyy"> <div class="formItemVendor"><div class="sliderimgItem"> <video class="VedioPorUpload"  controls><source src="'+e.target.result+'" type="video/mp4"></video> <button type="button" class="Removee RemoveVideo RemoveSlide RemoveProductImage" ><i class="far fa-trash-alt"></i> </button></div> </div></div>  ';                                                                  
-                                                                      
-// $html="<img  src='"+e.target.result+"'>";
- $(".sliderimgItemV").append($html);
- 
- 
+
+                $html = '<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 weyy"> <div class="formItemVendor"><div class="sliderimgItem"> <video class="VedioPorUpload"  controls><source src="' + e.target.result + '" type="video/mp4"></video> <button type="button" class="Removee RemoveVideo RemoveSlide RemoveProductImage" ><i class="far fa-trash-alt"></i> </button></div> </div></div>  ';
+
+                // $html="<img  src='"+e.target.result+"'>";
+                $(".sliderimgItemV").append($html);
+
+
             }
         });
     }
-    
-     $(document).on('click', '.RemoveProductImage', function(){ 
-   
-    $(this).closest('.weyy').remove();
-     $(".alert-danger").css("display", "none");;
 
-});
+    $(document).on('click', '.RemoveProductImage', function() {
+
+        $(this).closest('.weyy').remove();
+        $(".alert-danger").css("display", "none");;
+
+    });
 </script>
 
 
