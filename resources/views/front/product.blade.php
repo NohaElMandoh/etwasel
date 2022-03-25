@@ -106,7 +106,7 @@ $user=Auth::user();
                                                                         </li>
                                                                     </ul>
                                                                 </div>
-                                                                <div class="lidetaisl">
+                                                                <div class="lidetaisl" style="display: none;">
                                                                     <ul>
                                                                         <li>
                                                                             <p>Class: <span class="sas"> 1 </span></p>
@@ -129,8 +129,8 @@ $user=Auth::user();
 
                                                                     </ul>
                                                                 </div>
-                                                                <div class="line"></div>
-                                                                <div class="underline">
+                                                                <!-- <div class="line"></div> -->
+                                                                <!-- <div class="underline">
                                                                     <ul>
                                                                         <li>
                                                                             <a href="#" class="links">Hebei Zhouwo Trading Co., Ltd.</a>
@@ -139,7 +139,7 @@ $user=Auth::user();
                                                                             <p>Hebei, China <span>|</span> ISO 9001, ISO 9000, ISO 14001, ISO 14000</p>
                                                                         </li>
                                                                     </ul>
-                                                                </div>
+                                                                </div> -->
                                                                 <div class="addcart">
 
 
