@@ -9,7 +9,11 @@
 
                 <div class="card-body">
                     {{ __('Please confirm your password before continuing.') }}
-
+                    @if (session('status'))
+                    <div class="alert alert-success" role="alert">
+                        {{ session('status') }}
+                    </div>
+                @endif
                     <form method="POST" action="{{ route('password.confirm') }}">
                         @csrf
 

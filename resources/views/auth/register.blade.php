@@ -5,43 +5,42 @@
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content=" Finance ,Shopping, Retail, Food Delivery, Cost Reductions, Wholesaler, activity tracker, and profits- e-Payment- Financial Solutions ">
+    <meta name="description"
+        content=" Finance ,Shopping, Retail, Food Delivery, Cost Reductions, Wholesaler, activity tracker, and profits- e-Payment- Financial Solutions ">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link rel="stylesheet" href="{{asset('frontUI/assets/css/bootstrapnew.min.css')}}">
-    <link rel="stylesheet" href="{{asset('frontUI/assets/css/app.min.css')}}">
+    <link rel="stylesheet" href="{{ asset('frontUI/assets/css/bootstrapnew.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontUI/assets/css/app.min.css') }}">
 
-    <link href="{{asset('frontUI/assets/css/icons.min.css')}}" rel="stylesheet" type="text/css" />
-
-
-    <link rel="stylesheet" href="{{asset('frontUI/assets/Libs/select2/css/select2.min.css')}}">
+    <link href="{{ asset('frontUI/assets/css/icons.min.css') }}" rel="stylesheet" type="text/css" />
 
 
-    <link rel="stylesheet" href="{{asset('frontUI/assets/css/bootstrap.min.css')}}">
-    <link rel="stylesheet" href="{{asset('frontUI/assets/css/animate.min.css')}}">
-    <link rel="stylesheet" href="{{asset('frontUI/assets/css/fontawesome.min.css')}}">
-    <link rel="stylesheet" href="{{asset('frontUI/assets/css/flaticon.css')}}">
-    <link rel="stylesheet" href="{{asset('frontUI/assets/css/magnific-popup.min.css')}}">
-    <!--<link rel="stylesheet" href="{{asset('frontUI/assets/css/nice-select.css')}}">-->
-    <link rel="stylesheet" href="{{asset('frontUI/assets/css/slick.min.css')}}">
-    <link rel="stylesheet" href="{{asset('frontUI/assets/css/owl.carousel.min.css')}}">
-    <link rel="stylesheet" href="{{asset('frontUI/assets/css/meanmenu.css')}}">
-    <link rel="stylesheet" href="{{asset('frontUI/assets/css/odometer.min.css')}}">
-    <link rel="stylesheet" href="{{asset('frontUI/assets/css/icofont.css')}}">
-    <link rel="stylesheet" href="{{asset('frontUI/assets/css/themify-icons.css')}}">
-    <link rel="stylesheet" href="{{asset('frontUI/assets/css/revolution-slider.css')}}">
-       <link rel="stylesheet" href="{{asset('frontUI/assets/css/style.css')}}">
-@if ( Config::get('app.locale') == 'en')
+    <link rel="stylesheet" href="{{ asset('frontUI/assets/Libs/select2/css/select2.min.css') }}">
 
-   <link rel="stylesheet" href="{{asset('frontUI/assets/css/style.css')}}">
 
-   @elseif ( Config::get('app.locale') == 'ar' )
-<link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="{{asset('frontUI/assets/css/style-ar.css')}}">
-    
-   @endif
-    <link rel="stylesheet" href="{{asset('frontUI/assets/css/responsive.css')}}">
+    <link rel="stylesheet" href="{{ asset('frontUI/assets/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontUI/assets/css/animate.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontUI/assets/css/fontawesome.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontUI/assets/css/flaticon.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontUI/assets/css/magnific-popup.min.css') }}">
+    <!--<link rel="stylesheet" href="{{ asset('frontUI/assets/css/nice-select.css') }}">-->
+    <link rel="stylesheet" href="{{ asset('frontUI/assets/css/slick.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontUI/assets/css/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontUI/assets/css/meanmenu.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontUI/assets/css/odometer.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontUI/assets/css/icofont.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontUI/assets/css/themify-icons.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontUI/assets/css/revolution-slider.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontUI/assets/css/style.css') }}">
+    @if (Config::get('app.locale') == 'en')
+        <link rel="stylesheet" href="{{ asset('frontUI/assets/css/style.css') }}">
+    @elseif (Config::get('app.locale') == 'ar')
+        <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap"
+            rel="stylesheet">
+        <link rel="stylesheet" href="{{ asset('frontUI/assets/css/style-ar.css') }}">
+    @endif
+    <link rel="stylesheet" href="{{ asset('frontUI/assets/css/responsive.css') }}">
     <title>Cladex</title>
-    <link rel="icon" type="image/png" href="{{asset('frontUI/assets/img/NewImg/3anota%20alone.png')}}">
+    <link rel="icon" type="image/png" href="{{ asset('frontUI/assets/img/NewImg/3anota%20alone.png') }}">
     <script src="https://kit.fontawesome.com/ea9a619c4d.js" crossorigin="anonymous"></script>
 
     <style>
@@ -146,6 +145,7 @@
         .sectionfixd .fixedright {
             right: 0;
         }
+
     </style>
 </head>
 
@@ -154,7 +154,7 @@
         <div class="loader">
             <!--<div class="shadow"></div>-->
             <!--<div class="box"></div>-->
-                                  <img src="{{asset('frontUI/assets/img/loader.gif')}}">
+            <img src="{{ asset('frontUI/assets/img/loader.gif') }}">
         </div>
     </div>
 
@@ -165,36 +165,43 @@
             <div class="Registercint">
                 <div class="headernav">
                     <div class="row">
-                        
+
                         <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                             <div class="Language">
                                 <div class="dropdown show">
-                                             @if ( Config::get('app.locale') == 'en')
-                                  <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    {{__('front.English')}} <i class="fas fa-chevron-down"></i>
-                                  </a>
- @elseif ( Config::get('app.locale') == 'ar' )
- <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    {{__('front.Arabic')}} <i class="fas fa-chevron-down"></i>
-                                  </a>
-                                @endif  
+                                    @if (Config::get('app.locale') == 'en')
+                                        <a class="btn btn-secondary dropdown-toggle" href="#" role="button"
+                                            id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+                                            aria-expanded="false">
+                                            {{ __('front.English') }} <i class="fas fa-chevron-down"></i>
+                                        </a>
+                                    @elseif (Config::get('app.locale') == 'ar')
+                                        <a class="btn btn-secondary dropdown-toggle" href="#" role="button"
+                                            id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+                                            aria-expanded="false">
+                                            {{ __('front.Arabic') }} <i class="fas fa-chevron-down"></i>
+                                        </a>
+                                    @endif
                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                    <a class="dropdown-item" href="{{ LaravelLocalization::getLocalizedURL('ar', null, [], true) }}">{{__('front.Arabic')}}</a>
-                                    <!--<a class="dropdown-item" href="#">Português</a>-->
-                                    <a class="dropdown-item" href="{{ LaravelLocalization::getLocalizedURL('en', null, [], true) }}">{{__('front.English')}}</a>
-                                  </div>
+                                        <a class="dropdown-item"
+                                            href="{{ LaravelLocalization::getLocalizedURL('ar', null, [], true) }}">{{ __('front.Arabic') }}</a>
+                                        <!--<a class="dropdown-item" href="#">Português</a>-->
+                                        <a class="dropdown-item"
+                                            href="{{ LaravelLocalization::getLocalizedURL('en', null, [], true) }}">{{ __('front.English') }}</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                             <div class="imagelogo">
-                                <img src="{{asset('frontUI/assets/img/cladreximg/2021-LogoMaker-Site-Logo.png')}}">
+                                <img src="{{ asset('frontUI/assets/img/cladreximg/2021-LogoMaker-Site-Logo.png') }}">
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                             <div class="donthane">
                                 <div class="fr title-tip">
-                                    <h2>{{__('front.Have an account?')}} <a href="{{ route('login') }}">{{__('front.Sign in now')}}</a>!</h2>
+                                    <h2>{{ __('front.Have an account?') }} <a
+                                            href="{{ route('login') }}">{{ __('front.Sign in now') }}</a>!</h2>
                                 </div>
                             </div>
                         </div>
@@ -205,7 +212,7 @@
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
                             <div class="leftCOnt">
 
-                                <h3 class="TitleRegis">{{__('front.Create Account')}}</h3>
+                                <h3 class="TitleRegis">{{ __('front.Create Account') }}</h3>
                                 <div class="card-body">
 
                                     <!-- Nav tabs -->
@@ -213,368 +220,53 @@
                                         <li class="nav-item">
                                             <a class="nav-link active" data-bs-toggle="tab" href="#home1" role="tab">
                                                 <span class="d-block d-sm-none"><i class="fas fa-home"></i></span>
-                                                <span class="d-none d-sm-block">{{__('front.Register as User')}}</span>
+                                                <span
+                                                    class="d-none d-sm-block">{{ __('front.Register as User') }}</span>
                                             </a>
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link" data-bs-toggle="tab" href="#profile1" role="tab">
                                                 <span class="d-block d-sm-none"><i class="far fa-user"></i></span>
-                                                <span class="d-none d-sm-block">{{__('front.Register as Vendor')}}</span>
+                                                <span
+                                                    class="d-none d-sm-block">{{ __('front.Register as Vendor') }}</span>
                                             </a>
                                         </li>
 
                                     </ul>
+                                    {{-- start  alert errors and sussess --}}
+                                    @if ($errors->any())
+                                        <div class="contact-form h-75">
+                                            <div class="alert alert-danger">
+                                                @foreach ($errors->all() as $error)
+                                                    <p style="padding: 7px">{{ $error }}</p>
+                                                @endforeach
+                                            </div>
+                                        </div>
+                                    @endif
+                                    @if ($message = Session::get('success'))
+                                        <div class="alert alert-success">
+                                            <strong>{{ $message }}</strong>
+                                        </div>
+                                    @endif
+                                    {{-- end alert errors and sussess --}}
 
                                     <!-- Tab panes -->
                                     <div class="tab-content p-3 text-muted">
                                         <div class="tab-pane active" id="home1" role="tabpanel">
                                             <div class="card ">
-
-                                                <form id="msform" method="post" action="" enctype="multipart/form-data">
-
-                                                    @csrf
-                                                    <input type="hidden" id="type_user" name="type" value="user">
-
-                                                    <div class="alert alert-success alert-success-message" style="display:none">
-                                                        {{ Session::get('success') }}
-                                                    </div>
-                                                    <div class="alert alert-danger " style="display:none">
-                                                       {{__('front.please fill all records')}}
-                                                    </div>
-                                                    <div class="form-card">
-                                                        <div class="row">
-                                                            <div class="col-lg-12 col-md-12col-sm-12 col-xs-12">
-                                                                <div class="form-group">
-                                                                    <label class="fieldlabels">{{__('front.Full Name')}}</label>
-                                                                    <input type="text" name="full_name" id='full_name' placeholder="{{__('front.Write Your Name')}}" required />
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-lg-12 col-md-12col-sm-12 col-xs-12">
-                                                                <div class="form-group">
-                                                                    <label class="fieldlabels">{{__('front.Email')}}</label>
-                                                                    <input type="email" name="email" id='email' placeholder="{{__('front.Enter Your Email')}}" required />
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                                                <div class="form-group">
-                                                                    <label class="fieldlabels">{{__('front.Gender')}}</label>
-                                                                    <select id='gender' name='gender' class='form-control select2'>
-                                                                        <option value='male'>{{__('front.Male')}}</option>
-                                                                        <option value='female'>{{__('front.Femail')}}</option>
-                                                                    </select>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                                <div class="form-group">
-                                                                    <label class="fieldlabels">{{__('front.Password')}}</label>
-                                                                    <input type="Password" name="password" id='password' placeholder="6-20 characters" required />
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                                <div class="form-group">
-                                                                    <label class="fieldlabels">{{__('front.Confirm Password')}}</label>
-                                                                    <input type="Password" name="password_confirmation" id='password_confirmation' placeholder="" required />
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                                                <div class="form-group">
-                                                                    <input type="submit" id='user_register' class=" btn btn-danger btnuserlogin  " value="{{__('front.Register')}}">
-                                                                </div>
-                                                            </div>
-
-                                                        </div>
-                                                    </div>
-                                                </form>
+                                                {{-- view user Register --}}
+                                                @include('auth.userRegister')
 
                                             </div>
                                         </div>
                                         <div class="tab-pane" id="profile1" role="tabpanel">
                                             <div class="row justify-content-center">
-                                                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 text-center p-0">
-                                                    <div class="card ">
+                                                <div
+                                                    class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 text-center p-0">
+                                                    <div class="card">
+                                                        {{-- view vendor Register --}}
+                                                        @include('auth.vendorRegister')
 
-                                                        <form id="msform" method="post" action="" novalidate="novalidate" enctype="multipart/form-data">
-                                                            @csrf
-                                                            <input type="hidden" id="type_vendor" name="type" value="vendor">
-
-                                                            <div class="alert alert-success alert-success-message-vendor" style="display:none">
-                                                                {{ Session::get('success') }}
-                                                            </div>
-                                                            <div class="alert alert-danger-vendor error " style="display:none">
-                                                              {{--  {{__('front.please fill all records')}}--}}
-                                                              <ul id='errors'>
-                                                                
-                                                              </ul>
-                                                              
-                                                            </div>
-                                                            
-                                                            <div class="row">
-                                                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                                                            <div class="form-group">
-                                                                                <label class="fieldlabels">{{__('front.Full Name')}}</label>
-                                                                                <div class="row">
-                                                                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-4">
-
-                                                                                        <select id='title' name='title' class='form-control select2'>
-                                                                                            <option value='Mr'>Mr</option>
-                                                                                            <option value='Mrs'>Mrs</option>
-                                                                                            <option value='Miss'>Miss</option>
-                                                                                            <option value='Ms'>Ms</option>
-                                                                                        </select>
-
-                                                                                    </div>
-                                                                                    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-8">
-                                                                                        <input type="text" id="vendor_full_name" name="vendor_full_name" placeholder="" required />
-
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-
-                                                                        </div>
-                                                                        <div class="col-lg-12 col-md-12col-sm-12 col-xs-12">
-                                                                            <div class="form-group">
-                                                                                <label class="fieldlabels">{{__('front.Email')}}</label>
-                                                                                <input type="email" id="vendor_email" value="{{ old('vendor_email') }}" name="vendor_email" placeholder="Email Id" required />
-                                                                            </div>
-                                                                        </div>
-
-                                                                        <div class="col-lg-12 col-md-12col-sm-12 col-xs-12" style="display:none">
-                                                                            <div class="form-group">
-                                                                                <label class="fieldlabels">Verification Code</label>
-                                                                                <div class="captcha-box">
-                                                                                    <canvas id="canvas"></canvas>
-                                                                                    <input name="code" class="form-control">
-                                                                                    <button id="valid" type="button" class="btn btn-danger testrelod"><i class="fas fa-sync"></i></button>
-                                                                                </div>
-                                                                                <span class="notee">Please enter the characters you see in the image</span>
-                                                                            </div>
-                                                                        </div>
-                                                                        
-                                                                        
-                                                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                                            <div class="form-group">
-                                                                                <label class="fieldlabels">{{__('front.Password')}}</label>
-                                                                                <input type="Password" id="vendor_password" name="vendor_password" placeholder="6-20 characters" required />
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                                            <div class="form-group">
-                                                                                <label class="fieldlabels">{{__('front.Confirm Password')}}</label>
-                                                                                <input type="Password" id="vendor_password_confirmation" name="vendor_password_confirmation" placeholder="" required />
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="col-lg-12 col-md-12col-sm-12 col-xs-12">
-                                                                            <div class="form-group">
-                                                                                <label class="fieldlabels">{{__('front.Phone Number')}}</label>
-                                                                                <div class="input-group">
-                                                                                    <div class="input-group-prepend">
-                                                                                        <span class="input-group-text" id="basic-addon1">+20</span>
-                                                                                    </div>
-                                                                                    <input type="text" id='phone' name='phone' class="form-control" placeholder=""  aria-describedby="basic-addon1">
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="col-lg-12 col-md-12col-sm-12 col-xs-12">
-                                                                            <div class="form-group">
-                                                                                <label class="fieldlabels">{{__('front.Company Name')}}</label>
-                                                                                <input type="text" id='shop_name' name='shop_name' placeholder="" required />
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                                                            <div class="form-group">
-                                                                            <label class="fieldlabels">{{__('front.city')}}</label>
-                                                                               {{--     <input id='country' name='country' type="text" placeholder="{{__('front.Country/Region')}}" class="formcontrol">
---}}
-
-  <select id='city_id' name='city_id' class="form-control select2">
-                                                        @if($Cities)
-                                                        @foreach($Cities as $city)
-                                                        <option value="{{$city->id}}" @if(!empty($user->details))@if($city->id == $user->details->city_id) selected @endif @endif>{{$city->name}}</option>
-                                                        @endforeach
-                                                        @endif
-
-                                                    </select>
-  
-                                                                            </div>
-                                                                        </div>
-                                                                        
-                                                                        
-                                                                        
-                                                                        
-                                                                        <div class="col-lg-12 col-md-12col-sm-12 col-xs-12">
-                                                                            <div class="form-group">
-                                                                                <input type="submit" id='vendor_register'class=" action-button btnuserlogin"  value="Submit" />
-                                                                            </div>
-                                                                        </div>
-
-                                                                    </div>
-                                                            
-                                                            
-                                                            
-                                                            
-                                                            
-                                                            
-                                                            
-                                                            
-                                                            
-                                                            
-                                                            
-                                                            
-                                                            
-                                                            
-                                                            
-                                                            
-                                                            
-                                                            
-                                                            
-                                                            
-                                                            
-                                                            
-                                                            
-                                                            
-                                                            
-                                                            
-                                                            
-                                                            
-                                                            
-                                                            
-                                                            
-                                                            
-                                                            
-                                                            <!--<form id="msform">-->
-                                                            <!-- progressbar -->
-                                                            <ul id="progressbar" style="display:none">
-                                                                <li class="active" id="account"><span>{{__('front.Basic Info')}}</span></li>
-                                                                <!--<li id="verification"><span>Verification</span></li>-->
-                                                                <li id="personal"><span>{{__('front.Information')}}</span></li>
-                                                                <li id="payment" style='display:none'><span>{{__('front.Complete')}}</span></li>
-
-                                                                <!--                        <li id="confirm"><span>Finish</span></li>-->
-                                                            </ul>
-
-                                                            <fieldset  style="display:none">
-                                                                <div class="form-card">
-                                                                    <div class="row">
-                                                                        <div class="col-lg-12 col-md-12col-sm-12 col-xs-12">
-                                                                            <div class="form-group">
-                                                                                <label class="fieldlabels">{{__('front.Email')}}</label>
-                                                                                <input type="email" id="vendor_email" value="{{ old('vendor_email') }}" name="vendor_email" placeholder="Email Id" required />
-                                                                            </div>
-                                                                        </div>
-
-                                                                        <div class="col-lg-12 col-md-12col-sm-12 col-xs-12" style="display:none">
-                                                                            <div class="form-group">
-                                                                                <label class="fieldlabels">Verification Code</label>
-                                                                                <div class="captcha-box">
-                                                                                    <canvas id="canvas"></canvas>
-                                                                                    <input name="code" class="form-control">
-                                                                                    <button id="valid" type="button" class="btn btn-danger testrelod"><i class="fas fa-sync"></i></button>
-                                                                                </div>
-                                                                                <span class="notee">Please enter the characters you see in the image</span>
-                                                                            </div>
-                                                                        </div>
-
-                                                                    </div>
-
-
-
-
-                                                                </div>
-
-                                                                <input name="next" class="next action-button" value="{{__('front.Next')}}" />
-                                                            </fieldset>
-
-
-
-
-                                                            <fieldset  style="display:none">
-                                                                <div class="form-card">
-                                                                    <div class="row">
-                                                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                                            <div class="form-group">
-                                                                                <label class="fieldlabels">{{__('front.Password')}}</label>
-                                                                                <input type="Password" id="vendor_password" name="vendor_password" placeholder="6-20 characters" required />
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                                            <div class="form-group">
-                                                                                <label class="fieldlabels">{{__('front.Confirm Password')}}</label>
-                                                                                <input type="Password" id="vendor_password_confirmation" name="vendor_password_confirmation" placeholder="" required />
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                                                            <div class="form-group">
-                                                                                <label class="fieldlabels">{{__('front.Country/Region')}}</label>
-                                                                                <input id='country' name='country' type="text" placeholder="{{__('front.Country/Region')}}" class="formcontrol">
-
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                                                            <div class="form-group">
-                                                                                <label class="fieldlabels">{{__('front.Full Name')}}</label>
-                                                                                <div class="row">
-                                                                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-4">
-
-                                                                                        <select id='title' name='title' class='form-control select2'>
-                                                                                            <option value='Mr'>Mr</option>
-                                                                                            <option value='Mrs'>Mrs</option>
-                                                                                            <option value='Miss'>Miss</option>
-                                                                                            <option value='Ms'>Ms</option>
-                                                                                        </select>
-
-                                                                                    </div>
-                                                                                    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-8">
-                                                                                        <input type="text" id="vendor_full_name" name="vendor_full_name" placeholder="" required />
-
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-
-                                                                        </div>
-                                                                        <div class="col-lg-12 col-md-12col-sm-12 col-xs-12">
-                                                                            <div class="form-group">
-                                                                                <label class="fieldlabels">{{__('front.Company Name')}}</label>
-                                                                                <input type="text" id='shop_name' name='shop_name' placeholder="" required />
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="col-lg-12 col-md-12col-sm-12 col-xs-12">
-                                                                            <div class="form-group">
-                                                                                <label class="fieldlabels">{{__('front.Phone Number')}}</label>
-                                                                                <div class="input-group">
-                                                                                    <div class="input-group-prepend">
-                                                                                        <span class="input-group-text" id="basic-addon1">+20</span>
-                                                                                    </div>
-                                                                                    <input type="text" id='phone' name='phone' class="form-control" placeholder=""  aria-describedby="basic-addon1">
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-
-
-
-
-                                                                </div>
-                                                                <input name="next" class="next action-button" value="{{__('front.Next')}}" />
-                                                                <input type="button" name="previous" class="previous action-button-previous" value="{{__('front.Previous')}}" />
-                                                            </fieldset>
-                                                            <fieldset  style="display:none">
-                                                                <div class="form-card">
-                                                                    <div class="row">
-
-                                                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                                                            <div class="form-group">
-                                                                                <label class="fieldlabels">{{__('front.Upload Photo')}}</label>
-                                                                                <input type="file" id='photo' name='photo' name="pic">
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-
-                                                                </div>
-                                                                <input type="submit" id='vendor_register'class=" action-button"  value="Submit" />
-                                                                <input type="button" name="previous" class="previous action-button-previous" value="{{__('front.Previous')}}" />
-                                                            </fieldset>
-
-                                                        </form>
                                                     </div>
                                                 </div>
                                             </div>
@@ -621,12 +313,12 @@
                         <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12 othercol" style="display:none">
                             <div class="rigjtcont">
                                 <div class="why-register">
-                                    <h2 class="why">{{__('front.Why register with us?')}}</h2>
+                                    <h2 class="why">{{ __('front.Why register with us?') }}</h2>
                                     <ul>
                                         <li>
                                             <i class="far fa-clock"></i>
                                             <span class="why-text">
-                                                {{__('front.Faster response to your inquiries')}}
+                                                {{ __('front.Faster response to your inquiries') }}
                                             </span>
                                         </li>
                                         <li>
@@ -635,13 +327,13 @@
 
 
                                             <span class="why-text">
-                                                {{__('front.Multiple quotes per each request')}}
+                                                {{ __('front.Multiple quotes per each request') }}
                                             </span>
                                         </li>
                                         <li>
                                             <i class="fas fa-users"></i>
                                             <span class="why-text">
-                                                {{__('front.Sourcing assistant to help you source easier')}}
+                                                {{ __('front.Sourcing assistant to help you source easier') }}
                                             </span>
                                         </li>
                                     </ul>
@@ -654,7 +346,7 @@
                 </div>
 
                 <div class="copyRight">
-                    <p>{{__('front.Copyright')}}</p>
+                    <p>{{ __('front.Copyright') }}</p>
                 </div>
             </div>
 
@@ -678,30 +370,34 @@
 
 
     <script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
-    <script src="{{asset('frontUI/assets/js/jquery.min.js')}}"></script>
-    <script src="{{asset('frontUI/assets/js/popper.min.js')}}"></script>
-    <script src="{{asset('frontUI/assets/js/bootstrap.min.js')}}"></script>
-    
-        <script src="{{asset('frontUI/assets/Libs/select2/js/select2.min.js')}}"></script>
-    <script src="{{asset('frontUI/assets/Libs/select2/form-advanced.init.js')}}"></script>
+    <script src="{{ asset('frontUI/assets/js/jquery.min.js') }}"></script>
+    <script src="{{ asset('frontUI/assets/js/popper.min.js') }}"></script>
+    <script src="{{ asset('frontUI/assets/js/bootstrap.min.js') }}"></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <script src="{{asset('frontUI/assets/js/jquery.meanmenu.js')}}"></script>
-    <!--<script src="{{asset('frontUI/assets/js/jquery.nice-select.min.js')}}"></script>-->
-    <script src="{{asset('frontUI/assets/js/slick.min.js')}}"></script>
-    <script src="{{asset('frontUI/assets/js/jquery.magnific-popup.min.js')}}"></script>
-    <script src="{{asset('frontUI/assets/js/jquery.appear.min.js')}}"></script>
-    <script src="{{asset('frontUI/assets/js/odometer.min.js')}}"></script>
-    <script src="{{asset('frontUI/assets/js/owl.carousel.min.js')}}"></script>
-    <script src="{{asset('frontUI/assets/js/parallax.min.js')}}"></script>
-    <script src="{{asset('frontUI/assets/js/wow.min.js')}}"></script>
-    <script src="{{asset('frontUI/assets/js/form-validator.min.js')}}"></script>
-    <script src="{{asset('frontUI/assets/js/contact-form-script.js')}}"></script>
-    <script src="{{asset('frontUI/assets/js/main.js')}}"></script>
+    <script src="{{ asset('frontUI/assets/Libs/select2/js/select2.min.js') }}"></script>
+    <script src="{{ asset('frontUI/assets/Libs/select2/form-advanced.init.js') }}"></script>
 
-    <script src="{{asset('frontUI/wizard.js')}}"></script>
-    <script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script>
+    <script src="{{ asset('frontUI/assets/js/jquery.meanmenu.js') }}"></script>
+    <!--<script src="{{ asset('frontUI/assets/js/jquery.nice-select.min.js') }}"></script>-->
+    <script src="{{ asset('frontUI/assets/js/slick.min.js') }}"></script>
+    <script src="{{ asset('frontUI/assets/js/jquery.magnific-popup.min.js') }}"></script>
+    <script src="{{ asset('frontUI/assets/js/jquery.appear.min.js') }}"></script>
+    <script src="{{ asset('frontUI/assets/js/odometer.min.js') }}"></script>
+    <script src="{{ asset('frontUI/assets/js/owl.carousel.min.js') }}"></script>
+    <script src="{{ asset('frontUI/assets/js/parallax.min.js') }}"></script>
+    <script src="{{ asset('frontUI/assets/js/wow.min.js') }}"></script>
+    <script src="{{ asset('frontUI/assets/js/form-validator.min.js') }}"></script>
+    <script src="{{ asset('frontUI/assets/js/contact-form-script.js') }}"></script>
+    <script src="{{ asset('frontUI/assets/js/main.js') }}"></script>
+
+    <script src="{{ asset('frontUI/wizard.js') }}"></script>
+    {{-- <script>
         $(document).ready(function() {
 
             var current_fs, next_fs, previous_fs; //fieldsets
@@ -786,15 +482,15 @@
             })
 
         });
-    </script>
+    </script> --}}
 
 
 
 
 
 
-    <script type="text/javascript" src="{{asset('frontUI/assets/js/jquery-captcha.js')}}"></script>
-    <script>
+    <script type="text/javascript" src="{{ asset('frontUI/assets/js/jquery-captcha.js') }}"></script>
+    {{-- <script>
         // step-1
         const captcha = new Captcha($('#canvas'), {
             length: 4
@@ -860,7 +556,7 @@
                 type: "POST",
                 data: {
                     "_token": "{{ csrf_token() }}",
-name:name,
+                    name:name,
                     email: email,
                     type: type,
                     gender: gender,
@@ -936,8 +632,8 @@ name:name,
                 type: "POST",
                 data:form,
                  processData: false,
-  contentType: false,
-  cache: false,
+                    contentType: false,
+                    cache: false,
   
                 success: function(response) {
                     // $(".alert-danger").css("display", "none");
@@ -972,7 +668,8 @@ $("#errors").append(str);
                 });
             // document.getElementById("contactForm").reset();
         });
-    </script>
+    </script> --}}
+
 
 
 </body>

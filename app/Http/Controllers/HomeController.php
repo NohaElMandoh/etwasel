@@ -79,12 +79,12 @@ class HomeController extends Controller
     public function vendorRegistration(Request $request)
     {
 
-    //   $validator=  $request->validate([
-    //         'name' => 'required',
-    //         'email' => 'required|email|unique:users',
-    //         'password' => 'required|min:6|confirmed',
-    //         'type' => 'required'
-    //     ]);
+      $validator=  $request->validate([
+            'name' => 'required',
+            'email' => 'required|email|unique:users',
+            'password' => 'required|min:6|confirmed',
+            'type' => 'required'
+        ]);
         
          $validator = \Validator::make($request->all(), [ 'name' => 'required',
             'email' => 'required|email|unique:users',

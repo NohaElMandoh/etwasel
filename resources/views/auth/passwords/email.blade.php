@@ -5,33 +5,32 @@
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content=" Finance ,Shopping, Retail, Food Delivery, Cost Reductions, Wholesaler, activity tracker, and profits- e-Payment- Financial Solutions ">
-    <link rel="stylesheet" href="{{asset('frontUI/assets/css/bootstrap.min.css')}}">
-    <link rel="stylesheet" href="{{asset('frontUI/assets/css/animate.min.css')}}">
-    <link rel="stylesheet" href="{{asset('frontUI/assets/css/fontawesome.min.css')}}">
-    <link rel="stylesheet" href="{{asset('frontUI/assets/css/flaticon.css')}}">
-    <link rel="stylesheet" href="{{asset('frontUI/assets/css/magnific-popup.min.css')}}">
-    <link rel="stylesheet" href="{{asset('frontUI/assets/css/nice-select.css')}}">
-    <link rel="stylesheet" href="{{asset('frontUI/assets/css/slick.min.css')}}">
-    <link rel="stylesheet" href="{{asset('frontUI/assets/css/owl.carousel.min.css')}}">
-    <link rel="stylesheet" href="{{asset('frontUI/assets/css/meanmenu.css')}}">
-    <link rel="stylesheet" href="{{asset('frontUI/assets/css/odometer.min.css')}}">
-    <link rel="stylesheet" href="{{asset('frontUI/assets/css/icofont.css')}}">
-    <link rel="stylesheet" href="{{asset('frontUI/assets/css/themify-icons.css')}}">
-    <link rel="stylesheet" href="{{asset('frontUI/assets/css/revolution-slider.css')}}">
-       <link rel="stylesheet" href="{{asset('frontUI/assets/css/style.css')}}">
- @if ( Config::get('app.locale') == 'en')
-
-   <link rel="stylesheet" href="{{asset('frontUI/assets/css/style.css')}}">
-
-   @elseif ( Config::get('app.locale') == 'ar' )
-<link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="{{asset('frontUI/assets/css/style-ar.css')}}">
-    
-   @endif
-    <link rel="stylesheet" href="{{asset('frontUI/assets/css/responsive.css')}}">
+    <meta name="description"
+        content=" Finance ,Shopping, Retail, Food Delivery, Cost Reductions, Wholesaler, activity tracker, and profits- e-Payment- Financial Solutions ">
+    <link rel="stylesheet" href="{{ asset('frontUI/assets/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontUI/assets/css/animate.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontUI/assets/css/fontawesome.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontUI/assets/css/flaticon.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontUI/assets/css/magnific-popup.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontUI/assets/css/nice-select.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontUI/assets/css/slick.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontUI/assets/css/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontUI/assets/css/meanmenu.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontUI/assets/css/odometer.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontUI/assets/css/icofont.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontUI/assets/css/themify-icons.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontUI/assets/css/revolution-slider.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontUI/assets/css/style.css') }}">
+    @if (Config::get('app.locale') == 'en')
+        <link rel="stylesheet" href="{{ asset('frontUI/assets/css/style.css') }}">
+    @elseif (Config::get('app.locale') == 'ar')
+        <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap"
+            rel="stylesheet">
+        <link rel="stylesheet" href="{{ asset('frontUI/assets/css/style-ar.css') }}">
+    @endif
+    <link rel="stylesheet" href="{{ asset('frontUI/assets/css/responsive.css') }}">
     <title>Cladex</title>
-    <link rel="icon" type="image/png" href="{{asset('frontUI/assets/img/NewImg/3anota%20alone.png')}}">
+    <link rel="icon" type="image/png" href="{{ asset('frontUI/assets/img/NewImg/3anota%20alone.png') }}">
     <script src="https://kit.fontawesome.com/ea9a619c4d.js" crossorigin="anonymous"></script>
 
 
@@ -137,36 +136,41 @@
         .sectionfixd .fixedright {
             right: 0;
         }
-        
-        .newRegister .registerForm{
+
+        .newRegister .registerForm {
             width: 100%;
-    margin: auto;
+            margin: auto;
         }
-        
-        .newRegister .Registercint{
+
+        .newRegister .Registercint {
             width: 50%;
-    margin: 5% auto;
+            margin: 5% auto;
         }
-        .donthane{
-                margin-top: 17px;
+
+        .donthane {
+            margin-top: 17px;
         }
-        .newRegister .headernav .Language .dropdown .dropdown-toggle{
+
+        .newRegister .headernav .Language .dropdown .dropdown-toggle {
             margin-top: 0;
         }
+
         .newRegister .headernav .Language {
-    float: left;
-    margin-top: 0;
-    top: 0;
-}
-.donthane .title-tip h2{
-    top:0;
-}
-.newRegister .headernav .imagelogo img {
-    display: block;
-    width: 250px;
-    margin: auto;
-}
-        
+            float: left;
+            margin-top: 0;
+            top: 0;
+        }
+
+        .donthane .title-tip h2 {
+            top: 0;
+        }
+
+        .newRegister .headernav .imagelogo img {
+            display: block;
+            width: 250px;
+            margin: auto;
+        }
+
     </style>
 </head>
 
@@ -175,7 +179,7 @@
         <div class="loader">
             <!--<div class="shadow"></div>-->
             <!--<div class="box"></div>-->
-                                  <img src="{{asset('frontUI/assets/img/loader.gif')}}">
+            <img src="{{ asset('frontUI/assets/img/loader.gif') }}">
         </div>
     </div>
 
@@ -183,88 +187,103 @@
 
     <div class="newRegister">
         <div class="container">
-            
+
             <div class="Registercint">
                 <div class="headernav">
                     <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                             <div class="imagelogo">
-                                <img src="{{asset('frontUI/assets/img/cladreximg/2021-LogoMaker-Site-Logo.png')}}">
+                                <img src="{{ asset('frontUI/assets/img/cladreximg/2021-LogoMaker-Site-Logo.png') }}">
                             </div>
                         </div>
+
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                             <div class="Language">
                                 <div class="dropdown show">
-                                     @if ( Config::get('app.locale') == 'en')
-                                  <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    {{__('front.English')}} <i class="fas fa-chevron-down"></i>
-                                  </a>
- @elseif ( Config::get('app.locale') == 'ar' )
- <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    {{__('front.Arabic')}} <i class="fas fa-chevron-down"></i>
-                                  </a>
-                                @endif  
-                                  
- 
-                                  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                    <a class="dropdown-item" href="{{ LaravelLocalization::getLocalizedURL('ar', null, [], true) }}">{{__('front.Arabic')}}</a>
-                                    <!--<a class="dropdown-item" href="#">Português</a>-->
-                                    <a class="dropdown-item" href="{{ LaravelLocalization::getLocalizedURL('en', null, [], true) }}">{{__('front.English')}}</a>
-                                  </div>
+                                    @if (Config::get('app.locale') == 'en')
+                                        <a class="btn btn-secondary dropdown-toggle" href="#" role="button"
+                                            id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+                                            aria-expanded="false">
+                                            {{ __('front.English') }} <i class="fas fa-chevron-down"></i>
+                                        </a>
+                                    @elseif (Config::get('app.locale') == 'ar')
+                                        <a class="btn btn-secondary dropdown-toggle" href="#" role="button"
+                                            id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+                                            aria-expanded="false">
+                                            {{ __('front.Arabic') }} <i class="fas fa-chevron-down"></i>
+                                        </a>
+                                    @endif
+
+
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                        <a class="dropdown-item"
+                                            href="{{ LaravelLocalization::getLocalizedURL('ar', null, [], true) }}">{{ __('front.Arabic') }}</a>
+                                        <!--<a class="dropdown-item" href="#">Português</a>-->
+                                        <a class="dropdown-item"
+                                            href="{{ LaravelLocalization::getLocalizedURL('en', null, [], true) }}">{{ __('front.English') }}</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        
-                      
+
+
                     </div>
                 </div>
                 <div class="registerForm">
                     <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
                             <div class="leftCOnt p-4">
-                                
+
                                 <div class="row">
-                                <form method="post" action="{{ route('password.email') }}" enctype="multipart/form-data">
-                                @csrf
-                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                        <div class="form-group">
-                                            <label class="fieldlabels">{{__('front.Email')}}</label> 
-                                            <input name="email" id="email" class="LoginInput  @error('email') is-invalid @enderror" type="email" placeholder="" required />
-                                            
-                                            @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
+                                    <form method="post" action="{{ route('password.email') }}"
+                                        enctype="multipart/form-data">
+                                        @csrf
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                            <div class="form-group">
+                                                <label class="fieldlabels">{{ __('front.Email') }}</label>
+                                                <input name="email" id="email"
+                                                    class="LoginInput  @error('email') is-invalid @enderror"
+                                                    type="email" placeholder="" required />
+                                                @if (session('status'))
+                                                    <div class="alert alert-success" role="alert">
+                                                        {{ session('status') }}
+                                                    </div>
+                                                @endif
+                                                @error('email')
+                                                    <span class="invalid-feedback" role="alert">
+                                                        <strong>{{ $message }}</strong>
+                                                    </span>
+                                                @enderror
+                                            </div>
                                         </div>
-                                    </div>
-                                
-                                    <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Send Password Reset Link') }}
-                                </button>
-                            </div>
-    </form>
- 
-                               
+
+                                        <div class="col-md-6 offset-md-4">
+                                            <button type="submit" class="btn btn-primary">
+                                                {{ __('Send Password Reset Link') }}
+                                            </button>
+                                        </div>
+                                    </form>
+
+
                                 </div>
 
-                                
-                                
-                       
+
+
+
                             </div>
                         </div>
                         <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12 othercol" style="display:none">
-                            <div class="rigjtcont" style="background-image: url('{{asset("frontUI/assets/img/cladreximg/im2.jpg")}}'); background-size: cover">
-                                
+                            <div class="rigjtcont"
+                                style="background-image: url('{{ asset('frontUI/assets/img/cladreximg/im2.jpg') }}'); background-size: cover">
+
                             </div>
                         </div>
                     </div>
-                    
+
                 </div>
-                
+
                 <div class="copyRight">
-                    <p>{{__('front.Copyright')}}</p>
+                    <p>{{ __('front.Copyright') }}</p>
                 </div>
             </div>
 
@@ -278,111 +297,123 @@
 
 
     <script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
-    <script src="{{asset('frontUI/assets/js/jquery.min.js')}}"></script>
-    <script src="{{asset('frontUI/assets/js/popper.min.js')}}"></script>
-    <script src="{{asset('frontUI/assets/js/bootstrap.min.js')}}"></script>
+    <script src="{{ asset('frontUI/assets/js/jquery.min.js') }}"></script>
+    <script src="{{ asset('frontUI/assets/js/popper.min.js') }}"></script>
+    <script src="{{ asset('frontUI/assets/js/bootstrap.min.js') }}"></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <script src="{{asset('frontUI/assets/js/jquery.meanmenu.js')}}"></script>
-    <script src="{{asset('frontUI/assets/js/jquery.nice-select.min.js')}}"></script>
-    <script src="{{asset('frontUI/assets/js/slick.min.js')}}"></script>
-    <script src="{{asset('frontUI/assets/js/jquery.magnific-popup.min.js')}}"></script>
-    <script src="{{asset('frontUI/assets/js/jquery.appear.min.js')}}"></script>
-    <script src="{{asset('frontUI/assets/js/odometer.min.js')}}"></script>
-    <script src="{{asset('frontUI/assets/js/owl.carousel.min.js')}}"></script>
-    <script src="{{asset('frontUI/assets/js/parallax.min.js')}}"></script>
-    <script src="{{asset('frontUI/assets/js/wow.min.js')}}"></script>
-    <script src="{{asset('frontUI/assets/js/form-validator.min.js')}}"></script>
-    <script src="{{asset('frontUI/assets/js/contact-form-script.js')}}"></script>
-    <script src="{{asset('frontUI/assets/js/main.js')}}"></script>
-
-  
-    <script>
-    $(document).ready(function(){
-
-var current_fs, next_fs, previous_fs; //fieldsets
-var opacity;
-var current = 1;
-var steps = $("fieldset").length;
-
-setProgressBar(current);
-
-$(".next").click(function(){
-
-current_fs = $(this).parent();
-next_fs = $(this).parent().next();
-
-//Add Class Active
-$("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
-
-//show the next fieldset
-next_fs.show();
-//hide the current fieldset with style
-current_fs.animate({opacity: 0}, {
-step: function(now) {
-// for making fielset appear animation
-opacity = 1 - now;
-
-current_fs.css({
-'display': 'none',
-'position': 'relative'
-});
-next_fs.css({'opacity': opacity});
-},
-duration: 500
-});
-setProgressBar(++current);
-});
-
-$(".previous").click(function(){
-
-current_fs = $(this).parent();
-previous_fs = $(this).parent().prev();
-
-//Remove class active
-$("#progressbar li").eq($("fieldset").index(current_fs)).removeClass("active");
-
-//show the previous fieldset
-previous_fs.show();
-
-//hide the current fieldset with style
-current_fs.animate({opacity: 0}, {
-step: function(now) {
-// for making fielset appear animation
-opacity = 1 - now;
-
-current_fs.css({
-'display': 'none',
-'position': 'relative'
-});
-previous_fs.css({'opacity': opacity});
-},
-duration: 500
-});
-setProgressBar(--current);
-});
-
-function setProgressBar(curStep){
-var percent = parseFloat(100 / steps) * curStep;
-percent = percent.toFixed();
-$(".progress-bar")
-.css("width",percent+"%")
-}
-
-$(".submit").click(function(){
-return false;
-})
-
-});
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
     </script>
-    
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script>
+    <script src="{{ asset('frontUI/assets/js/jquery.meanmenu.js') }}"></script>
+    <script src="{{ asset('frontUI/assets/js/jquery.nice-select.min.js') }}"></script>
+    <script src="{{ asset('frontUI/assets/js/slick.min.js') }}"></script>
+    <script src="{{ asset('frontUI/assets/js/jquery.magnific-popup.min.js') }}"></script>
+    <script src="{{ asset('frontUI/assets/js/jquery.appear.min.js') }}"></script>
+    <script src="{{ asset('frontUI/assets/js/odometer.min.js') }}"></script>
+    <script src="{{ asset('frontUI/assets/js/owl.carousel.min.js') }}"></script>
+    <script src="{{ asset('frontUI/assets/js/parallax.min.js') }}"></script>
+    <script src="{{ asset('frontUI/assets/js/wow.min.js') }}"></script>
+    <script src="{{ asset('frontUI/assets/js/form-validator.min.js') }}"></script>
+    <script src="{{ asset('frontUI/assets/js/contact-form-script.js') }}"></script>
+    <script src="{{ asset('frontUI/assets/js/main.js') }}"></script>
 
-    
-    
-    
 
-        <script type="text/javascript" src="{{asset('frontUI/assets/js/jquery-captcha.js')}}"></script>
+    <script>
+        $(document).ready(function() {
+
+            var current_fs, next_fs, previous_fs; //fieldsets
+            var opacity;
+            var current = 1;
+            var steps = $("fieldset").length;
+
+            setProgressBar(current);
+
+            $(".next").click(function() {
+
+                current_fs = $(this).parent();
+                next_fs = $(this).parent().next();
+
+                //Add Class Active
+                $("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
+
+                //show the next fieldset
+                next_fs.show();
+                //hide the current fieldset with style
+                current_fs.animate({
+                    opacity: 0
+                }, {
+                    step: function(now) {
+                        // for making fielset appear animation
+                        opacity = 1 - now;
+
+                        current_fs.css({
+                            'display': 'none',
+                            'position': 'relative'
+                        });
+                        next_fs.css({
+                            'opacity': opacity
+                        });
+                    },
+                    duration: 500
+                });
+                setProgressBar(++current);
+            });
+
+            $(".previous").click(function() {
+
+                current_fs = $(this).parent();
+                previous_fs = $(this).parent().prev();
+
+                //Remove class active
+                $("#progressbar li").eq($("fieldset").index(current_fs)).removeClass("active");
+
+                //show the previous fieldset
+                previous_fs.show();
+
+                //hide the current fieldset with style
+                current_fs.animate({
+                    opacity: 0
+                }, {
+                    step: function(now) {
+                        // for making fielset appear animation
+                        opacity = 1 - now;
+
+                        current_fs.css({
+                            'display': 'none',
+                            'position': 'relative'
+                        });
+                        previous_fs.css({
+                            'opacity': opacity
+                        });
+                    },
+                    duration: 500
+                });
+                setProgressBar(--current);
+            });
+
+            function setProgressBar(curStep) {
+                var percent = parseFloat(100 / steps) * curStep;
+                percent = percent.toFixed();
+                $(".progress-bar")
+                    .css("width", percent + "%")
+            }
+
+            $(".submit").click(function() {
+                return false;
+            })
+
+        });
+    </script>
+
+
+
+
+
+
+    <script type="text/javascript" src="{{ asset('frontUI/assets/js/jquery-captcha.js') }}"></script>
     <script>
         // step-1
         const captcha = new Captcha($('#canvas'), {
@@ -426,12 +457,13 @@ return false;
             var ga = document.createElement('script');
             ga.type = 'text/javascript';
             ga.async = true;
-            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') +
+                '.google-analytics.com/ga.js';
             var s = document.getElementsByTagName('script')[0];
             s.parentNode.insertBefore(ga, s);
         })();
     </script>
-    
+
 
 </body>
 
