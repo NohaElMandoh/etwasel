@@ -524,7 +524,7 @@ class HomeController extends Controller
 
 
         $request->validate([
-            'pmc_id' => 'required',
+            'pmc_id' => 'required|numeric',
             'product_name_en' => 'required',
             'product_name_ar' => 'required',
             'min_order' => 'required',
@@ -535,6 +535,7 @@ class HomeController extends Controller
             'product_name_en.required' => __('messages.product_name_en'),
             'product_name_ar.required' => __('messages.product_name_ar'),
             'pmc_id.required' => __('messages.pmc_id'),
+            'pmc_id.numeric' => __('messages.pmc_id'),
             'min_order.required' => __('messages.min_order'),
             'min_price.required' => __('messages.min_price'),
             'max_price.required' => __('messages.max_price'),
