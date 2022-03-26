@@ -196,7 +196,7 @@
                                     <span class="cubicItem smallcub"></span>
                                 </div>
                             
-                            {!! html_entity_decode($user->details->about_campany) !!}
+                            {!! html_entity_decode($user->details->about_campany ?? '') !!}
                          
                             </div>
                         </div>
