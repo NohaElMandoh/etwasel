@@ -88,7 +88,7 @@ $user=Auth::user();
                                                                     <td>
                                                                         <!--<p>{{$content->message}}</p>-->
                                                                         <!-- <button type="button" class=" modalShowMessageBTN" data-toggle="modal" data-target="#modalShowMessage"> -->
-                                                                        <button type="button" class=" modalShowMessageBTN" id='view_message' data-id='{{$content->id}}' data-name='{{$content->message}}'>
+                                                                        <button type="button" class=" modalShowMessageBTN" id='view_message' data-id='{{$content->id}}' data-name='{{$content->message}}' data-email='{{$content->email}}'>
 
                                                                             View Message
                                                                         </button>
@@ -233,7 +233,9 @@ event.preventDefault();
 
 let id = $(this).attr("data-id");
 let message = $(this).attr("data-name");
+let email = $(this).attr("data-email");
 
+$('#exampleModalLabel').html(email);
 $('#message_details').html(message);
 $("#modalShowMessage").modal('show');
 
