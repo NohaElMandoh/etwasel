@@ -190,7 +190,7 @@ if ($validator->fails()) {
                 Storage::disk('local')->put('users-details' . '/' . $fileName, $img, 'public');
 
 
-                $userDetails->update(['logo' => 'users-details\\' . $fileName]);
+                $user_details->update(['logo' => 'users-details\\' . $fileName]);
         }
     }
 
