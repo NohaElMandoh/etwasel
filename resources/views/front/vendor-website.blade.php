@@ -361,7 +361,7 @@
                                                                                         </div>
 
 
-                                                                                        <div class="finshlinks">
+                                                                                        <div class="finshlinks" style="display: none;">
                                                                                             <ul>
                                                                                                 <li>
                                                                                                     <p class="text-muted mt-3">

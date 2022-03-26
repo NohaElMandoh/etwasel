@@ -218,12 +218,12 @@
                                                             <div class="websiteVendor">
                                                                 <div class="productOwl PopuProd">
                                                                     <div class="title">
-                                                                        <h2> <span>{{$pmc->cat}}</span></h2>
+                                                                        <h2> <span>{{$pmc_pro->cat}}</span></h2>
                                                                     </div>
                                                                     <div class="Products PopuProdtemsss">
                                                                         <div class="owl-carousel owl-theme prprprOwl">
-                                                                            @if($pmc->products)
-                                                                            @foreach($pmc->products as $product)
+                                                                            @if($pmc_pro->products)
+                                                                            @foreach($pmc_pro->products as $product)
                                                                             <div class="item">
                                                                                 <div class="PopuProdItem">
                                                                                     <div class="imges">
@@ -284,7 +284,7 @@
                                                                                         </div>
 
 
-                                                                                        <div class="finshlinks">
+                                                                                        <div class="finshlinks" style="display: none;">
                                                                                             <ul>
                                                                                                 <li>
                                                                                                     <p class="text-muted mt-3">

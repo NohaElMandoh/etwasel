@@ -878,15 +878,15 @@ if ($validator->fails()) {
     }
     public function product_pmc($pmc_id)
     {
-        $pmc=Pmc::find($pmc_id);
-        if ($pmc ) {
-            $user = User::find($pmc->user_id);
+        $pmc_pro=Pmc::find($pmc_id);
+        if ($pmc_pro ) {
+            $user = User::find($pmc_pro->user_id);
         }
         // return  $pmc;
         $fields = IndustriesField::all();
         $regions = Region::all();
         //   $certification=Certification::all();
-        return view('front.product_pmc', compact('user', 'fields', 'regions','pmc'));
+        return view('front.product_pmc', compact('user', 'fields', 'regions','pmc_pro'));
     }
     
     public function Vendor_ContactUs($vendor_id)
