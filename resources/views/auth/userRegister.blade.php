@@ -5,15 +5,16 @@
 
     <div class="form-card">
         <div class="row">
-            <div class="col-lg- col-md-12col-sm-12 col-xs-12">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                 <div class="form-group">
-                    <label class="fieldlabels">{{ __('front.Full Name') }}</label>
+                    <label class="fieldlabels">{{ __('front.Write Your first Name') }}</label>
                     <input type="text" name="f_name" id='full_name'
                         placeholder="{{ __('front.Write Your first Name') }}" />
                 </div>
             </div>
-            <div class="col-lg- col-md-12col-sm-12 col-xs-12">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                 <div class="form-group"> 
+                <label class="fieldlabels">{{ __('front.Write Your last Name') }}</label>
                     <input type="text" name="l_name" id='full_name'
                         placeholder="{{ __('front.Write Your last Name') }}" />
                 </div>
