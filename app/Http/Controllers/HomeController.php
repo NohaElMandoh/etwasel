@@ -879,6 +879,7 @@ if ($validator->fails()) {
     public function product_pmc($pmc_id)
     {
         $pmc_pro=Pmc::find($pmc_id);
+        $user=null;
         if ($pmc_pro ) {
             $user = User::find($pmc_pro->user_id);
         }
