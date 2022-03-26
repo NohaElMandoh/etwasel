@@ -221,7 +221,7 @@
                                                                     @if(!empty($user->pmcs))
                                                                     @foreach($user->pmcs as $pmc)
                                                                     <li class="accordion-item">
-                                                                        <a class="accordion-title " href="{{route('product_pmc', $pmc->id)}}">
+                                                                        <a class="accordion-title " href="{{route('product_pmc', ['pmc_id'=>$pmc->id,'user_id'=>$user->id])}}">
 
                                                                             <span class="namecat"> {{$pmc->cat}}
                                                                             </span>

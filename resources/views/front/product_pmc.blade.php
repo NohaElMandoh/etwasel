@@ -90,7 +90,7 @@
                                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                             @if(!empty($user->pmcs))
                                             @foreach($user->pmcs as $pmc)
-                                            <a class="dropdown-item" href="{{route('product_pmc', $pmc->id)}}">{{ $pmc->cat}}</a>
+                                            <a class="dropdown-item" href="{{route('product_pmc', ['pmc_id'=>$pmc->id,'user_id'=>$user->id])}}">{{ $pmc->cat}}</a>
                                             <!--<a class="dropdown-item" href="#">Die cutting machine</a>-->
                                             <!--<a class="dropdown-item" href="#">Slitting machine</a>-->
                                             @endforeach
