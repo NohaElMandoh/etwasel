@@ -225,7 +225,7 @@ $user=Auth::user();
                                                         <button type="button" data-repeater-create class="addMore" title="Add More">
                                                             <i class="fas fa-plus iconpluss"></i>
                                                         </button>
-                                                        @if(!empty($user->details))
+                                                        @if(count($user->details)>0)
 
                                                         @if(count($user->pmcs)>0)
 

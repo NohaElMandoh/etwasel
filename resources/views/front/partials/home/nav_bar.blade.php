@@ -305,7 +305,7 @@
                          <img class="rounded-circle header-profile-user" src="{{Voyager::image('users/profile.png')}}"
                         alt="Header Avatar">
                         @endif
-                    <span class="d-none d-xl-inline-block ms-1" key="t-henry">{{Auth::user()->full_name}}</span>
+                    <span class="d-none d-xl-inline-block ms-1" key="t-henry">{{Auth::user()->full_name}}&nbsp; {{Auth::user()->f_name}}&nbsp; {{Auth::user()->s_name}}</span>
                     <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
                 </button>
                 <div class="dropdown-menu dropdown-menu-end">
