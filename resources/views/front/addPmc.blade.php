@@ -235,7 +235,7 @@ $user=Auth::user();
                                                             <span>{{__('front.Product Main Category EN')}} </span>
                                                             <input type="text" class="inputvendor" name="cat_name" value='{{$pmc->cat_name}}' id='cat_name'  onkeypress="return /[a-z]/i.test(event.key)"required placeholder="">
                                                             <span>{{__('front.Product Main Category AR')}} </span>
-                                                            <input type="text" class="inputvendor mt-1" name="cat_name_ar" value='{{$pmc->cat_name_ar}}' id='cat_name_ar' onkeypress="return /[\p{IsArabic}-[\D]]/i.test(event.key)"required placeholder="">
+                                                            <input type="text" class="inputvendor mt-1" name="cat_name_ar" value='{{$pmc->cat_name_ar}}' id='cat_name_ar' onkeypress="return /[\u0600-\u06FF]/i.test(event.key)"required placeholder="">
                                                             <input type="hidden" id='cat_id' name='cat_id' value='{{$pmc->id}}'>
                                                             <!--<input data-repeater-delete type="button" class="btn btn-danger" value="{{ __('Delete') }}" />-->
                                                             <button data-repeater-delete type="button" class="btn btn-danger deleterepeat" title="Add Mor PMC">
@@ -252,7 +252,7 @@ $user=Auth::user();
                                                             <span>{{__('front.Product Main Category EN')}} </span>
                                                             <input type="text" class="inputvendor" name="cat_name" id='cat_name' value='{{$pmc->cat_name ?? ''}}'  onkeypress="return /[a-z]/i.test(event.key)"required placeholder="">
                                                             <span>{{__('front.Product Main Category AR')}} </span>
-                                                            <input type="text" class="inputvendor mt-1" name="cat_name_ar" value='{{$pmc->cat_name_ar ?? ''}}' onkeypress="return /[\p{IsArabic}-[\D]]/i.test(event.key)"required id='cat_name_ar' placeholder="">
+                                                            <input type="text" class="inputvendor mt-1" name="cat_name_ar" value='{{$pmc->cat_name_ar ?? ''}}' onkeypress="return /[\u0600-\u06FF]/i.test(event.key)"required id='cat_name_ar' placeholder="">
                                                             <input type="hidden" id='cat_id' name='cat_id'>
                                                             <!--<input data-repeater-delete type="button" class="btn btn-danger" value="{{ __('Delete') }}" />-->
                                                             <button data-repeater-delete type="button" class="btn btn-danger deleterepeat" title="Add Mor PMC">
@@ -265,7 +265,7 @@ $user=Auth::user();
                                                             <span>{{__('front.Product Main Category EN')}} </span>
                                                             <input type="text" class="inputvendor" name="cat_name" id='cat_name' value='{{$pmc->cat_name ?? ''}}' onkeypress="return /[a-z]/i.test(event.key)" required placeholder="">
                                                             <span>{{__('front.Product Main Category AR')}} </span>
-                                                            <input type="text" class="inputvendor mt-1" name="cat_name_ar" value='{{$pmc->cat_name_ar ?? ''}}'  onkeypress="return /[\p{IsArabic}-[\D]]/i.test(event.key)"required id='cat_name_ar' placeholder="">
+                                                            <input type="text" class="inputvendor mt-1" name="cat_name_ar" value='{{$pmc->cat_name_ar ?? ''}}'  onkeypress="return /[\u0600-\u06FF]/i.test(event.key)"required id='cat_name_ar' placeholder="">
                                                             <input type="hidden" id='cat_id' name='cat_id'>
                                                             <!--<input data-repeater-delete type="button" class="btn btn-danger" value="{{ __('Delete') }}" />-->
                                                             <button data-repeater-delete type="button" class="btn btn-danger deleterepeat" title="Add Mor PMC">
