@@ -194,6 +194,18 @@
                                                                             </div>
                                                                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                                                                 <div class="formitem">
+                                                                                    <span>{{__('front.Name')}}</span>
+                                                                                    <input type="text" id='name' name='name' class="forminpsd" placeholder=" {{__('front.Enter your Name')}}">
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                                                <div class="formitem">
+                                                                                    <span>{{__('front.Phone Number')}}</span>
+                                                                                    <input type="text" id='phone' name='phone' class="forminpsd" placeholder=" {{__('front.Enter your Phone')}}">
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                                                <div class="formitem">
                                                                                     <span>{{__('front.Message')}}</span>
                                                                                     <textarea id='message' name='message' placeholder="   {{__('front.Enter your message')}}" class="textaremess"></textarea>
                                                                                 </div>
@@ -368,7 +380,40 @@
                                                                                 </div>
                                                                             </div>
                                                                         </div>
+                                                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                                            <div class="Messageinput">
+                                                                                <div class="row">
+                                                                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                                                                        <div class="titiw">
+                                                                                            <p> {{__('front.Name')}}</p>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="col-lg-9 col-md-9 col-xs-9 col-xs-12">
+                                                                                        <div class="inputmess">
+                                                                                            <input type="text" id='name22' name='name22' placeholder=" {{__('front.Enter your Name')}}" class="mailinpu">
 
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                                            <div class="Messageinput">
+                                                                                <div class="row">
+                                                                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                                                                        <div class="titiw">
+                                                                                            <p> {{__('front.Phone Number')}}</p>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="col-lg-9 col-md-9 col-xs-9 col-xs-12">
+                                                                                        <div class="inputmess">
+                                                                                            <input type="text" id='phone22' name='phone22' placeholder=" {{__('front.Enter Your Phone')}}" class="mailinpu">
+
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
                                                                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                                                             <div class="Messageinput">
                                                                                 <div class="row">
@@ -464,6 +509,8 @@
             let user_id = $('#user_id').val();
             let email = $('#email').val();
             let message = $('#message').val();
+            let phone = $('#phone').val();
+            let name = $('#name').val();
 
             $.ajax({
                 url: "{{route('contactUs')}}",
@@ -473,6 +520,8 @@
                     user_id: user_id,
                     email: email,
                     message: message,
+                    phone:phone,
+                    name:name
                 },
                 success: function(response) {
                     $(".alert-danger").css("display", "none");
@@ -509,6 +558,8 @@
                     user_id: user_id,
                     email: $('#email22').val(),
                     message: $('#message22').val(),
+                    name: $('#name22').val(),
+                    phone: $('#phone22').val(),
                 },
                 success: function(response) {
                     $(".alert-danger").css("display", "none");

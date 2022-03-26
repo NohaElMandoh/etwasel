@@ -12208,17 +12208,18 @@ background: #f5f7fa;
     
 }
 .addcontact .btn_addcont{
-display: block;
-    width: 100%;
+    display: block;
+    width: 80%;
     height: 40px;
     padding: 0 15px;
     border: 1px solid #e64545;
     background: #e64545;
     color: #fff;
     text-transform: capitalize;
-    font-size: 16px;
-    line-height: 40px;
-    text-align: center;
+    font-size: 14px;
+    margin: auto 5px;
+    transition: all .4s ease-in-out;
+    margin: auto;
 }
 
 
@@ -12718,6 +12719,9 @@ display: inline-block;
 
 .vrticalproduct .productitem .produdetails .detaisl .fobMin{
     margin-top: 10px;
+    padding: 15px;
+    background: #f5f7fa;
+    margin-bottom: 20px;
 }
 .vrticalproduct .productitem .produdetails .detaisl .fobMin ul{
     padding: 0;
@@ -12731,6 +12735,10 @@ display: inline-block;
     font-weight: 300;
     color: #7b7b7b;
     margin: 0;
+    font-family: 'Roboto';
+    font-size: 20px;
+    color: #6c6c6c;
+    font-weight: 300;
 }
 
 .vrticalproduct .productitem .produdetails .detaisl .fobMin ul li p .red{
@@ -12742,7 +12750,7 @@ display: inline-block;
 }
 .vrticalproduct .productitem .produdetails .detaisl .fobMin ul li p .black{
 
-        font-weight: 500;
+        font-weight: 400;
     color: #000;
 }
 
@@ -12818,8 +12826,8 @@ border-bottom: 2px dashed #c1c1c1;
 }
 .vrticalproduct .productitem .produdetails .detaisl .addcart .btn_addcont{
     display: block;
-    width: max-content;
-    height: 30px;
+    width: 100%;
+    height: 40px;
     padding: 0 15px;
     border: 1px solid #e64545;
     background: #e64545;
@@ -14307,7 +14315,7 @@ border: 5px solid #ffffff;
     margin: 5% auto;
 }
 .newRegister .headernav{
-    
+        margin-bottom: 30px;
 }
 .newRegister .headernav .imagelogo{
     
@@ -14354,9 +14362,12 @@ background: #f0f1f2;
     font-weight: 300;
 }
 .newRegister .registerForm{
-    background: #fff;
-    box-shadow: 0px 1px 3px rgb(0 0 0 / 10%);
+background: #fff;
+    box-shadow: 0px 0px 15px rgb(70 70 70 / 27%);
     margin-bottom: 30px;
+    border-radius: 10px;
+    border: 1px solid #eee;
+
 }
 
 .registerForm .othercol{
@@ -16684,7 +16695,7 @@ margin: 0px 20px;
 
 .newRegister .Registercint{
         width: 70%;
-    margin: 5% auto;
+    margin: 3% auto;
 }
 .registerForm{
     
@@ -17067,7 +17078,6 @@ padding: 5px 15px;
     font-weight: 400;
 }
 }
-
 
 
 
@@ -17828,5 +17838,30 @@ height: 150px !important;
 }
 
 
+/* .alert{*/
+/*background-color: #fff !important;*/
+/*    border: 2px solid #fff !important;*/
+/*        padding: 0;*/
+/*}*/
 
+.alert-danger {
+    background-color: rgba(244, 106, 106, .8);
+    border: 2px solid #f46a6a;
+    color: #fff;
+}
 
+ .alert-danger p {
+padding: 10px !IMPORTANT;
+    color: #ffffff;
+    font-weight: unset;
+    background-color: rgba(244, 106, 106, .8) !important;
+    border: 2px solid #f46a6a !important;
+    font-size: 15px;
+    border-radius: 5px;
+}
+
+.alert-success{
+    border: 2px solid #34c38f !important;
+    background-color: rgba(52, 195, 143, .8) !important;
+    color: #fff;
+}

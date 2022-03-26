@@ -75,9 +75,7 @@ $user=Auth::user();
                                                             <tbody>
                                                                 @if(Auth::user()->contactsUs )
                                                                 @foreach(Auth::user()->contactsUs as $k=>$content)
-
-
-                                          5                      <tr>
+                                                                <tr>
                                                                     <td>
                                                                         <p>{{$k+1}}</p>
                                                                     </td>
@@ -188,7 +186,7 @@ $user=Auth::user();
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">admin@steel.com</h5>
-                <button type="button" id='close_btn'class="close" data-dismiss="modal" aria-label="Close">
+                <button type="button" id='close_btn' class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
@@ -227,19 +225,19 @@ $user=Auth::user();
     $(document).on('click', '#close_btn', function(e) {
         $('#modalShowMessage').modal('hide');
     })
-    
-$(document).on('click', '#view_message', function(e) {
-event.preventDefault();
 
-let id = $(this).attr("data-id");
-let message = $(this).attr("data-name");
-let email = $(this).attr("data-email");
+    $(document).on('click', '#view_message', function(e) {
+        event.preventDefault();
 
-$('#exampleModalLabel').html(email);
-$('#message_details').html(message);
-$("#modalShowMessage").modal('show');
+        let id = $(this).attr("data-id");
+        let message = $(this).attr("data-name");
+        let email = $(this).attr("data-email");
+
+        $('#exampleModalLabel').html(email);
+        $('#message_details').html(message);
+        $("#modalShowMessage").modal('show');
 
 
-});
+    });
 </script>
 @endsection
