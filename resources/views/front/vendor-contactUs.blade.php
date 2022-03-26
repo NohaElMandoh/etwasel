@@ -89,7 +89,7 @@
                                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                             @if(!empty($user->pmcs))
                                             @foreach($user->pmcs as $pmc)
-                                            <a class="dropdown-item" href="#">{{ $pmc->cat}}</a>
+                                            <a class="dropdown-item" href="{{route('product_pmc', ['pmc_id'=>$pmc->id,'user_id'=>$user->id])}}">{{ $pmc->cat}}</a>
                                             <!--<a class="dropdown-item" href="#">Die cutting machine</a>-->
                                             <!--<a class="dropdown-item" href="#">Slitting machine</a>-->
                                             @endforeach
@@ -105,7 +105,7 @@
                                         <a class="nav-link" href="#">{{__('front.Solutions')}}</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link active" href="#">{{__('front.Contact Us')}}</a>
+                                        <a class="nav-link active" href="{{route('Vendor_ContactUs',$user->id)}}">{{__('front.Contact Us')}}</a>
                                     </li>
 
                                 </ul>
@@ -146,7 +146,7 @@
                                                                     @if(!empty($user->pmcs))
                                                                     @foreach($user->pmcs as $pmc)
                                                                     <li class="accordion-item">
-                                                                        <a class="accordion-title " href="javascript:void(0)">
+                                                                        <a class="accordion-title " href="{{route('product_pmc', ['pmc_id'=>$pmc->id,'user_id'=>$user->id])}}">
 
                                                                             <span class="namecat"> {{$pmc->cat}}
                                                                             </span>
@@ -177,7 +177,7 @@
                                                                     </div>
                                                                 </div>
                                                                 <div class="formsss">
-                                                                    <form method="post" class='contact_form'>
+                                                                    <form method="post" id='contact_form'>
                                                                         @csrf
                                                                         <input type="hidden" id='user_id' name='user_id' value='{{$user->id ?? ''}}'>
                                                                         <div class="alert alert-success alert-success-message" style="display:none">
@@ -195,6 +195,18 @@
                                                                             </div>
                                                                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                                                                 <div class="formitem">
+                                                                                    <span>{{__('front.Name')}}</span>
+                                                                                    <input type="text" id='name' name='name' class="forminpsd" placeholder=" {{__('front.Enter your Name')}}">
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                                                <div class="formitem">
+                                                                                    <span>{{__('front.Phone Number')}}</span>
+                                                                                    <input type="text" id='phone' name='phone' class="forminpsd" placeholder=" {{__('front.Enter your Phone')}}">
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                                                <div class="formitem">
                                                                                     <span>{{__('front.Message')}}</span>
                                                                                     <textarea id='message' name='message' placeholder="   {{__('front.Enter your message')}}" class="textaremess"></textarea>
                                                                                 </div>
@@ -202,7 +214,7 @@
                                                                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                                                                 <div class="formitem">
 
-                                                                                    <button class="SenMess contact_form" type='button'>{{__('front.Send')}} </button>
+                                                                                    <button class="SenMess send_msg2" type='button'>{{__('front.Send')}} </button>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
@@ -307,7 +319,7 @@
                                                                 <h2>{{__('front.Send your message to this supplier')}}</h2>
                                                             </div>
                                                             <div class="Messagee">
-                                                                <form method="post" class='contact_form'>
+                                                                <form method="post" id='contact_form2'>
                                                                     @csrf
 
                                                                     <div class="alert alert-success alert-success-message2" style="display:none">
@@ -327,7 +339,7 @@
                                                                                     </div>
                                                                                     <div class="col-lg-9 col-md-9 col-xs-9 col-xs-12">
                                                                                         <div class="inputmess">
-                                                                                            <input type="email" id='email2' name='email2' placeholder=" {{__('front.Enter Your Email')}}" class="mailinpu">
+                                                                                            <input type="email" id='email22' name='email22' placeholder=" {{__('front.Enter Your Email')}}" class="mailinpu">
 
                                                                                         </div>
                                                                                     </div>
@@ -352,7 +364,40 @@
                                                                                 </div>
                                                                             </div>
                                                                         </div>
+                                                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                                            <div class="Messageinput">
+                                                                                <div class="row">
+                                                                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                                                                        <div class="titiw">
+                                                                                            <p> {{__('front.Name')}}</p>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="col-lg-9 col-md-9 col-xs-9 col-xs-12">
+                                                                                        <div class="inputmess">
+                                                                                            <input type="text" id='name22' name='name22' placeholder=" {{__('front.Enter your Name')}}" class="mailinpu">
 
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                                            <div class="Messageinput">
+                                                                                <div class="row">
+                                                                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                                                                        <div class="titiw">
+                                                                                            <p> {{__('front.Phone Number')}}</p>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="col-lg-9 col-md-9 col-xs-9 col-xs-12">
+                                                                                        <div class="inputmess">
+                                                                                            <input type="text" id='phone22' name='phone22' placeholder=" {{__('front.Enter Your Phone')}}" class="mailinpu">
+
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
                                                                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                                                             <div class="Messageinput">
                                                                                 <div class="row">
@@ -363,7 +408,7 @@
                                                                                     </div>
                                                                                     <div class="col-lg-9 col-md-9 col-xs-9 col-xs-12">
                                                                                         <div class="inputmess">
-                                                                                            <textarea id='message2' name='message2' placeholder="{{__('front.message2')}}" class="textaremess"></textarea>
+                                                                                            <textarea id='message22' name='message22' placeholder="{{__('front.message2')}}" class="textaremess"></textarea>
 
                                                                                         </div>
                                                                                     </div>
@@ -379,7 +424,7 @@
                                                                                     </div>
                                                                                     <div class="col-lg-9 col-md-9 col-xs-9 col-xs-12">
                                                                                         <div class="inputmess">
-                                                                                            <button class="SenMess send_msg" type="button">{{__('front.Send')}}</button>
+                                                                                            <button class="SenMess send_msg22" type="button">{{__('front.Send')}}</button>
 
                                                                                         </div>
                                                                                     </div>
@@ -442,13 +487,15 @@
 
 <script type="text/javascript">
     $(document).ready(function() {
-        $(document).on('click', '.contact_form', function(e) {
+        $(document).on('click', '.send_msg2', function(e) {
             // $('.contact_form').on('click', function(event) {
             event.preventDefault();
             // alert('hi');
             let user_id = $('#user_id').val();
             let email = $('#email').val();
             let message = $('#message').val();
+            let phone = $('#phone').val();
+            let name = $('#name').val();
 
             $.ajax({
                 url: "{{route('contactUs')}}",
@@ -458,6 +505,8 @@
                     user_id: user_id,
                     email: email,
                     message: message,
+                    phone:phone,
+                    name:name
                 },
                 success: function(response) {
                     $(".alert-danger").css("display", "none");
@@ -476,10 +525,10 @@
                 },
 
             });
-            document.getElementById("contactForm").reset();
+            document.getElementById("contactForm2").reset();
         });
 
-        $('.send_msg').on('click', function(event) {
+        $('.send_msg22').on('click', function(event) {
             event.preventDefault();
             let user_id = $('#user_id').val();
             let email = $('#email2').val();
@@ -492,8 +541,10 @@
                 data: {
                     "_token": "{{ csrf_token() }}",
                     user_id: user_id,
-                    email: email,
-                    message: message,
+                    email: $('#email22').val(),
+                    message: $('#message22').val(),
+                    name: $('#name22').val(),
+                    phone: $('#phone22').val(),
                 },
                 success: function(response) {
                     $(".alert-danger").css("display", "none");

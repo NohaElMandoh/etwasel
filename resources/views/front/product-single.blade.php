@@ -483,6 +483,36 @@ $user=Auth::user();
                                                                     <div class="formitem">
                                                                         <div class="row">
                                                                             <div class="col-lg-2 col-md-2 col-sm-3 col-xs-12">
+                                                                                <span class="tititle">{{__('front.Name')}}</span>
+                                                                            </div>
+                                                                            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                                                                                <div class="inpuyss">
+                                                                                <input type="text" id='name22' name='name22' class="inputformmd" placeholder=" {{__('front.Enter your Name')}}" class="mailinpu">
+
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                                    <div class="formitem">
+                                                                        <div class="row">
+                                                                            <div class="col-lg-2 col-md-2 col-sm-3 col-xs-12">
+                                                                                <span class="tititle"> {{__('front.Phone Number')}}</span>
+                                                                            </div>
+                                                                            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                                                                                <div class="inpuyss">
+                                                                                <input type="text" id='phone22' name='phone22' class="inputformmd" placeholder=" {{__('front.Enter Your Phone')}}" class="mailinpu">
+
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                                    <div class="formitem">
+                                                                        <div class="row">
+                                                                            <div class="col-lg-2 col-md-2 col-sm-3 col-xs-12">
                                                                                 <span class="tititle">{{__('front.Message')}}</span>
                                                                             </div>
                                                                             <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
@@ -533,29 +563,29 @@ $user=Auth::user();
                                                             <div class="item">
                                                                 <div class="PopuProdItem">
                                                                     <div class="imges">
-                                                                    @if(count($product->media) >0)
-                                                               
-                                                               @foreach($like_produt->media as $key=>$media)
-                                                               @if($loop->first)                                       
-                                                               @if($media->type == 'image'  )
-                                                           
-                                                                 <img src="{{Voyager::image($media->image ?? 'default_product.png')}}">
-                                                                @endif
-                                                                 @if($media->type == 'video'  )
-                                                             
-                                                                 <video src="{{Voyager::image($media->video ?? 'default_product.png')}}">
-                                                                @endif
-                                                                
-                                                                 @endif
-                                                                
-                                                               @endforeach
-                                                               
-                                                               @else 
-                                                             
-                                                               <img src="{{Voyager::image($like_produt->image)}}" onerror="this.onerror=null;this.src='{{asset("frontUI/assets/img/cladreximg/Product/26.png")}}';">
-                                                               @endif
-                                                               
-                                                                 {{--       <img src="{{asset('frontUI/assets/img/cladreximg/Product/26.png')}}">--}}
+                                                                        @if(count($product->media) >0)
+
+                                                                        @foreach($like_produt->media as $key=>$media)
+                                                                        @if($loop->first)
+                                                                        @if($media->type == 'image' )
+
+                                                                        <img src="{{Voyager::image($media->image ?? 'default_product.png')}}">
+                                                                        @endif
+                                                                        @if($media->type == 'video' )
+
+                                                                        <video src="{{Voyager::image($media->video ?? 'default_product.png')}}">
+                                                                            @endif
+
+                                                                            @endif
+
+                                                                            @endforeach
+
+                                                                            @else
+
+                                                                            <img src="{{Voyager::image($like_produt->image)}}" onerror="this.onerror=null;this.src='{{asset("frontUI/assets/img/cladreximg/Product/26.png")}}';">
+                                                                            @endif
+
+                                                                            {{-- <img src="{{asset('frontUI/assets/img/cladreximg/Product/26.png')}}">--}}
                                                                     </div>
                                                                     <div class="buttonsssRight">
                                                                         <ul>
@@ -577,7 +607,7 @@ $user=Auth::user();
                                                                             <a href="#" class="catlinl">{{$like_produt->product_name ?? ''}}</a>
                                                                         </div>
                                                                         <div class="nameprod">
-                                                                            <a href="NewProductdetails.html" class="namlink">  {!! html_entity_decode($like_produt->product_description) !!}</a>
+                                                                            <a href="NewProductdetails.html" class="namlink"> {!! html_entity_decode($like_produt->product_description) !!}</a>
                                                                         </div>
                                                                         <div class="price">
                                                                             <div class="prod_price" title="FOB Price: {{$like_produt->currency->name ?? ''}} {{$product->min_price}}-{{$product->max_price}} / {{$like_produt->unit->name ?? ''}}">
@@ -1698,6 +1728,8 @@ $user=Auth::user();
         let email = $('#email').val();
         let message = $('#message').val();
         let user_id = $('#user_id').val();
+        let name = $('#name22').val();
+        let phone = $('#phone22').val();
         $.ajax({
             url: "{{route('contactUs')}}",
             type: "POST",
@@ -1706,7 +1738,9 @@ $user=Auth::user();
 
                 email: email,
                 message: message,
-                user_id: user_id
+                user_id: user_id,
+                name:name,
+                phone:phone
             },
             success: function(response) {
                 $(".alert-danger").css("display", "none");
