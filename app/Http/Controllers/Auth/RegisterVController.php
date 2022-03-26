@@ -6,8 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\userRegister;
 use App\Http\Requests\vendorRegister;
 use App\Providers\RouteServiceProvider;
-use App\Models\User;
-use Illuminate\Foundation\Auth\RegistersUsers;
+use App\Models\User; 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -27,7 +26,7 @@ class RegisterController extends Controller
     |
     */
 
-    use RegistersUsers;
+    use RegistersVendor;
 
     /**
      * Where to redirect users after registration.
@@ -54,34 +53,14 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
-        if ($data['type'] == 'user') {
-            // dd('data  user ');
-            return  Validator::make($data, [
-                'f_name' => ['required', 'string', 'max:255'],
-                'l_name' => ['required', 'string', 'max:255'],
-                'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-                'password' => ['required', 'string', 'min:8', 'confirmed'],
-                'gender' => ['required'],
-            ]);
-             
-        } elseif ($data['type'] == 'vendor') {
-            // dd($data);
-            return Validator::make(
-                $data,
-                [
-                    'f_name' => ['required', 'string', 'max:40', 'min:3'],
-                    'l_name' => ['required', 'string', 'max:40', 'min:3'],
-                    'title' => ['required', 'in:Mr,Mrs,Miss,Ms'],
-                    'email' => ['required', 'string', 'email', 'unique:users,email'],
-                    'password' => ['required', 'string', 'min:6', 'confirmed'],
-                    'type' => ['required'],
-                    'phone' => ['required'],
-                    'shop_name' => ['required', 'string', 'unique:users,shop_name', 'min:3', 'max:50'],
-                    // 'country'=>''
-                    'city_id' => ['required', 'exists:cities,id']
-                ]
-            );
-        }
+
+        return Validator::make($data, [
+            'f_name' => ['required', 'string', 'max:255'],
+            'l_name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'gender'=>['required'],
+        ]);
     }
 
     /**
@@ -93,19 +72,14 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         $userRole = Role::where('name', 'user')->first();
-
         return User::create([
             'name' => $data['f_name'] . " " . $data['l_name'],
-            'title' => $data['title'] ?? null,
             'f_name' => $data['f_name'],
             's_name' => $data['l_name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
-            'gender' => $data['gender'] ?? null,
-            'phone' => $data['phone'] ?? null,
-            'shop_name' => $data['shop_name'] ?? null,
-            'country' => $data['city_id'] ?? null,
-            'type' => $data['type'],
+            'gender' => $data['gender'],
+            'type' => 'user',
             'role_id' => $userRole->id,
         ]);
     }
@@ -146,27 +120,27 @@ class RegisterController extends Controller
     //     return redirect('/login')->with('success', 'Your accound add successfully');
     // }
 
-    // public function vendorRegister(vendorRegister $request)
-    // {
-    //     // dd($request->all());
-    //     $request->validated();
+    public function vendorRegister(vendorRegister $request)
+    {
+        // dd($request->all());
+        $request->validated();
 
-    //     $vendorRole = Role::where('name', 'vendor')->first();
+        $vendorRole = Role::where('name', 'vendor')->first();
 
-    //     $user = User::create([
-    //         'type' => 'vendor',
-    //         'name' => $request->f_name . " " . $request->l_name,
-    //         'role_id' => $vendorRole->id,
-    //         'f_name' => $request->f_name,
-    //         's_name' => $request->l_name,
-    //         'full_name' => $request->title,
-    //         'email' => $request->vendor_email,
-    //         'password' =>  Hash::make($request->vendor_password),
-    //         'phone' => $request->phone ?? null,
-    //         'shop_name' => $request->shop_name ?? null,
-    //         'country' => $request->city_id
-    //     ]);
-    //     // Auth::login($user);
-    //     return redirect('/login')->with('success', 'Your accound add successfully');
-    // }
+        $user = User::create([
+            'type' => 'vendor',
+            'name' => $request->f_name . " " . $request->l_name,
+            'role_id' => $vendorRole->id,
+            'f_name' => $request->f_name,
+            's_name' => $request->l_name,
+            'full_name' => $request->title,
+            'email' => $request->vendor_email,
+            'password' =>  Hash::make($request->vendor_password),
+            'phone' => $request->phone ?? null,
+            'shop_name' => $request->shop_name ?? null,
+            'country' => $request->city_id
+        ]);
+        // Auth::login($user);
+        return redirect('/login')->with('success', 'Your accound add successfully');
+    }
 }

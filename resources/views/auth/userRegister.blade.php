@@ -1,4 +1,4 @@
-<form id="msform" method="post" action="{{ url('userRegister') }}" enctype="multipart/form-data">
+<form id="msform" method="post" action="{{ route('register') }}" enctype="multipart/form-data">
 
     @csrf
     <input type="hidden" id="type_user" name="type" value="user">
