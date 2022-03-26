@@ -497,7 +497,7 @@
                                                                                     <div class="col-lg-9 col-md-9 col-xs-9 col-xs-12">
                                                                                         <div class="tomrsss">
                                                                                             <img src="{{Voyager::image($user->photo ?? $user->avatar)}}">
-                                                                                            <span>{{$user->full_name ?? 'supplier'}}</span>
+                                                                                            <span>{{$user->full_name ?? ''}} {{$user->f_name ?? 'supplier'}} {{$user->s_name ?? ''}}</span>
                                                                                         </div>
                                                                                     </div>
                                                                                 </div>
