@@ -225,6 +225,7 @@ $user=Auth::user();
                                                         <button type="button" data-repeater-create class="addMore" title="Add More">
                                                             <i class="fas fa-plus iconpluss"></i>
                                                         </button>
+                                                       
                                                         @if(!empty($user->details))
 
                                                         @if(count($user->pmcs)>0)
@@ -259,6 +260,18 @@ $user=Auth::user();
                                                             </button>
                                                         </div>
                                                         @endif
+                                                        @else
+                                                         <div class="repeterdev" data-repeater-item>
+                                                            <span>{{__('front.Product Main Category EN')}} </span>
+                                                            <input type="text" class="inputvendor" name="cat_name" id='cat_name' value='{{$pmc->cat_name ?? ''}}' required placeholder="">
+                                                            <span>{{__('front.Product Main Category AR')}} </span>
+                                                            <input type="text" class="inputvendor mt-1" name="cat_name_ar" value='{{$pmc->cat_name_ar ?? ''}}' required id='cat_name_ar' placeholder="">
+                                                            <input type="hidden" id='cat_id' name='cat_id'>
+                                                            <!--<input data-repeater-delete type="button" class="btn btn-danger" value="{{ __('Delete') }}" />-->
+                                                            <button data-repeater-delete type="button" class="btn btn-danger deleterepeat" title="Add Mor PMC">
+                                                                <i class="far fa-trash-alt"></i>
+                                                            </button>
+                                                        </div>
                                                         @endif
                                                     </div>
                                                 </div>
