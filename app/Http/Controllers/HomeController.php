@@ -876,7 +876,7 @@ if ($validator->fails()) {
         //   $certification=Certification::all();
         return view('front.vendor-website', compact('user', 'fields', 'regions'));
     }
-    public function product_pmc($pmc_id,$user_id)
+    public function product_pmc($pmc_id,$user_id=null)
     {
         $pmc_pro=Pmc::find($pmc_id);
         $user=$user_id;
