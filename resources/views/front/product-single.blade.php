@@ -174,14 +174,14 @@ $user=Auth::user();
 
                                                     <div class="copanyDetails">
 
-                                                        <a href="{{route('vendor_website',['vendor_id'=>$product->user->id ?? null,'vendor_name'=>$product->user->name ?? ''])}}" class="companyname">
+                                                        <a href="{{route('vendor_website',['vendor_id'=>$user->id ?? null,'vendor_name'=>$user->name ?? ''])}}" class="companyname">
                                                             <div class="imgcomp">
-                                                                <img src="{{Voyager::image($product->user->details->logo ?? $product->user->avatar ?? '')}} ">
+                                                                <img src="{{Voyager::image($user->details->logo ?? $product->user->avatar ?? '')}} " onerror="this.onerror=null;this.src='{{$user->avatar}};">
                                                             </div>
                                                             <div class="Namecompany">
                                                                 <img src="http://etwasel.com/public/frontUI/assets/img/cladreximg/jewels.png">
 
-                                                                <h2>{{$product->user->details->campany_name ?? 'Campany Name'}}</h2>
+                                                                <h2>{{$user->details->campany_name ?? 'Campany Name'}}</h2>
                                                             </div>
                                                         </a>
                                                     </div>
@@ -471,7 +471,7 @@ $user=Auth::user();
 
                                                                             <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
                                                                                 <div class="inpuyss">
-                                                                                    <img src="{{Voyager::image($product->user->details->logo ?? '')}}"> <span class="name">{{$product->user->details->campany_name ??''}}</span>
+                                                                                    <img src="{{Voyager::image($user->details->logo ?? $user->avatar)}}" onerror="this.onerror=null;this.src='{{$user->avatar}};"> <span class="name">{{$product->user->details->campany_name ??''}}</span>
                                                                                 </div>
                                                                             </div>
 

@@ -905,8 +905,8 @@ if ($validator->fails()) {
 
         $product = PmcsProduct::where('product_name_en', $product_name)->first();
         $like_produts=PmcsProduct::where('user_id', $product->user_id)->get();
-
-        return view('front.product-single', compact('product','like_produts'));
+$user=User:: find($product->user_id);
+        return view('front.product-single', compact('product','like_produts','user'));
     }
     public function product_media(Request $request)
     {
