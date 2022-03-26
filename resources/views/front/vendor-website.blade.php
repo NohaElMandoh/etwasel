@@ -33,10 +33,10 @@
                                         <div class="servcomp">
                                             <ul>
                                                 <li><img src="{{asset('frontUI/assets/img/cladreximg/jewels.png')}}"> {{$user->details->campany_name ??'Campany Name'}}
-                                                
+
                                                     <!--<span>sinc 2008</span>-->
                                                 </li>
-                                                
+
                                             </ul>
                                         </div>
                                     </div>
@@ -48,7 +48,7 @@
                                 <div class="seraserbox">
 
 
-                                    <form  method="get" action="{{route('search')}}" enctype="multipart/form-data" class="">
+                                    <form method="get" action="{{route('search')}}" enctype="multipart/form-data" class="">
                                         @csrf
                                         <div class="searchselect">
                                             <select class="selecttsite select2" style="width: 100px">
@@ -102,7 +102,7 @@
                                     <li class="nav-item" style='display:none'>
                                         <a class="nav-link" href="#">{{__('front.About Us')}}</a>
                                     </li>
-                                    <li class="nav-item"  style='display:none'>
+                                    <li class="nav-item" style='display:none'>
                                         <a class="nav-link" href="#">{{__('front.Solutions')}}</a>
                                     </li>
                                     <li class="nav-item">
@@ -126,18 +126,18 @@
                                 <div id='jtv-rev_slider_wrapper' class='rev_slider_wrapper fullwidthbanner-container'>
                                     <div id='jtv-rev_slider' class='rev_slider fullwidthabanner'>
                                         <ul>
-                                         
+
                                             @if(count($user->sliders) >0)
-                                            
+
                                             @foreach($user->sliders as $slide)
                                             <li data-transition='random' data-slotamount='7' data-masterspeed='1000' data-thumb='{{Voyager::image($slide->image)}}'><img src="{{Voyager::image($slide->image)}}" alt="slide-img" data-bgposition='left top' data-bgfit='cover' data-bgrepeat='no-repeat' />
                                                 <div class="info">
 
                                                 </div>
                                             </li>
-                                            
+
                                             @endforeach
-                                         @else
+                                            @else
                                             <li data-transition='random' data-slotamount='7' data-masterspeed='1000' data-thumb='assets/img/cladreximg/slide-img1.jpg'><img src="{{asset('frontUI/assets/img/slider3.png')}}" alt="slide-img" data-bgposition='left top' data-bgfit='cover' data-bgrepeat='no-repeat' />
                                                 <div class="info">
 
@@ -157,7 +157,7 @@
 
                                                 </div>
                                             </li>
-@endif
+                                            @endif
 
 
 
@@ -176,8 +176,8 @@
                     </div>
                 </div>
             </div>
-                
-                
+
+
 
             <div class="col-lg-12 col-md-12">
 
@@ -185,23 +185,23 @@
                     <div class="centersidecont">
                         <div class="row">
 
-<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="CompanyInfo">
-                        <div class="container">
-                            <div class="companyInfoContent">
-                                <h2>{{__('front.About Company')}} </h2>
-                                <div class="cubics">
-                                    <span class="cubicItem smallcub"></span>
-                                    <span class="cubicItem Bigcub"></span>
-                                    <span class="cubicItem smallcub"></span>
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <div class="CompanyInfo">
+                                    <div class="container">
+                                        <div class="companyInfoContent">
+                                            <h2>{{__('front.About Company')}} </h2>
+                                            <div class="cubics">
+                                                <span class="cubicItem smallcub"></span>
+                                                <span class="cubicItem Bigcub"></span>
+                                                <span class="cubicItem smallcub"></span>
+                                            </div>
+
+                                            {!! html_entity_decode($user->details->about_campany ?? '') !!}
+
+                                        </div>
+                                    </div>
                                 </div>
-                            
-                            {!! html_entity_decode($user->details->about_campany ?? '') !!}
-                         
                             </div>
-                        </div>
-                    </div>
-                </div>
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                 <div class="PopuProd productfillter">
 
@@ -248,11 +248,11 @@
                                                                     </div>
                                                                     <div class="sudet">
                                                                         <p>{{$user->full_name ?? ''}} {{$user->f_name ?? 'supplier'}} {{$user->s_name ?? ''}}</p>
-                                                                        <span>{{$user->details->campany_category->name  ?? ''}}</span>
+                                                                        <span>{{$user->details->campany_category->name ?? ''}}</span>
                                                                     </div>
                                                                 </div>
                                                                 <div class="formsss">
-                                                                    <form  method="post" class='contact_form'>
+                                                                    <form method="post" id='contact_form2'>
                                                                         @csrf
                                                                         <input type="hidden" id='user_id' name='user_id' value='{{$user->id ?? ''}}'>
                                                                         <div class="alert alert-success alert-success-message" style="display:none">
@@ -277,7 +277,7 @@
                                                                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                                                                 <div class="formitem">
 
-                                                                                    <button class="SenMess contact_form" type='button' >{{__('front.Send')}} </button>
+                                                                                    <button class="SenMess  send_msg2" type='button'>{{__('front.Send')}} </button>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
@@ -299,29 +299,29 @@
                                                                     </div>
                                                                     <div class="Products PopuProdtemsss">
                                                                         <div class="owl-carousel owl-theme prprprOwl">
-                                                                        @if($pmc->products)
-                                                                @foreach($pmc->products as $product)
+                                                                            @if($pmc->products)
+                                                                            @foreach($pmc->products as $product)
                                                                             <div class="item">
                                                                                 <div class="PopuProdItem">
                                                                                     <div class="imges">
                                                                                         @if(count($product->media)>0)
                                                                                         @foreach($product->media as $key=>$media)
                                                                                         @if($loop->first)
-                                                                                        @if($media->type == 'image'  )
-                                                                                        
-                                                                                          <img src="{{Voyager::image($media->image)}}">
-                                                                                         @endif
-                                                                                          @if($media->type == 'video'  )
-                                                                                        
-                                                                                          <video src="{{Voyager::image($media->video)}}">
-                                                                                         @endif
-                                                                                          @endif
-                                                                                        @endforeach
-                                                    @else     
-                                                      <img src="{{Voyager::image($product->image)}}">
-                                                                    
-                                                    @endif
-                                                                                      
+                                                                                        @if($media->type == 'image' )
+
+                                                                                        <img src="{{Voyager::image($media->image)}}">
+                                                                                        @endif
+                                                                                        @if($media->type == 'video' )
+
+                                                                                        <video src="{{Voyager::image($media->video)}}">
+                                                                                            @endif
+                                                                                            @endif
+                                                                                            @endforeach
+                                                                                            @else
+                                                                                            <img src="{{Voyager::image($product->image)}}">
+
+                                                                                            @endif
+
                                                                                     </div>
                                                                                     <div class="buttonsssRight">
                                                                                         <ul>
@@ -335,7 +335,7 @@
                                                                                                     <i class="bx bx-sync"></i>
                                                                                                 </a>
                                                                                             </li>
-                                                                                            
+
                                                                                         </ul>
                                                                                     </div>
                                                                                     <div class="details">
@@ -344,11 +344,11 @@
                                                                                         </div>
                                                                                         <div class="nameprod">
                                                                                             <a href="{{route('product',$product->product_name_en)}}" class="namlink">
-                                                                                                  {!! html_entity_decode($product->product_description) !!}
-                                                                                                </a>
+                                                                                                {!! html_entity_decode($product->product_description) !!}
+                                                                                            </a>
                                                                                         </div>
                                                                                         <div class="price">
-                                                                                       
+
                                                                                             <div class="prod_price" title="FOB Price: US $300-450 / Piece">
                                                                                                 <span class="label">FOB {{__('front.Price')}}: </span>
                                                                                                 <span class="value">{{$product->min_price}}-{{$product->max_price}} {{$product->currency->name ??''}}</span>
@@ -384,7 +384,7 @@
 
 
                                                                             </div>
-                                                                         
+
                                                                             @endforeach
                                                                             @endif
                                                                         </div>
@@ -397,7 +397,7 @@
                                                         @endif
 
 
-                                                     
+
 
                                                         <div class="certifications">
                                                             <div class="prpdtit">
@@ -405,22 +405,22 @@
                                                             </div>
                                                             <div class="certitemss CertificationPopUp">
                                                                 <div class="row certificationsRow">
-                                                                           @if(!empty(Auth::user()->certification))
-                                            @foreach(Auth::user()->certification as $cer)
-                                                           
+                                                                    @if(!empty(Auth::user()->certification))
+                                                                    @foreach(Auth::user()->certification as $cer)
+
                                                                     <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
                                                                         <div class="certitem">
                                                                             <a href="{{Voyager::image($cer->image)}}" class="itemcert">
                                                                                 <div class="imgaes">
-                                                                                <div class="imgesitem">
-                                                                                    <img src="{{Voyager::image($cer->image)}}">
+                                                                                    <div class="imgesitem">
+                                                                                        <img src="{{Voyager::image($cer->image)}}">
+                                                                                    </div>
                                                                                 </div>
-                                                                            </div>
-                                                                            <div class="ceritname">
-                                                                                <h3>{{$cer->title_en ?? ''}}</h3>
-                                                                            </div>
+                                                                                <div class="ceritname">
+                                                                                    <h3>{{$cer->title_en ?? ''}}</h3>
+                                                                                </div>
                                                                             </a>
-                                                                            
+
                                                                         </div>
                                                                     </div>
                                                                     @endforeach
@@ -458,9 +458,9 @@
                                                                 <h2>{{__('front.Send your message to this supplier')}}</h2>
                                                             </div>
                                                             <div class="Messagee">
-                                                                <form  method="post" class='contact_form'>
+                                                                <form method="post" id='contact_form'>
                                                                     @csrf
-                                                                 
+
                                                                     <div class="alert alert-success alert-success-message2" style="display:none">
                                                                         {{ Session::get('success') }}
                                                                     </div>
@@ -478,7 +478,7 @@
                                                                                     </div>
                                                                                     <div class="col-lg-9 col-md-9 col-xs-9 col-xs-12">
                                                                                         <div class="inputmess">
-                                                                                            <input type="email" id='email2' name='email2' placeholder=" {{__('front.Enter Your Email')}}" class="mailinpu">
+                                                                                            <input type="email" id='email22' name='email22' placeholder=" {{__('front.Enter Your Email')}}" class="mailinpu">
 
                                                                                         </div>
                                                                                     </div>
@@ -514,7 +514,7 @@
                                                                                     </div>
                                                                                     <div class="col-lg-9 col-md-9 col-xs-9 col-xs-12">
                                                                                         <div class="inputmess">
-                                                                                            <textarea id='message2' name='message2' placeholder="{{__('front.message2')}}" class="textaremess"></textarea>
+                                                                                            <textarea id='message22' name='message22' placeholder="{{__('front.message2')}}" class="textaremess"></textarea>
 
                                                                                         </div>
                                                                                     </div>
@@ -530,7 +530,7 @@
                                                                                     </div>
                                                                                     <div class="col-lg-9 col-md-9 col-xs-9 col-xs-12">
                                                                                         <div class="inputmess">
-                                                                                            <button class="SenMess send_msg" type="button">{{__('front.Send')}}</button>
+                                                                                            <button class="SenMess send_msg22" type="button">{{__('front.Send')}}</button>
 
                                                                                         </div>
                                                                                     </div>
@@ -583,7 +583,7 @@
     </div>
 </div>
 
- 
+
 @endsection
 @section('scripts')
 <script src="{{asset('frontUI/assets/Libs/magnific-popup/jquery.magnific-popup.min.js')}}"></script>
@@ -593,78 +593,78 @@
 
 <script type="text/javascript">
     $(document).ready(function() {
-         $(document).on('click', '.contact_form', function(e) {
-    // $('.contact_form').on('click', function(event) {
-        event.preventDefault();
-        // alert('hi');
-let user_id=$('#user_id').val();
-        let email = $('#email').val();
-        let message = $('#message').val();
+        $(document).on('click', '.send_msg2', function(e) {
+            // $('.contact_form').on('click', function(event) {
+            event.preventDefault();
+            // alert('hi');
+            let user_id = $('#user_id').val();
+            let email = $('#email').val();
+            let message = $('#message').val();
 
-        $.ajax({
-            url: "{{route('contactUs')}}",
-            type: "POST",
-            data: {
-                "_token": "{{ csrf_token() }}",
-user_id:user_id,
-                email: email,
-                message: message,
-            },
-            success: function(response) {
-                $(".alert-danger").css("display", "none");
-                $(".alert-success-message").css("display", "block");
-                $(".alert-success-message").html('<P style="text-align:center">Thank you.').hide()
-                    .fadeIn(1500, function() {
-                        $('.alert-success-message');
-                    }).fadeOut(1500, function() {
-                        $('.alert-success-message');
-                    }).reset();
+            $.ajax({
+                url: "{{route('contactUs')}}",
+                type: "POST",
+                data: {
+                    "_token": "{{ csrf_token() }}",
+                    user_id: user_id,
+                    email: email,
+                    message: message,
+                },
+                success: function(response) {
+                    $(".alert-danger").css("display", "none");
+                    $(".alert-success-message").css("display", "block");
+                    $(".alert-success-message").html('<P style="text-align:center">Thank you.').hide()
+                        .fadeIn(1500, function() {
+                            $('.alert-success-message');
+                        }).fadeOut(1500, function() {
+                            $('.alert-success-message');
+                        }).reset();
 
-            },
-            error: function(response) {
-                $(".alert-danger").css("display", "block");
-                $(".alert-success-message").css("display", "none");
-            },
+                },
+                error: function(response) {
+                    $(".alert-danger").css("display", "block");
+                    $(".alert-success-message").css("display", "none");
+                },
 
+            });
+            document.getElementById("contactForm2").reset();
         });
-        document.getElementById("contactForm").reset();
-    });
 
-    $('.send_msg').on('click', function(event) {
-        event.preventDefault();
-let user_id=$('#user_id').val();
-        let email = $('#email2').val();
-        let message = $('#message2').val();
+        $('.send_msg22').on('click', function(event) {
+            event.preventDefault();
+            let user_id = $('#user_id').val();
+            let email = $('#email2').val();
+            let message = $('#message2').val();
 
 
-        $.ajax({
-            url: "{{route('contactUs')}}",
-            type: "POST",
-            data: {
-                "_token": "{{ csrf_token() }}",
-user_id:user_id,
-                email: email,
-                message: message,
-            },
-            success: function(response) {
-                $(".alert-danger").css("display", "none");
-                $(".alert-success-message2").css("display", "block");
-                $(".alert-success-message2").html('<P style="text-align:center">Thank you.').hide()
-                    .fadeIn(1500, function() {
-                        $('.alert-success-message2');
-                    }).fadeOut(1500, function() {
-                        $('.alert-success-message2');
-                    }).reset();
+            $.ajax({
+                url: "{{route('contactUs')}}",
+                type: "POST",
+                data: {
+                    "_token": "{{ csrf_token() }}",
+                    user_id: user_id,
+                    email: $('#email22').val(),
+                    message: $('#message22').val(),
+                },
+                success: function(response) {
+                    $(".alert-danger").css("display", "none");
+                    $(".alert-success-message2").css("display", "block");
+                    $(".alert-success-message2").html('<P style="text-align:center">Thank you.').hide()
+                        .fadeIn(1500, function() {
+                            $('.alert-success-message2');
+                        }).fadeOut(1500, function() {
+                            $('.alert-success-message2');
+                        }).reset();
 
-            },
-            error: function(response) {
-                $(".alert-danger2").css("display", "block");
-                $(".alert-success-message2").css("display", "none");
-            },
+                },
+                error: function(response) {
+                    $(".alert-danger2").css("display", "block");
+                    $(".alert-success-message2").css("display", "none");
+                },
 
+            });
+            document.getElementById("contactForm").reset();
         });
-        document.getElementById("contactForm").reset();
-    });
     });
 </script>
 @endsection

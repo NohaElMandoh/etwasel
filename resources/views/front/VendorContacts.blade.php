@@ -77,7 +77,7 @@ $user=Auth::user();
                                                                 @foreach(Auth::user()->contactsUs as $k=>$content)
 
 
-                                                                <tr>
+                                          5                      <tr>
                                                                     <td>
                                                                         <p>{{$k+1}}</p>
                                                                     </td>

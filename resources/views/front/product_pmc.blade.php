@@ -176,7 +176,7 @@
                                                                     </div>
                                                                 </div>
                                                                 <div class="formsss">
-                                                                    <form method="post" class='contact_form'>
+                                                                    <form method="post" id='contact_form'>
                                                                         @csrf
                                                                         <input type="hidden" id='user_id' name='user_id' value='{{$user->id ?? ''}}'>
                                                                         <div class="alert alert-success alert-success-message" style="display:none">
@@ -201,7 +201,7 @@
                                                                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                                                                 <div class="formitem">
 
-                                                                                    <button class="SenMess contact_form" type='button'>{{__('front.Send')}} </button>
+                                                                                    <button class="SenMess send_msg2" type='button'>{{__('front.Send')}} </button>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
@@ -343,7 +343,7 @@
                                                                                     </div>
                                                                                     <div class="col-lg-9 col-md-9 col-xs-9 col-xs-12">
                                                                                         <div class="inputmess">
-                                                                                            <input type="email" id='email2' name='email2' placeholder=" {{__('front.Enter Your Email')}}" class="mailinpu">
+                                                                                            <input type="email" id='email22' name='email22' placeholder=" {{__('front.Enter Your Email')}}" class="mailinpu">
 
                                                                                         </div>
                                                                                     </div>
@@ -379,7 +379,7 @@
                                                                                     </div>
                                                                                     <div class="col-lg-9 col-md-9 col-xs-9 col-xs-12">
                                                                                         <div class="inputmess">
-                                                                                            <textarea id='message2' name='message2' placeholder="{{__('front.message2')}}" class="textaremess"></textarea>
+                                                                                            <textarea id='message22' name='message22' placeholder="{{__('front.message2')}}" class="textaremess"></textarea>
 
                                                                                         </div>
                                                                                     </div>
@@ -395,7 +395,7 @@
                                                                                     </div>
                                                                                     <div class="col-lg-9 col-md-9 col-xs-9 col-xs-12">
                                                                                         <div class="inputmess">
-                                                                                            <button class="SenMess send_msg" type="button">{{__('front.Send')}}</button>
+                                                                                            <button class="SenMess send_msg22" type="button">{{__('front.Send')}}</button>
 
                                                                                         </div>
                                                                                     </div>
@@ -455,10 +455,9 @@
 <script src="{{asset('frontUI/assets/Libs/magnific-popup/lightbox.init.js')}}"></script>
 
 
-
 <script type="text/javascript">
     $(document).ready(function() {
-        $(document).on('click', '.contact_form', function(e) {
+        $(document).on('click', '.send_msg2', function(e) {
             // $('.contact_form').on('click', function(event) {
             event.preventDefault();
             // alert('hi');
@@ -492,10 +491,10 @@
                 },
 
             });
-            document.getElementById("contactForm").reset();
+            document.getElementById("contactForm2").reset();
         });
 
-        $('.send_msg').on('click', function(event) {
+        $('.send_msg22').on('click', function(event) {
             event.preventDefault();
             let user_id = $('#user_id').val();
             let email = $('#email2').val();
@@ -508,8 +507,8 @@
                 data: {
                     "_token": "{{ csrf_token() }}",
                     user_id: user_id,
-                    email: email,
-                    message: message,
+                    email: $('#email22').val(),
+                    message: $('#message22').val(),
                 },
                 success: function(response) {
                     $(".alert-danger").css("display", "none");
