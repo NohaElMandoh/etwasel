@@ -247,7 +247,7 @@
                                                                         <img src="{{Voyager::image($user->photo ?? $user->avatar)}}">
                                                                     </div>
                                                                     <div class="sudet">
-                                                                        <p>{{$user->full_name ?? 'supplier'}}</p>
+                                                                        <p>{{$user->full_name ?? ''}} {{$user->f_name ?? 'supplier'}} {{$user->s_name ?? ''}}</p>
                                                                         <span>{{$user->details->campany_category->name  ?? ''}}</span>
                                                                     </div>
                                                                 </div>
