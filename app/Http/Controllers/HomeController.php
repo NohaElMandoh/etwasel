@@ -174,6 +174,23 @@ if ($validator->fails()) {
         } else {
 
             $user_details = $user->details()->create($allReaquest);
+            if ($request->hasFile('logo')) {
+                $image      = $request->file('logo');
+                $fileName   = time() . '.' . $image->getClientOriginalExtension();
+                $path = public_path();
+                $destinationPath = $path . '/storage/users-details/';
+                $img = \Image::make($image->getRealPath());
+                // $img->resize(120, 120, function ($constraint) {
+                //     $constraint->aspectRatio();                 
+                // });
+
+                $img->stream(); // <-- Key point
+                $image->move($destinationPath, $fileName); // uploading file to given path
+                //dd();
+                Storage::disk('local')->put('users-details' . '/' . $fileName, $img, 'public');
+
+
+                $userDetails->update(['logo' => 'users-details\\' . $fileName]);
         }
 
         //  if ($request->has('certicications_imgs')) {
