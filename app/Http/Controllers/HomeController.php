@@ -192,6 +192,7 @@ if ($validator->fails()) {
 
                 $userDetails->update(['logo' => 'users-details\\' . $fileName]);
         }
+    }
 
         //  if ($request->has('certicications_imgs')) {
         //      return gettype($request->certicications_imgs);
