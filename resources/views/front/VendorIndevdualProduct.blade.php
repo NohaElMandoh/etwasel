@@ -255,7 +255,7 @@ $user=Auth::user();
                                                     <textarea placeholder="{{__('front.Product Name EN')}}" id='product_name_en' name='product_name_en' required class="TextInputt"></textarea>
                                                 </div>
                                             </div>
-                                            <div class="col-lg-12 col-nd-12 col-sm-12 col-xs-12">
+                                            <div class="col-lg-12 col-nd-12 col-sm-12 col-xs-12">s
                                                 <div class="formItemVendor">
                                                     <span>{{__('front.Product Name AR')}}*</span>
 
