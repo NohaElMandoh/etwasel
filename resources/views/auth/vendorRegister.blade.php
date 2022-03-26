@@ -1,5 +1,4 @@
-<form id="msform" method="post" action="{{ url('/vendorRegister') }}"  
-    enctype="multipart/form-data">
+<form id="msform" method="post" action="{{ route('register') }}" enctype="multipart/form-data">
     @csrf
     <input type="hidden" id="type_vendor" name="type" value="vendor">
 
@@ -19,10 +18,12 @@
 
                     </div>
                     <div class="col-lg-5 col-md-5 col-sm-5 col-xs-8">
-                        <input type="text" id="vendor_full_name" name="f_name" placeholder="{{ __('front.Write Your first Name') }}" re />
+                        <input type="text" id="vendor_full_name" name="f_name"
+                            placeholder="{{ __('front.Write Your first Name') }}" re />
                     </div>
                     <div class="col-lg-5 col-md-5 col-sm-5 col-xs-8">
-                        <input type="text" id="vendor_full_name" name="l_name" placeholder="{{ __('front.Write Your last Name') }}" re />
+                        <input type="text" id="vendor_full_name" name="l_name"
+                            placeholder="{{ __('front.Write Your last Name') }}" re />
                     </div>
                 </div>
             </div>
@@ -31,7 +32,7 @@
         <div class="col-lg-12 col-md-12col-sm-12 col-xs-12">
             <div class="form-group">
                 <label class="fieldlabels">{{ __('front.Email') }}</label>
-                <input type="email" id="vendor_email" value="{{ old('vendor_email') }}" name="vendor_email"
+                <input type="email" id="vendor_email" value="{{ old('vendor_email') }}" name="email"
                     placeholder="Email Id" re />
             </div>
         </div>
@@ -55,14 +56,13 @@
         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
             <div class="form-group">
                 <label class="fieldlabels">{{ __('front.Password') }}</label>
-                <input type="Password" id="vendor_password" name="vendor_password" placeholder="6-20 characters"
-                    re />
+                <input type="Password" id="vendor_password" name="password" placeholder="6-20 characters" re />
             </div>
         </div>
         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
             <div class="form-group">
                 <label class="fieldlabels">{{ __('front.Confirm Password') }}</label>
-                <input type="Password" id="vendor_password_confirmation" name="vendor_password_confirmation"
+                <input type="Password" id="vendor_password_confirmation" name="password_confirmation"
                     placeholder="" re />
             </div>
         </div>
