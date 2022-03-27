@@ -176,7 +176,7 @@ $user=Auth::user();
 
                                                         <a href="{{route('vendor_website',['vendor_id'=>$user->id ?? null,'vendor_name'=>$user->name ?? ''])}}" class="companyname">
                                                             <div class="imgcomp">
-                                                                <img src="{{Voyager::image($user->details->logo ?? $product->user->avatar ?? '')}} " onerror="this.onerror=null;this.src='{{$user->avatar ?? Voyager::image("default_product.png")}};">
+                                                                <img src="{{Voyager::image($user->details->logo ?? $product->user->avatar ?? 'default_product.png')}} " onerror="this.onerror=null;this.src='{{$user->avatar ?? Voyager::image("default_product.png")}};">
                                                             </div>
                                                             <div class="Namecompany">
                                                                 <img src="http://etwasel.com/public/frontUI/assets/img/cladreximg/jewels.png">
@@ -471,7 +471,7 @@ $user=Auth::user();
 
                                                                             <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
                                                                                 <div class="inpuyss">
-                                                                                    <img src="{{Voyager::image($user->details->logo ?? $user->avatar)}}" onerror="this.onerror=null;this.src='{{$user->avatar ?? Voyager::image("default_product.png")}};"> <span class="name">{{$product->user->details->campany_name ??''}}</span>
+                                                                                    <img src="{{Voyager::image($user->details->logo ?? $user->avatar ??'default_product.png')}}" onerror="this.onerror=null;this.src='{{$user->avatar ?? Voyager::image("default_product.png")}};"> <span class="name">{{$product->user->details->campany_name ??''}}</span>
                                                                                 </div>
                                                                             </div>
 
