@@ -176,7 +176,7 @@ $user=Auth::user();
 
                                                         <a href="{{route('vendor_website',['vendor_id'=>$user->id ?? null,'vendor_name'=>$user->name ?? ''])}}" class="companyname">
                                                             <div class="imgcomp">
-                                                                <img src="{{Voyager::image($user->details->logo ?? $product->user->avatar ?? '')}} " onerror="this.onerror=null;this.src='{{$user->avatar}};">
+                                                                <img src="{{Voyager::image($user->details->logo ?? $product->user->avatar ?? '')}} " onerror="this.onerror=null;this.src='{{$user->avatar ?? Voyager::image("default_product.png")}};">
                                                             </div>
                                                             <div class="Namecompany">
                                                                 <img src="http://etwasel.com/public/frontUI/assets/img/cladreximg/jewels.png">
