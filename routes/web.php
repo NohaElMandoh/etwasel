@@ -72,7 +72,7 @@ Route::get('/Vendor_contact_us/{vendor_id?}', [App\Http\Controllers\HomeControll
     Route::get('/Vendor_contact_us/{vendor_id?}', [App\Http\Controllers\HomeController::class, 'Vendor_contact_us'])->name('Vendor_contact_us');
 
 
-    Route::get('/product/{product_name}', [App\Http\Controllers\HomeController::class, 'product'])->name('product');
+    Route::get('/product/{product_id?}/{product_name}', [App\Http\Controllers\HomeController::class, 'product'])->name('product');
 
     Route::get('/search', [App\Http\Controllers\HomeController::class, 'search'])->name('search');
 

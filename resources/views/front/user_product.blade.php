@@ -96,7 +96,7 @@ $user=Auth::user();
                                                                 <div class="title">
 
                                                                     <!-- <a class="product_name" href="#" target="_blank"> Wholesale <span>A4</span> Copy <span>Paper</span> / Wholesale Woodfree Printing <span>Paper</span></a> -->
-                                                                    <a class="product_name" href="{{route('product',$product->product_name_en??'')}}" target="_blank"> {{$product->product_name??''}} </a>
+                                                                    <a class="product_name" href="{{route('product',['product_id'=>$product->id,'product_name'=>$product->product_name_en ?? ''])}}" target="_blank"> {{$product->product_name??''}} </a>
 
                                                                 </div>
                                                                 <div class="fobMin">

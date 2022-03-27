@@ -900,10 +900,10 @@ if ($validator->fails()) {
     }
 
 
- public function product($product_name)
+ public function product($product_id,$product_name)
     {
 
-        $product = PmcsProduct::where('product_name_en', $product_name)->first();
+        $product = PmcsProduct::find($product_id);
         $like_produts=PmcsProduct::where('user_id', $product->user_id)->get();
 $user=User:: find($product->user_id);
         return view('front.product-single', compact('product','like_produts','user'));

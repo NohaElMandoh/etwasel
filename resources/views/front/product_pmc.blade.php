@@ -275,10 +275,10 @@
                                                                                     </div>
                                                                                     <div class="details">
                                                                                         <div class="categoru">
-                                                                                            <a href="{{route('product',$product->product_name_en)}}" class="catlinl">{{$product->product_name}}</a>
+                                                                                            <a href="{{route('product',['product_id'=>$product->id,'product_name'=>$product->product_name_en])}}" class="catlinl">{{$product->product_name}}</a>
                                                                                         </div>
                                                                                         <div class="nameprod">
-                                                                                            <a href="{{route('product',$product->product_name_en)}}" class="namlink">
+                                                                                            <a href="{{route('product',['product_id'=>$product->id,'product_name'=>$product->product_name_en])}}" class="namlink">
                                                                                                 {!! html_entity_decode($product->product_description) !!}
                                                                                             </a>
                                                                                         </div>

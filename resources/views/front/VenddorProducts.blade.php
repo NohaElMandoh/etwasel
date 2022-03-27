@@ -106,7 +106,7 @@ $user=Auth::user();
                                                                                     <i class="fas fa-ellipsis-h"></i>
                                                                                 </button>
                                                                                 <div class="dropdown-menu dropdown-menu-end">
-                                                                                    <a class="dropdown-item accept" href="{{route('product',$product->product_name_en ?? '')}}"><i class="far fa-eye"></i> {{__('front.View Product')}}  </a>
+                                                                                    <a class="dropdown-item accept" href="{{route('product',['product_id'=>$product->id,'product_name'=>$product->product_name_en ?? ''])}}"><i class="far fa-eye"></i> {{__('front.View Product')}}  </a>
                                                                                     <a class="dropdown-item " href="{{route('vendor_individual_product_Edit',$product->id)}}"><i class="far fa-edit"></i> {{__('front.edit')}} </a>
                                                                                     <a class="dropdown-item Delete del_pro" data-proid='{{$product->id}}' ><i class="far fa-trash-alt"></i> {{__('front.Delete')}} </a>
                                                                                 </div>
