@@ -471,7 +471,7 @@ $user=Auth::user();
 
                                                                             <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
                                                                                 <div class="inpuyss">
-                                                                                    <img src="{{Voyager::image($user->details->logo ?? $user->avatar)}}" onerror="this.onerror=null;this.src='{{$user->avatar}};"> <span class="name">{{$product->user->details->campany_name ??''}}</span>
+                                                                                    <img src="{{Voyager::image($user->details->logo ?? $user->avatar)}}" onerror="this.onerror=null;this.src='{{$user->avatar ?? Voyager::image("default_product.png")}};"> <span class="name">{{$product->user->details->campany_name ??''}}</span>
                                                                                 </div>
                                                                             </div>
 
